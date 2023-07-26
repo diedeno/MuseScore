@@ -55,7 +55,7 @@ static JsonObject metaToJson(const AudioResourceMeta& meta)
 
     result.set("id", meta.id);
     result.set("type", mu::value(RESOURCE_TYPE_TO_STRING_MAP, meta.type, "Undefined"));
-    result.set("hasNativeEditorSupport", meta.hasNativeEditorSupport);
+    result.set("hasNativeEditorSupport", true);
 
     if (!meta.vendor.empty()) {
         result.set("vendor", meta.vendor);
