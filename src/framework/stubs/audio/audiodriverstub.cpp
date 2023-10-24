@@ -109,3 +109,9 @@ bool AudioDriverStub::pushMidiEvent(muse::midi::Event&)
 {
     return true;
 }
+
+std::vector<muse::midi::MidiDevice> AudioDriverStub::availableMidiDevices() const
+{
+    std::vector<muse::midi::MidiDevice> x;
+    return x; // dummy
+}

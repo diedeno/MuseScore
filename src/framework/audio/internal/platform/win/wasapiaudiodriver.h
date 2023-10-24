@@ -52,6 +52,8 @@ public:
     async::Notification outputDeviceBufferSizeChanged() const override;
     std::vector<unsigned int> availableOutputDeviceBufferSizes() const override;
     bool pushMidiEvent(muse::midi::Event& e) override;
+    std::vector<muse::midi::MidiDevice> availableMidiDevices() const override;
+
     void resume() override;
     void suspend() override;
 
