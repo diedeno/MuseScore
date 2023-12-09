@@ -70,7 +70,7 @@ public:
 
     std::vector<unsigned int> availableOutputDeviceBufferSizes() const override;
     bool pushMidiEvent(muse::midi::Event& e) override;
-    std::vector<muse::midi::MidiDevice> availableMidiDevices() const override;
+    std::vector<muse::midi::MidiDevice> availableMidiDevices(muse::midi::MidiPortDirection dir) const override;
 
 private:
     static void OnFillBuffer(void* context, OpaqueAudioQueue* queue, AudioQueueBuffer* buffer);
