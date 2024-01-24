@@ -453,7 +453,7 @@ void Box::manageExclusionFromParts(bool exclude)
                         EngravingItem* newSectionBreak = sectionBreak->linkedClone();
                         newSectionBreak->setScore(score);
                         newSectionBreak->setParent(localPrevMeasure);
-                        score->undo(new AddElement(newSectionBreak));
+                        score->doUndoAddElement(newSectionBreak);
                     }
                 }
             }
@@ -464,7 +464,7 @@ void Box::manageExclusionFromParts(bool exclude)
                 continue;
             }
 
-            MeasureBase* newMB = next()->getInScore(score, true);
+            MeasureBase* newMB = next() ? next()->getInScore(score, true) : nullptr;
             Score::InsertMeasureOptions options;
             options.cloneBoxToAllParts = false;
             MeasureBase* newFrame = score->insertBox(type(), newMB, options);

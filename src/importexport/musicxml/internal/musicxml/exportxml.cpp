@@ -318,6 +318,7 @@ public:
 private:
     void init();
     int _measureNo;                             // number of next regular measure
+    int _measureNoOffset;                       // measure number offset
     int _irregularMeasureNo;                    // number of next irregular measure
     int _pickupMeasureNo;                       // number of next pickup measure
     QString _cachedAttributes;                  // attributes calculated by updateForMeasure()
@@ -3183,26 +3184,67 @@ static QString symIdToOrnam(const SymId sid)
 static QString symIdToTechn(const SymId sid)
 {
     switch (sid) {
-    case SymId::brassMuteClosed:
-        return "stopped";
-        break;
-    case SymId::stringsHarmonic:
-        return "harmonic";
-        break;
     case SymId::stringsUpBow:
         return "up-bow";
         break;
     case SymId::stringsDownBow:
         return "down-bow";
         break;
-    case SymId::pluckedSnapPizzicatoAbove:
-        return "snap-pizzicato";
-        break;
-    case SymId::brassMuteOpen:
-        return "open-string";
+    case SymId::stringsHarmonic:
+        return "harmonic";
         break;
     case SymId::stringsThumbPosition:
+    case SymId::stringsThumbPositionTurned:
         return "thumb-position";
+        break;
+    case SymId::doubleTongueAbove:
+    case SymId::doubleTongueBelow:
+        return "double-tongue";
+        break;
+    case SymId::tripleTongueAbove:
+    case SymId::tripleTongueBelow:
+        return "triple-tongue";
+        break;
+    case SymId::brassMuteClosed:
+        return "stopped";
+        break;
+    case SymId::pluckedSnapPizzicatoAbove:
+    case SymId::pluckedSnapPizzicatoBelow:
+        return "snap-pizzicato";
+        break;
+    case SymId::keyboardPedalHeel1:
+    case SymId::keyboardPedalHeel2:
+    case SymId::keyboardPedalHeel3:
+        return "heel";
+        break;
+    case SymId::keyboardPedalToe1:
+    case SymId::keyboardPedalToe2:
+        return "toe";
+        break;
+    case SymId::pluckedWithFingernails:
+        return "fingernails";
+        break;
+    case SymId::brassBend:
+        return "brass-bend";
+        break;
+    case SymId::brassFlip:
+        return "brass-flip";
+        break;
+    case SymId::brassSmear:
+        return "smear";
+        break;
+    case SymId::brassMuteOpen:
+        // return "open-string";
+        return "open";
+        break;
+    case SymId::brassMuteHalfClosed:
+        return "half-muted";
+        break;
+    case SymId::brassHarmonMuteClosed:
+        return "harmon-mute";
+        break;
+    case SymId::guitarGolpe:
+        return "golpe";
         break;
     default:
         ;           // nothing
@@ -3389,6 +3431,7 @@ void ExportMusicXml::chordAttributes(Chord* chord, Notations& notations, Technic
             notations.tag(_xml, a);
             technical.tag(_xml);
             mxmlTechn += color2xml(a);
+            mxmlTechn += ExportMusicXml::positioningAttributes(a);
             if (sid == SymId::stringsHarmonic) {
                 if (placement != "") {
                     attr += QString(" placement=\"%1\"").arg(placement);
@@ -5165,6 +5208,9 @@ void ExportMusicXml::pedal(Pedal const* const pd, staff_idx_t staff, const Fract
             pedalType = "start";
         }
         signText = pd->beginText().isEmpty() ? " sign=\"no\"" : " sign=\"yes\"";
+        if (pd->beginText() == u"<sym>keyboardPedalSost</sym>" || pd->beginText() == u"<sym>keyboardPedalS</sym>") {
+            pedalType = "sostenuto";
+        }
     } else {
         if (!pd->endText().isEmpty() || pd->endHookType() == HookType::HOOK_90) {
             pedalType = "stop";
@@ -7326,6 +7372,7 @@ MeasureNumberStateHandler::MeasureNumberStateHandler()
 void MeasureNumberStateHandler::init()
 {
     _measureNo = 1;
+    _measureNoOffset = 0;
     _irregularMeasureNo = 1;
     _pickupMeasureNo = 1;
 }
@@ -7347,7 +7394,8 @@ void MeasureNumberStateHandler::updateForMeasure(const Measure* const m)
     }
 
     // update measure numbers and cache result
-    _measureNo += m->noOffset();
+    _measureNoOffset = m->noOffset();
+    _measureNo += _measureNoOffset;
     _cachedAttributes = " number=";
     if ((_irregularMeasureNo + _measureNo) == 2 && m->irregular()) {
         _cachedAttributes += "\"0\" implicit=\"yes\"";
@@ -7366,7 +7414,7 @@ QString MeasureNumberStateHandler::measureNumber() const
 
 bool MeasureNumberStateHandler::isFirstActualMeasure() const
 {
-    return (_irregularMeasureNo + _measureNo + _pickupMeasureNo) == 4;
+    return (_irregularMeasureNo + (_measureNo - _measureNoOffset) + _pickupMeasureNo) == 4;
 }
 
 //---------------------------------------------------------

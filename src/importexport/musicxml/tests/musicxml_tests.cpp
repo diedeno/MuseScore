@@ -384,7 +384,7 @@ TEST_F(Musicxml_Tests, backupRoundingError) {
     mxmlImportTestRef("testBackupRoundingError");
 }
 TEST_F(Musicxml_Tests, barlineFermatas) {
-    mxmlMscxExportTestRef("testBarlineFermatas");
+    mxmlIoTest("testBarlineFermatas");
 }
 TEST_F(Musicxml_Tests, barStyles) {
     mxmlIoTest("testBarStyles");
@@ -716,6 +716,9 @@ TEST_F(Musicxml_Tests, measureLength) {
 TEST_F(Musicxml_Tests, measureNumbers) {
     mxmlIoTest("testMeasureNumbers");
 }
+TEST_F(Musicxml_Tests, measureNumberOffset) {
+    mxmlIoTest("testMeasureNumberOffset");
+}
 TEST_F(Musicxml_Tests, measureRepeats1) {
     mxmlIoTestRef("testMeasureRepeats1");
 }
@@ -811,6 +814,9 @@ TEST_F(Musicxml_Tests, pedalChanges) {
 }
 TEST_F(Musicxml_Tests, pedalChangesBroken) {
     mxmlImportTestRef("testPedalChangesBroken");
+}
+TEST_F(Musicxml_Tests, pedalStyles) {
+    mxmlIoTest("testPedalStyles");
 }
 TEST_F(Musicxml_Tests, placementDefaults) {
     mxmlImportTestRef("testPlacementDefaults");

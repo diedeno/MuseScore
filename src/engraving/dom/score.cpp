@@ -1539,6 +1539,15 @@ void Score::addElement(EngravingItem* element)
     element->triggerLayout();
 }
 
+void Score::doUndoAddElement(EngravingItem* element)
+{
+    if (element->generated()) {
+        addElement(element);
+    } else {
+        undo(new AddElement(element));
+    }
+}
+
 //---------------------------------------------------------
 //   removeElement
 ///   Remove \a element from its parent.
@@ -1718,6 +1727,17 @@ void Score::removeElement(EngravingItem* element)
 
     default:
         break;
+    }
+}
+
+void Score::doUndoRemoveElement(EngravingItem* element)
+{
+    if (element->generated()) {
+        removeElement(element);
+        //! HACK: don't delete as it may still be used in Inspector
+        // element->deleteLater();
+    } else {
+        undo(new RemoveElement(element));
     }
 }
 
@@ -2683,9 +2703,10 @@ void Score::adjustKeySigs(track_idx_t sidx, track_idx_t eidx, KeyList km)
 
             Segment* s = measure->getSegment(SegmentType::KeySig, tick);
             KeySig* keysig = Factory::createKeySig(s);
+            keysig->setParent(s);
             keysig->setTrack(staffIdx * VOICES);
             keysig->setKeySigEvent(key);
-            s->add(keysig);
+            doUndoAddElement(keysig);
         }
     }
 }
@@ -4312,12 +4333,14 @@ void Score::appendMeasures(int n)
 //   addSpanner
 //---------------------------------------------------------
 
-void Score::addSpanner(Spanner* s)
+void Score::addSpanner(Spanner* s, bool computeStartEnd)
 {
     m_spanner.addSpanner(s);
     s->added();
-    s->computeStartElement();
-    s->computeEndElement();
+    if (computeStartEnd) {
+        s->computeStartElement();
+        s->computeEndElement();
+    }
 }
 
 //---------------------------------------------------------
@@ -5196,16 +5219,20 @@ void Score::changeSelectedNotesVoice(voice_idx_t voice)
                 if (dstChord != dstCR) {
                     undoAddCR(dstChord, m, s->tick());
                 }
-                // reconnect the tie to this note, if any
-                Tie* tie = note->tieBack();
-                if (tie) {
-                    undoChangeSpannerElements(tie, tie->startNote(), newNote);
+                for (EngravingObject* linked : note->linkList()) {
+                    Note* linkedNote = toNote(linked);
+                    // reconnect the tie to this note, if any
+                    Tie* tie = linkedNote->tieBack();
+                    if (tie) {
+                        undoChangeSpannerElements(tie, tie->startNote(), newNote->findLinkedInStaff(linkedNote->staff()));
+                    }
+                    // reconnect the tie from this note, if any
+                    tie = linkedNote->tieFor();
+                    if (tie) {
+                        undoChangeSpannerElements(tie, newNote->findLinkedInStaff(linkedNote->staff()), tie->endNote());
+                    }
                 }
-                // reconnect the tie from this note, if any
-                tie = note->tieFor();
-                if (tie) {
-                    undoChangeSpannerElements(tie, newNote, tie->endNote());
-                }
+
                 // remove original note
                 if (notes > 1) {
                     undoRemoveElement(note);

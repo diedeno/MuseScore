@@ -19,6 +19,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+#include <cfloat>
+
 #include "chordlayout.h"
 
 #include "containers.h"
@@ -85,8 +87,6 @@ void ChordLayout::layout(Chord* item, LayoutContext& ctx)
     } else {
         layoutPitched(item, ctx);
     }
-
-    fillShape(item, item->mutldata(), ctx.conf());
 }
 
 void ChordLayout::layoutPitched(Chord* item, LayoutContext& ctx)
@@ -174,8 +174,7 @@ void ChordLayout::layoutPitched(Chord* item, LayoutContext& ctx)
     if (item->arpeggio()) {
         item->arpeggio()->findAndAttachToChords();
         item->arpeggio()->mutldata()->maxChordPad = 0.0;
-        static constexpr int MAX_ARPEGGIO_X = 10000;
-        item->arpeggio()->mutldata()->minChordX = MAX_ARPEGGIO_X;
+        item->arpeggio()->mutldata()->minChordX = DBL_MAX;
         TLayout::layoutArpeggio(item->arpeggio(), item->arpeggio()->mutldata(), ctx.conf());
     }
     // If item is within arpeggio span, keep track of largest space needed between glissando and chord across staves
@@ -298,7 +297,7 @@ void ChordLayout::layoutPitched(Chord* item, LayoutContext& ctx)
 
     // align note-based fingerings
     std::vector<Fingering*> alignNote;
-    double xNote = 10000.0;
+    double xNote = DBL_MAX;
     for (Note* note : item->notes()) {
         bool leftFound = false;
         for (EngravingItem* e : note->el()) {
@@ -318,6 +317,8 @@ void ChordLayout::layoutPitched(Chord* item, LayoutContext& ctx)
     for (Fingering* f : alignNote) {
         f->mutldata()->setPosX(xNote);
     }
+
+    fillShape(item, item->mutldata(), ctx.conf());
 }
 
 void ChordLayout::layoutTablature(Chord* item, LayoutContext& ctx)
@@ -460,7 +461,7 @@ void ChordLayout::layoutTablature(Chord* item, LayoutContext& ctx)
             Stem* stem = Factory::createStem(item);
             stem->setParent(item);
             stem->setGenerated(true);
-            ctx.mutDom().undo(new AddElement(stem));
+            ctx.mutDom().addElement(stem);
         }
         item->stem()->setPos(tab->chordStemPos(item) * _spatium);
         if (item->hook()) {
@@ -476,15 +477,15 @@ void ChordLayout::layoutTablature(Chord* item, LayoutContext& ctx)
         }
     } else {
         if (item->stem()) {
-            ctx.mutDom().undo(new RemoveElement(item->stem()));
+            ctx.mutDom().doUndoRemoveElement(item->stem());
             item->remove(item->stem());
         }
         if (item->hook()) {
-            ctx.mutDom().undo(new RemoveElement(item->hook()));
+            ctx.mutDom().doUndoRemoveElement(item->hook());
             item->remove(item->hook());
         }
         if (item->beam()) {
-            ctx.mutDom().undo(new RemoveElement(item->beam()));
+            ctx.mutDom().doUndoRemoveElement(item->beam());
             item->remove(item->beam());
         }
     }
@@ -553,6 +554,7 @@ void ChordLayout::layoutTablature(Chord* item, LayoutContext& ctx)
     }                                     // end of if(duration_symbols)
 
     if (item->arpeggio()) {
+        item->arpeggio()->findAndAttachToChords();
         double y = upnote->pos().y() - upnote->headHeight() * .5;
         TLayout::layoutArpeggio(item->arpeggio(), item->arpeggio()->mutldata(), ctx.conf());
         lll += item->arpeggio()->width() + _spatium * .5;
@@ -681,6 +683,8 @@ void ChordLayout::layoutTablature(Chord* item, LayoutContext& ctx)
     if (item->stemSlash()) {
         TLayout::layoutStemSlash(item->stemSlash(), item->stemSlash()->mutldata(), ctx.conf());
     }
+
+    fillShape(item, item->mutldata(), ctx.conf());
 }
 
 //---------------------------------------------------------
@@ -1329,6 +1333,10 @@ void ChordLayout::computeUp(Chord* item, LayoutContext& ctx)
     } else if (item->tremolo() && item->tremolo()->twoNotes()) {
         Chord* c1 = item->tremolo()->chord1();
         Chord* c2 = item->tremolo()->chord2();
+        if (!c1 || !c2) {
+            item->setUp(true);
+            return;
+        }
         bool cross = c1->staffMove() != c2->staffMove();
         if (item == c1) {
             // we have to lay out the tremolo because it hasn't been laid out at all yet, and we need its direction
@@ -1845,7 +1853,8 @@ void ChordLayout::layoutChords1(LayoutContext& ctx, Segment* segment, staff_idx_
                         upOffset = maxDownWidth + adjSpace;
                         if (downHooks) {
                             bool needsHookSpace = (ledgerOverlapBelow || ledgerOverlapAbove);
-                            double hookSpace = topDownNote->chord()->hook()->width();
+                            Hook* hook = topDownNote->chord()->hook();
+                            double hookSpace = hook ? hook->width() : 0.0;
                             upOffset = needsHookSpace ? hookSpace + ledgerLen + ledgerGap : upOffset + 0.3 * sp;
                         }
                     }
@@ -1881,7 +1890,8 @@ void ChordLayout::layoutChords1(LayoutContext& ctx, Segment* segment, staff_idx_
                         // we will need more space to avoid collision with hook
                         // but we won't need as much dot adjustment
                         if (ledgerOverlapBelow) {
-                            double hookWidth = topDownNote->chord()->hook()->width();
+                            Hook* hook = topDownNote->chord()->hook();
+                            double hookWidth = hook ? hook->width() : 0.0;
                             upOffset = hookWidth + ledgerLen + ledgerGap;
                         }
                         upOffset = std::max(upOffset, maxDownWidth + 0.1 * sp);
@@ -2374,7 +2384,7 @@ void ChordLayout::layoutChords3(const MStyle& style, const std::vector<Chord*>& 
     double stepDistance = sp * staff->lineDistance(tick) * .5;
     int stepOffset     = staff->staffType(tick)->stepOffset();
 
-    double lx           = 10000.0;    // leftmost notehead position
+    double lx           = DBL_MAX;    // leftmost notehead position
     double upDotPosX    = 0.0;
     double downDotPosX  = 0.0;
 
@@ -3596,8 +3606,8 @@ Shape ChordLayout::chordRestShape(const ChordRest* item, const LayoutConfigurati
 {
     Shape shape;
     {
-        double x1 = 1000000.0;
-        double x2 = -1000000.0;
+        double x1 = DBL_MAX;
+        double x2 = -DBL_MAX;
         for (Lyrics* l : item->lyrics()) {
             if (!l || !l->addToSkyline()) {
                 continue;

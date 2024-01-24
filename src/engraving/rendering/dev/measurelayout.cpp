@@ -19,6 +19,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
+#include <cfloat>
+
 #include "measurelayout.h"
 
 #include "dom/ambitus.h"
@@ -225,7 +227,7 @@ void MeasureLayout::createMMRest(LayoutContext& ctx, Measure* firstMeasure, Meas
                     EngravingItem* eClone = generated ? e->clone() : e->linkedClone();
                     eClone->setGenerated(generated);
                     eClone->setParent(mmrEndBarlineSeg);
-                    ctx.mutDom().undoAddElement(eClone);
+                    ctx.mutDom().undoAddElement(eClone);// ???
                 } else {
                     BarLine* mmrEndBarline = toBarLine(mmrEndBarlineSeg->element(staffIdx * VOICES));
                     BarLine* lastMeasureEndBarline = toBarLine(e);
@@ -313,7 +315,7 @@ void MeasureLayout::createMMRest(LayoutContext& ctx, Measure* firstMeasure, Meas
             mmr->setTicks(mmrMeasure->ticks());
             mmr->setTrack(track);
             mmr->setParent(s);
-            ctx.mutDom().undo(new AddElement(mmr));
+            ctx.mutDom().doUndoAddElement(mmr);
         }
     }
 
@@ -341,7 +343,7 @@ void MeasureLayout::createMMRest(LayoutContext& ctx, Measure* firstMeasure, Meas
         }
     } else if (mmrSeg) {
         // TODO: remove elements from mmrSeg?
-        ctx.mutDom().undo(new RemoveElement(mmrSeg));
+        ctx.mutDom().doUndoRemoveElement(mmrSeg);
     }
 
     //
@@ -364,7 +366,7 @@ void MeasureLayout::createMMRest(LayoutContext& ctx, Measure* firstMeasure, Meas
                     mmrTimeSig = underlyingTimeSig->generated() ? underlyingTimeSig->clone() : toTimeSig(
                         underlyingTimeSig->linkedClone());
                     mmrTimeSig->setParent(mmrSeg);
-                    ctx.mutDom().undo(new AddElement(mmrTimeSig));
+                    ctx.mutDom().doUndoAddElement(mmrTimeSig);
                 } else {
                     mmrTimeSig->setSig(underlyingTimeSig->sig(), underlyingTimeSig->timeSigType());
                     mmrTimeSig->setNumeratorString(underlyingTimeSig->numeratorString());
@@ -375,7 +377,7 @@ void MeasureLayout::createMMRest(LayoutContext& ctx, Measure* firstMeasure, Meas
         }
     } else if (mmrSeg) {
         // TODO: remove elements from mmrSeg?
-        ctx.mutDom().undo(new RemoveElement(mmrSeg));
+        ctx.mutDom().doUndoRemoveElement(mmrSeg);
     }
 
     //
@@ -395,7 +397,7 @@ void MeasureLayout::createMMRest(LayoutContext& ctx, Measure* firstMeasure, Meas
                 if (!mmrAmbitus) {
                     mmrAmbitus = underlyingAmbitus->clone();
                     mmrAmbitus->setParent(mmrSeg);
-                    ctx.mutDom().undo(new AddElement(mmrAmbitus));
+                    ctx.mutDom().doUndoAddElement(mmrAmbitus);
                 } else {
                     mmrAmbitus->initFrom(underlyingAmbitus);
                     TLayout::layoutAmbitus(mmrAmbitus, mmrAmbitus->mutldata(), ctx);
@@ -404,7 +406,7 @@ void MeasureLayout::createMMRest(LayoutContext& ctx, Measure* firstMeasure, Meas
         }
     } else if (mmrSeg) {
         // TODO: remove elements from mmrSeg?
-        ctx.mutDom().undo(new RemoveElement(mmrSeg));
+        ctx.mutDom().doUndoRemoveElement(mmrSeg);
     }
 
     //
@@ -428,7 +430,7 @@ void MeasureLayout::createMMRest(LayoutContext& ctx, Measure* firstMeasure, Meas
                         underlyingKeySig->linkedClone());
                     mmrKeySig->setParent(mmrSeg);
                     mmrKeySig->setGenerated(true);
-                    ctx.mutDom().undo(new AddElement(mmrKeySig));
+                    ctx.mutDom().doUndoAddElement(mmrKeySig);
                 } else {
                     if (!(mmrKeySig->keySigEvent() == underlyingKeySig->keySigEvent())) {
                         bool addKey = underlyingKeySig->isChange();
@@ -443,7 +445,7 @@ void MeasureLayout::createMMRest(LayoutContext& ctx, Measure* firstMeasure, Meas
         // TODO: remove elements from mmrSeg, then delete mmrSeg
         // previously we removed the segment if not empty,
         // but this resulted in "stale" keysig in mmrest after removed from underlying measure
-        //undo(new RemoveElement(mmrSeg));
+        //doUndoRemoveElement(mmrSeg);
     }
 
     mmrMeasure->checkHeader();
@@ -472,7 +474,7 @@ void MeasureLayout::createMMRest(LayoutContext& ctx, Measure* firstMeasure, Meas
             if (!found) {
                 EngravingItem* eClone = e->linkedClone();
                 eClone->setParent(s);
-                ctx.mutDom().undo(new AddElement(eClone));
+                ctx.mutDom().doUndoAddElement(eClone);
             }
         }
 
@@ -493,7 +495,7 @@ void MeasureLayout::createMMRest(LayoutContext& ctx, Measure* firstMeasure, Meas
             }
             // remove from mmr if no match found
             if (!found) {
-                ctx.mutDom().undo(new RemoveElement(e));
+                ctx.mutDom().doUndoRemoveElement(e);
             }
         }
     }
@@ -1153,11 +1155,7 @@ void MeasureLayout::layoutMeasureNumber(Measure* m, LayoutContext& ctx)
             TLayout::layoutMeasureNumber(t, t->mutldata());
         } else {
             if (t) {
-                if (t->generated()) {
-                    ctx.mutDom().removeElement(t);
-                } else {
-                    ctx.mutDom().undo(new RemoveElement(t));
-                }
+                ctx.mutDom().doUndoRemoveElement(t);
             }
         }
     }
@@ -1171,11 +1169,7 @@ void MeasureLayout::layoutMMRestRange(Measure* m, LayoutContext& ctx)
             const MStaff* ms = m->mstaves().at(staffIdx);
             MMRestRange* rr = ms->mmRangeText();
             if (rr) {
-                if (rr->generated()) {
-                    ctx.mutDom().removeElement(rr);
-                } else {
-                    ctx.mutDom().undo(new RemoveElement(rr));
-                }
+                ctx.mutDom().doUndoRemoveElement(rr);
             }
         }
 
@@ -2134,7 +2128,7 @@ void MeasureLayout::computeWidth(Measure* m, LayoutContext& ctx, Fraction minTic
     // left barriere:
     //    Make sure no elements crosses the left boarder if first measure in a system.
     //
-    Shape ls(first ? RectF(0.0, -1000000.0, 0.0, 2000000.0) : RectF(0.0, 0.0, 0.0, m->spatium() * 4));
+    Shape ls(first ? RectF(0.0, -DBL_MAX, 0.0, DBL_MAX) : RectF(0.0, 0.0, 0.0, m->spatium() * 4));
 
     x = HorizontalSpacing::minLeft(s, ls);
 
@@ -2178,7 +2172,7 @@ void MeasureLayout::computeWidth(Measure* m, LayoutContext& ctx, Segment* s, dou
         fs = fs->nextActive();
     }
     bool first  = m->isFirstInSystem();
-    const Shape ls(first ? RectF(0.0, -1000000.0, 0.0, 2000000.0) : RectF(0.0, 0.0, 0.0, m->spatium() * 4));
+    const Shape ls(first ? RectF(0.0, -DBL_MAX, 0.0, DBL_MAX) : RectF(0.0, 0.0, 0.0, m->spatium() * 4));
 
     static constexpr double spacingMultiplier = 1.2;
     double minNoteSpace = ctx.conf().noteHeadWidth() + spacingMultiplier * ctx.conf().styleMM(Sid::minNoteDistance);
