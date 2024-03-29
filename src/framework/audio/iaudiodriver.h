@@ -81,6 +81,10 @@ public:
     virtual bool setOutputDeviceBufferSize(unsigned int bufferSize) = 0;
     virtual async::Notification outputDeviceBufferSizeChanged() const = 0;
 
+    virtual unsigned int sampleRate() const = 0;
+    virtual bool setSampleRate(unsigned int sampleRate) = 0;
+    virtual async::Notification sampleRateChanged() const = 0;
+
     virtual std::vector<unsigned int> availableOutputDeviceBufferSizes() const = 0;
 
     virtual int audioDelayCompensate() const = 0;

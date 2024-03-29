@@ -240,6 +240,32 @@ std::vector<unsigned int> LinuxAudioDriver::availableOutputDeviceBufferSizes() c
     return result;
 }
 
+unsigned int LinuxAudioDriver::sampleRate() const
+{
+    return m_current_audioDriverState->m_spec.sampleRate;
+}
+
+bool LinuxAudioDriver::setSampleRate(unsigned int sampleRate)
+{
+    LOGE("------ setSamplerate: %i", sampleRate);
+    if (m_spec.sampleRate == (int)sampleRate) {
+        LOGE("------ SAME setSamplerate, doing nothing ------");
+        return true;
+    }
+    m_spec.sampleRate = (int)sampleRate;
+    LOGE("------ CHANGED setSamplerate, doing nothing ------");
+    if (!reopen(m_current_audioDriverState->name(), m_spec)) {
+        return false;
+    }
+    m_sampleRateChanged.notify();
+    return true;
+}
+
+async::Notification LinuxAudioDriver::sampleRateChanged() const
+{
+    return m_sampleRateChanged;
+}
+
 bool LinuxAudioDriver::pushMidiEvent(muse::midi::Event& e)
 {
     if (m_current_audioDriverState) {
