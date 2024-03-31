@@ -68,6 +68,9 @@ bool LinuxAudioDriver::open(const Spec& spec, Spec* activeSpec)
 #endif
     /**************************************************************************/
 
+    // re-initialize devide
+    m_current_audioDriverState->setAudioDelayCompensate(m_audioDelayCompensate);
+
     if (!m_current_audioDriverState->open(spec, activeSpec)) {
         return false;
     }
@@ -132,6 +135,10 @@ bool LinuxAudioDriver::reopen(const AudioDeviceID& deviceId, Spec newSpec)
             return false;
         }
     }
+
+    // re-initialize devide
+    m_current_audioDriverState->setAudioDelayCompensate(m_audioDelayCompensate);
+
     // open the device driver
     if (!m_current_audioDriverState->open(newSpec, &newSpec)) {
         return false;
@@ -184,6 +191,16 @@ AudioDeviceList LinuxAudioDriver::availableOutputDevices() const
 async::Notification LinuxAudioDriver::availableOutputDevicesChanged() const
 {
     return m_availableOutputDevicesChanged;
+}
+
+int LinuxAudioDriver::audioDelayCompensate() const
+{
+    return m_audioDelayCompensate;
+}
+
+void LinuxAudioDriver::setAudioDelayCompensate(const int frames)
+{
+    m_audioDelayCompensate = frames;
 }
 
 unsigned int LinuxAudioDriver::outputDeviceBufferSize() const

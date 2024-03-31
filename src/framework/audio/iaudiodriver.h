@@ -83,6 +83,9 @@ public:
 
     virtual std::vector<unsigned int> availableOutputDeviceBufferSizes() const = 0;
 
+    virtual int audioDelayCompensate() const = 0;
+    virtual void setAudioDelayCompensate(const int frames) = 0;
+
     virtual bool pushMidiEvent(muse::midi::Event&) = 0;
     virtual std::vector<muse::midi::MidiDevice> availableMidiDevices(muse::midi::MidiPortDirection dir) const = 0;
 
@@ -97,6 +100,7 @@ public:
     virtual bool open(const IAudioDriver::Spec& spec, IAudioDriver::Spec* activeSpec) = 0;
     virtual void close() = 0;
     virtual bool isOpened() const = 0;
+    virtual void setAudioDelayCompensate(const int frames) = 0;
     virtual bool pushMidiEvent(muse::midi::Event&) = 0;
     virtual void registerMidiInputQueue(async::Channel<muse::midi::tick_t, muse::midi::Event >) = 0;
     virtual std::vector<muse::midi::MidiDevice> availableMidiDevices(muse::midi::MidiPortDirection dir) const = 0;

@@ -163,6 +163,16 @@ async::Notification AudioConfiguration::sampleRateChanged() const
     return m_driverSampleRateChanged;
 }
 
+int AudioConfiguration::audioDelayCompensate() const
+{
+    return m_audioDelayCompensate;
+}
+
+void AudioConfiguration::setAudioDelayCompensate(const int frames)
+{
+    m_audioDelayCompensate = frames;
+}
+
 size_t AudioConfiguration::minTrackCountForMultithreading() const
 {
     // Start mutlithreading-processing only when there are more or equal number of tracks
