@@ -117,7 +117,6 @@ bool LinuxAudioDriver::makeDevice(const AudioDeviceID& deviceId)
         LOGE() << "Unknown device name: " << deviceId;
         return false;
     }
-    LOGI(" -- driver: %lx", m_current_audioDriverState.get());
     return true;
 }
 
