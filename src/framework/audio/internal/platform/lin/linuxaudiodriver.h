@@ -72,6 +72,14 @@ public:
     bool pushMidiEvent(muse::midi::Event& e) override;
     std::vector<muse::midi::MidiDevice> availableMidiDevices(muse::midi::MidiPortDirection direction) const override;
 
+    void isPlayingChanged();
+    void positionChanged();
+
+    bool isPlaying() const override;
+    float playbackPositionInSeconds() const override;
+    void remotePlayOrStop(bool) const override;
+    void remoteSeek(msecs_t) const override;
+
     void resume() override;
     void suspend() override;
 
