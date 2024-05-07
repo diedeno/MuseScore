@@ -200,7 +200,7 @@ echo export DUMPSYMS_BIN="$breakpad_dir/dump_syms" >> $ENV_FILE
 # OTHER
 ##########################################################################
 # TODO: https://github.com/musescore/MuseScore/issues/11689
-#echo "Get VST"
+echo "Get VST"
 vst_dir=$BUILD_TOOLS/vst
 if [[ ! -d "$vst_dir" ]]; then
   wget -q --show-progress -O $BUILD_TOOLS/vst_sdk.7z "https://s3.amazonaws.com/utils.musescore.org/VST3_SDK_37.7z"
