@@ -58,7 +58,8 @@ const UiActionList ProjectUiActions::m_actions = {
              mu::context::UiCtxAny,
              mu::context::CTX_ANY,
              TranslatableString("action", "Save &as…"),
-             TranslatableString("action", "Save as…")
+             TranslatableString("action", "Save as…"),
+              IconCode::Code::SAVE
              ),
     UiAction("file-save-a-copy",
              mu::context::UiCtxAny,
