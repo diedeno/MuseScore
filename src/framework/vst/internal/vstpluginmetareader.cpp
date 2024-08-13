@@ -41,6 +41,7 @@ static bool hasNativeEditorSupport()
 #else
     return true;
 #endif
+        return true;
 }
 }
 
