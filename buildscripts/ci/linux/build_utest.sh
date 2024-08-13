@@ -49,8 +49,7 @@ source $BUILD_TOOLS/environment.sh
 #    BUILD_VST=ON
 #fi
 
-BUILD_VST=OFF
-
+BUILD_VST=ON
 echo "=== BUILD ==="
 
 MUSESCORE_REVISION=$(git rev-parse --short=7 HEAD)
