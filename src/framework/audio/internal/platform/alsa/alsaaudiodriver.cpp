@@ -199,7 +199,7 @@ void AlsaDriverState::changedPlaying() const
 {
 }
 
-void AlsaDriverState::changedPosition() const
+void AlsaDriverState::changedPosition(muse::audio::secs_t secs, muse::midi::tick_t tick) const
 {
 }
 
