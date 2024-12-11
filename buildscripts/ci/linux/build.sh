@@ -77,7 +77,7 @@ fi
 #else
 #    BUILD_VST=ON
 #fi
-BUILD_VST=OFF
+BUILD_VST=ON
 
 echo "=== BUILD ==="
 
