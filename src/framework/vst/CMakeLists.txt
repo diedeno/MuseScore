@@ -77,16 +77,6 @@ set(MODULE_SRC
     ${CMAKE_CURRENT_LIST_DIR}/view/vstfxeditorview.h
     )
 
-if(OS_IS_LIN OR OS_IS_FBSD)
-    set(MODULE_SRC
-        ${MODULE_SRC}
-        ${CMAKE_CURRENT_LIST_DIR}/internal/platform/linux/runloop.cpp
-        ${CMAKE_CURRENT_LIST_DIR}/internal/platform/linux/runloop.h
-    )
-endif()
-
-
-
 set(MODULE_INCLUDE
     ${CMAKE_CURRENT_LIST_DIR}
     ${MUSE_MODULE_VST_VST3_SDK_PATH}
