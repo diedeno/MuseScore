@@ -43,7 +43,7 @@ cat $BUILD_TOOLS/environment.sh
 source $BUILD_TOOLS/environment.sh
 
 # TODO: https://github.com/musescore/MuseScore/issues/11689
-BUILD_VST=OFF
+BUILD_VST=ON
 
 TESTS_ENABLE_CODE_COVERAGE=OFF
 TESTS_COMPILE_USE_UNITY=ON
