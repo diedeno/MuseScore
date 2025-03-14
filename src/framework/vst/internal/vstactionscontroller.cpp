@@ -44,12 +44,6 @@ void VstActionsController::fxEditor(const actions::ActionQuery& actionQuery)
 {
     LOGD() << actionQuery.toString();
 
-#ifdef Q_OS_LINUX
-    if (!isUsedNewView()) {
-        LOGW() << "Old (QWidget) VST View not support Linux";
-        return;
-    }
-#endif
 
     std::string resourceId = actionQuery.param("resourceId").toString();
     IF_ASSERT_FAILED(!resourceId.empty()) {
@@ -80,12 +74,6 @@ void VstActionsController::instEditor(const actions::ActionQuery& actionQuery)
 {
     LOGD() << actionQuery.toString();
 
-#ifdef Q_OS_LINUX
-    if (!isUsedNewView()) {
-        LOGW() << "Old (QWidget) VST View not support Linux";
-        return;
-    }
-#endif
 
     std::string resourceId = actionQuery.param("resourceId").toString();
     IF_ASSERT_FAILED(!resourceId.empty()) {
