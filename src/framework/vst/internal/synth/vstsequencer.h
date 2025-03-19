@@ -26,6 +26,7 @@
 #include "audio/internal/abstracteventsequencer.h"
 
 #include "playback/internal/playbackcontroller.h"
+#include "notation/notationtypes.h" 
 
 #include "vsttypes.h"
 
