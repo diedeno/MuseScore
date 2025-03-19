@@ -25,6 +25,9 @@
 
 #include "audio/internal/abstracteventsequencer.h"
 
+#include "musescore/playback/playbackcontroller.h" // Include the header for PlaybackController
+#include "musescore/notation/measurebeat.h" // Include the header for MeasureBeat
+
 #include "vsttypes.h"
 
 typedef typename std::variant<Steinberg::Vst::Event, muse::vst::ParamChangeEvent, muse::audio::gain_t> VstSequencerEvent;
@@ -61,6 +64,9 @@ public:
 
     muse::audio::gain_t currentGain() const;
 
+    // Constructor
+    explicit VstSequencer(PlaybackController* playbackController);
+
     double currentTempo() const;
     bool isPlaying() const;
     double currentProjectTimeMusic() const;
@@ -70,6 +76,8 @@ private:
     double m_currentTempo = 120.0; // Example default tempo
     bool m_isPlaying = false; // Example default playback state
     double m_projectTimeMusic = 0.0; // Example default musical time
+    PlaybackController* m_playbackController = nullptr;
+
     void updateOffStreamEvents(const mpe::PlaybackEventsMap& events, const mpe::PlaybackParamList& params) override;
     void updateMainStreamEvents(const mpe::PlaybackEventsMap& events, const mpe::DynamicLevelLayers& dynamics,
                                 const mpe::PlaybackParamLayers& params) override;
