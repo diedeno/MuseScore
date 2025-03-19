@@ -113,24 +113,22 @@ void VstAudioClient::setVolumeGain(const muse::audio::gain_t newVolumeGain)
     m_volumeGain = newVolumeGain;
 }
 
-void VstAudioClient::process(float* output, muse::audio::samples_t samplesPerChannel, muse::audio::msecs_t playbackPosition)
+muse::audio::samples_t VstAudioClient::process(float* output, muse::audio::samples_t samplesPerChannel, muse::audio::msecs_t playbackPosition)
 {
     IAudioProcessorPtr processor = pluginProcessor();
     if (!processor || !output) {
-        return 0;
+        return 0; // Return 0 if processing fails
     }
 
     if (!m_isActive) {
-        return 0;
+        return 0; // Return 0 if the plugin is not active
     }
 
     // Set the number of samples to process
     m_processData.numSamples = samplesPerChannel;
 
-    // Update the ProcessContext with playback state and tempo
+    // Update the ProcessContext with playback position
     m_processContext.projectTimeSamples = (playbackPosition / 1000000.f) * m_samplesInfo.sampleRate;
-    m_processContext.tempo = museScore->getTempo(); // Assuming MuseScore provides the tempo
-    m_processContext.state = museScore->isPlaying() ? ProcessContext::kPlaying : 0;
 
     // Ensure the buffer size is within limits
     if (samplesPerChannel > m_samplesInfo.maxSamplesPerBlock) {
@@ -143,7 +141,7 @@ void VstAudioClient::process(float* output, muse::audio::samples_t samplesPerCha
     }
 
     if (processor->process(m_processData) != Steinberg::kResultOk) {
-        return 0;
+        return 0; // Return 0 if processing fails
     }
 
     // Fill the output buffer
@@ -152,13 +150,13 @@ void VstAudioClient::process(float* output, muse::audio::samples_t samplesPerCha
         m_paramChanges.clearQueue();
 
         if (!fillOutputBufferInstrument(samplesPerChannel, output)) {
-            return 0;
+            return 0; // Return 0 if filling the output buffer fails
         }
     } else if (!fillOutputBufferFx(samplesPerChannel, output)) {
-        return 0;
+        return 0; // Return 0 if filling the output buffer fails
     }
 
-    return samplesPerChannel;
+    return samplesPerChannel; // Return the number of processed samples
 }
 
 
