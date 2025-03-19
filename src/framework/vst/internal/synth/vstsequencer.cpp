@@ -334,3 +334,16 @@ float VstSequencer::pitchBendLevel(const mpe::pitch_level_t pitchLevel) const
 
     return std::clamp(0.5f + offset, 0.f, 1.f);
 }
+
+double VstSequencer::currentTempo() const {
+    return m_playbackController->currentTempo().bpm();
+}
+
+bool VstSequencer::isPlaying() const {
+    return m_playbackController->isPlaying();
+}
+
+double VstSequencer::currentProjectTimeMusic() const {
+    MeasureBeat beat = m_playbackController->currentBeat();
+    return beat.measure + (beat.beat - 1) / static_cast<double>(beat.beatsPerMeasure);
+}
