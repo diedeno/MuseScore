@@ -345,7 +345,7 @@ double VstSequencer::currentTempo() const {
     if (!m_playbackController) {
         return 120.0; // Default tempo if playback controller is not available
     }
-    return m_playbackController->currentTempo().bpm();
+    return m_playbackController->currentTempo().bpm; // Access the bpm member directly
 }
 
 bool VstSequencer::isPlaying() const {
@@ -359,6 +359,6 @@ double VstSequencer::currentProjectTimeMusic() const {
     if (!m_playbackController) {
         return 0.0; // Default to 0 if playback controller is not available
     }
-    MeasureBeat beat = m_playbackController->currentBeat();
+    mu::notation::MeasureBeat beat = m_playbackController->currentBeat();
     return beat.measure + (beat.beat - 1) / static_cast<double>(beat.beatsPerMeasure);
 }
