@@ -20,6 +20,7 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 #include "vstaudioclient.h"
+#include <pluginterfaces/vst/ivstprocesscontext.h>
 
 #include "log.h"
 
