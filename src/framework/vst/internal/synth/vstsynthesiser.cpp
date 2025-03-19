@@ -200,13 +200,19 @@ samples_t VstSynthesiser::process(float* buffer, samples_t samplesPerChannel)
         m_vstAudioClient->setMaxSamplesPerBlock(samplesPerChannel);
     }
 
-    // Get the current tempo, playback state, and timing information from the sequencer
-    double tempo = m_sequencer.currentTempo(); // Assuming the sequencer provides the tempo
-    bool isPlaying = m_sequencer.isPlaying(); // Assuming the sequencer provides the playback state
-    double projectTimeMusic = m_sequencer.currentProjectTimeMusic(); // Assuming the sequencer provides the musical time
+   // Fetch the latest tempo, playback state, and timing information
+    double tempo = m_sequencer.currentTempo();
+    bool isPlaying = m_sequencer.isPlaying();
+    double projectTimeMusic = m_sequencer.currentProjectTimeMusic();
 
-    // Update the ProcessContext with tempo, playback state, and timing information
+    // Log the values for debugging
+    LOGI() << "Tempo: " << tempo << ", Is Playing: " << isPlaying << ", Project Time Music: " << projectTimeMusic;
+
+    // Update the ProcessContext
     m_vstAudioClient->updateProcessContext(tempo, isPlaying, projectTimeMusic);
+
+    // Process audio data
+    return m_vstAudioClient->process(buffer, samplesPerChannel, m_sequencer.playbackPosition());
 
     const msecs_t nextMsecs = samplesToMsecs(samplesPerChannel, m_sampleRate);
     const VstSequencer::EventSequenceMap sequences = m_sequencer.movePlaybackForward(nextMsecs);
