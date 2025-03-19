@@ -61,7 +61,23 @@ public:
 
     muse::audio::gain_t currentGain() const;
 
+    double currentTempo() const {
+        return m_currentTempo; // Assuming m_currentTempo is a member variable
+    }
+
+    bool isPlaying() const {
+        return m_isPlaying; // Assuming m_isPlaying is a member variable
+    }
+
+    double currentProjectTimeMusic() const {
+        return m_projectTimeMusic; // Assuming m_projectTimeMusic is a member variable
+    }
+
+
 private:
+    double m_currentTempo = 120.0; // Example default tempo
+    bool m_isPlaying = false; // Example default playback state
+    double m_projectTimeMusic = 0.0; // Example default musical time
     void updateOffStreamEvents(const mpe::PlaybackEventsMap& events, const mpe::PlaybackParamList& params) override;
     void updateMainStreamEvents(const mpe::PlaybackEventsMap& events, const mpe::DynamicLevelLayers& dynamics,
                                 const mpe::PlaybackParamLayers& params) override;
