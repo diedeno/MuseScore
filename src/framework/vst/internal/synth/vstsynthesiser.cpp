@@ -200,10 +200,10 @@ samples_t VstSynthesiser::process(float* buffer, samples_t samplesPerChannel)
         m_vstAudioClient->setMaxSamplesPerBlock(samplesPerChannel);
     }
 
-    // Get the current tempo and playback state from MuseScore
-    double tempo = museScore->getTempo(); // Assuming MuseScore provides the tempo
-    bool isPlaying = museScore->isPlaying(); // Assuming MuseScore provides the playback state
-    double projectTimeMusic = museScore->getProjectTimeMusic(); // Assuming MuseScore provides the musical time
+    // Get the current tempo, playback state, and timing information from the sequencer
+    double tempo = m_sequencer.currentTempo(); // Assuming the sequencer provides the tempo
+    bool isPlaying = m_sequencer.isPlaying(); // Assuming the sequencer provides the playback state
+    double projectTimeMusic = m_sequencer.currentProjectTimeMusic(); // Assuming the sequencer provides the musical time
 
     // Update the ProcessContext with tempo, playback state, and timing information
     m_vstAudioClient->updateProcessContext(tempo, isPlaying, projectTimeMusic);
@@ -233,7 +233,6 @@ samples_t VstSynthesiser::process(float* buffer, samples_t samplesPerChannel)
 
     return processedSamples;
 }
-
 
 samples_t VstSynthesiser::processSequence(const VstSequencer::EventSequence& sequence, const samples_t samples, float* buffer)
 {
