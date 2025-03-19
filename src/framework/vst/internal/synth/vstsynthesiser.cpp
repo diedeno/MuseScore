@@ -38,11 +38,12 @@ static const std::set<Steinberg::Vst::CtrlNumber> SUPPORTED_CONTROLLERS = {
 };
 
 VstSynthesiser::VstSynthesiser(const TrackId trackId, const muse::audio::AudioInputParams& params,
-                               const modularity::ContextPtr& iocCtx)
+                               const modularity::ContextPtr& iocCtx,
+                               mu::playback::PlaybackController* playbackController) // Add PlaybackController parameter
     : AbstractSynthesizer(params, iocCtx),
     m_vstAudioClient(std::make_unique<VstAudioClient>()),
     m_trackId(trackId),
-    m_sequencer(globalContext()->playbackController()) // Pass the PlaybackController to the sequencer
+    m_sequencer(playbackController) // Pass PlaybackController to the sequencer
 {
 }
 
