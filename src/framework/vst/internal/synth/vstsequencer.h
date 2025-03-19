@@ -25,7 +25,7 @@
 
 #include "audio/internal/abstracteventsequencer.h"
 
-#include "playback/internal/playbackcontroller.h"
+#include "playbackcontroller.h"
 
 #include "vsttypes.h"
 
