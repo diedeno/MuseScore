@@ -335,15 +335,29 @@ float VstSequencer::pitchBendLevel(const mpe::pitch_level_t pitchLevel) const
     return std::clamp(0.5f + offset, 0.f, 1.f);
 }
 
+VstSequencer::VstSequencer(PlaybackController* playbackController)
+    : m_playbackController(playbackController) // Initialize m_playbackController
+{
+}
+
 double VstSequencer::currentTempo() const {
+    if (!m_playbackController) {
+        return 120.0; // Default tempo if playback controller is not available
+    }
     return m_playbackController->currentTempo().bpm();
 }
 
 bool VstSequencer::isPlaying() const {
+    if (!m_playbackController) {
+        return false; // Default to not playing if playback controller is not available
+    }
     return m_playbackController->isPlaying();
 }
 
 double VstSequencer::currentProjectTimeMusic() const {
+    if (!m_playbackController) {
+        return 0.0; // Default to 0 if playback controller is not available
+    }
     MeasureBeat beat = m_playbackController->currentBeat();
     return beat.measure + (beat.beat - 1) / static_cast<double>(beat.beatsPerMeasure);
 }
