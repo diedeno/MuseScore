@@ -25,6 +25,11 @@
 
 #include "audio/internal/abstracteventsequencer.h"
 
+namespace mu::playback {
+class PlaybackController; // Forward declaration
+}
+
+
 #include "playback/internal/playbackcontroller.h"
 #include "notation/notationtypes.h" 
 
