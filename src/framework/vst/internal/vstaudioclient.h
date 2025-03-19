@@ -52,6 +52,9 @@ public:
 
     void setSampleRate(unsigned int sampleRate);
 
+    // Add a method to update the ProcessContext with tempo and playback state
+    void updateProcessContext(double tempo, bool isPlaying, double projectTimeMusic);
+
     ParamsMapping paramsMapping(const std::set<Steinberg::Vst::CtrlNumber>& controllers) const;
 
 private:
