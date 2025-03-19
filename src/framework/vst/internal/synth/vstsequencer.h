@@ -61,17 +61,9 @@ public:
 
     muse::audio::gain_t currentGain() const;
 
-    double currentTempo() const {
-        return m_currentTempo; // Assuming m_currentTempo is a member variable
-    }
-
-    bool isPlaying() const {
-        return m_isPlaying; // Assuming m_isPlaying is a member variable
-    }
-
-    double currentProjectTimeMusic() const {
-        return m_projectTimeMusic; // Assuming m_projectTimeMusic is a member variable
-    }
+    double currentTempo() const;
+    bool isPlaying() const;
+    double currentProjectTimeMusic() const;
 
 
 private:
