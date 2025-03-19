@@ -164,7 +164,7 @@ void VstAudioClient::updateProcessContext(double tempo, bool isPlaying, double p
 {
     // Update the ProcessContext with the provided data
     m_processContext.tempo = tempo;
-    m_processContext.state = isPlaying ? ProcessContext::kPlaying : 0;
+    m_processContext.state = isPlaying ? Steinberg::Vst::ProcessContext::kPlaying : 0;
     m_processContext.projectTimeMusic = projectTimeMusic;
 
     // Optionally, log the updated context for debugging
