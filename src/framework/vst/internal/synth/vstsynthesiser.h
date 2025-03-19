@@ -30,6 +30,7 @@
 #include "audio/audiotypes.h"
 #include "modularity/ioc.h"
 #include "mpe/events.h"
+#include "framework/audio/internal/worker/track.h"
 
 #include "../vstaudioclient.h"
 #include "../../ivstinstancesregister.h"
