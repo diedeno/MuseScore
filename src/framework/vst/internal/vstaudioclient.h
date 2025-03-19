@@ -73,8 +73,6 @@ private:
     IAudioProcessorPtr pluginProcessor() const;
     PluginComponentPtr pluginComponent() const;
 
-    Steinberg::Vst::ProcessContext m_processContext;
-
     void setUpProcessData();
     void updateProcessSetup();
     void extractInputSamples(muse::audio::samples_t sampleCount, const float* sourceBuffer);
