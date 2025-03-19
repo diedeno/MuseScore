@@ -37,9 +37,9 @@ static const std::set<Steinberg::Vst::CtrlNumber> SUPPORTED_CONTROLLERS = {
     Steinberg::Vst::kPitchBend,
 };
 
-VstSynthesiser::VstSynthesiser(const TrackId trackId, const muse::audio::AudioInputParams& params,
+VstSynthesiser::VstSynthesiser(const muse::audio::worker::TrackId trackId, const muse::audio::AudioInputParams& params,
                                const modularity::ContextPtr& iocCtx,
-                               mu::playback::PlaybackController* playbackController) // Add PlaybackController parameter
+                               mu::playback::PlaybackController* playbackController)
     : AbstractSynthesizer(params, iocCtx),
     m_vstAudioClient(std::make_unique<VstAudioClient>()),
     m_trackId(trackId),
@@ -51,6 +51,8 @@ VstSynthesiser::~VstSynthesiser()
 {
     instancesRegister()->unregisterInstrPlugin(m_params.resourceMeta.id, m_trackId);
 }
+
+
 
 void VstSynthesiser::init()
 {
