@@ -72,10 +72,8 @@ public:
 
 
 private:
-    double m_currentTempo = 120.0; // Example default tempo
-    bool m_isPlaying = false; // Example default playback state
-    double m_projectTimeMusic = 0.0; // Example default musical time
-    PlaybackController* m_playbackController = nullptr;
+    
+    muse::playback::PlaybackController* m_playbackController = nullptr;
 
     void updateOffStreamEvents(const mpe::PlaybackEventsMap& events, const mpe::PlaybackParamList& params) override;
     void updateMainStreamEvents(const mpe::PlaybackEventsMap& events, const mpe::DynamicLevelLayers& dynamics,
