@@ -113,8 +113,7 @@ void VstAudioClient::setVolumeGain(const muse::audio::gain_t newVolumeGain)
     m_volumeGain = newVolumeGain;
 }
 
-muse::audio::samples_t VstAudioClient::process(float* output, muse::audio::samples_t samplesPerChannel,
-                                               muse::audio::msecs_t playbackPosition)
+void VstAudioClient::process(float* output, muse::audio::samples_t samplesPerChannel, muse::audio::msecs_t playbackPosition)
 {
     IAudioProcessorPtr processor = pluginProcessor();
     if (!processor || !output) {
@@ -125,19 +124,20 @@ muse::audio::samples_t VstAudioClient::process(float* output, muse::audio::sampl
         return 0;
     }
 
-    //! NOTE: From the VST3 documentation:
-    //!
-    //! Note that the ProcessData->numSamples
-    //! which indicates how many samples are used in a process call can change from call to call,
-    //! but never bigger than the maxSamplesPerBlock
+    // Set the number of samples to process
     m_processData.numSamples = samplesPerChannel;
 
+    // Update the ProcessContext with playback state and tempo
     m_processContext.projectTimeSamples = (playbackPosition / 1000000.f) * m_samplesInfo.sampleRate;
+    m_processContext.tempo = museScore->getTempo(); // Assuming MuseScore provides the tempo
+    m_processContext.state = museScore->isPlaying() ? ProcessContext::kPlaying : 0;
 
+    // Ensure the buffer size is within limits
     if (samplesPerChannel > m_samplesInfo.maxSamplesPerBlock) {
         setMaxSamplesPerBlock(samplesPerChannel);
     }
 
+    // Process audio data
     if (m_type == AudioPluginType::Fx) {
         extractInputSamples(samplesPerChannel, output);
     }
@@ -146,6 +146,7 @@ muse::audio::samples_t VstAudioClient::process(float* output, muse::audio::sampl
         return 0;
     }
 
+    // Fill the output buffer
     if (m_type == AudioPluginType::Instrument) {
         m_eventList.clear();
         m_paramChanges.clearQueue();
@@ -159,6 +160,7 @@ muse::audio::samples_t VstAudioClient::process(float* output, muse::audio::sampl
 
     return samplesPerChannel;
 }
+
 
 void VstAudioClient::flush()
 {
