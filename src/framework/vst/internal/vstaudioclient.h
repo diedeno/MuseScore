@@ -26,6 +26,8 @@
 
 #include "../ivstplugininstance.h"
 #include "../vsttypes.h"
+#include <pluginterfaces/vst/ivstprocesscontext.h>
+
 
 namespace muse::vst {
 class VstAudioClient
@@ -70,6 +72,8 @@ private:
 
     IAudioProcessorPtr pluginProcessor() const;
     PluginComponentPtr pluginComponent() const;
+
+    Steinberg::Vst::ProcessContext m_processContext;
 
     void setUpProcessData();
     void updateProcessSetup();
