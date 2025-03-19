@@ -41,7 +41,8 @@ VstSynthesiser::VstSynthesiser(const TrackId trackId, const muse::audio::AudioIn
                                const modularity::ContextPtr& iocCtx)
     : AbstractSynthesizer(params, iocCtx),
     m_vstAudioClient(std::make_unique<VstAudioClient>()),
-    m_trackId(trackId)
+    m_trackId(trackId),
+    m_sequencer(globalContext()->playbackController()) // Pass the PlaybackController to the sequencer
 {
 }
 
