@@ -336,7 +336,7 @@ float VstSequencer::pitchBendLevel(const mpe::pitch_level_t pitchLevel) const
     return std::clamp(0.5f + offset, 0.f, 1.f);
 }
 
-VstSequencer::VstSequencer(PlaybackController* playbackController)
+VstSequencer::VstSequencer(mu::playback::PlaybackController* playbackController)
     : m_playbackController(playbackController) // Initialize m_playbackController
 {
 }
