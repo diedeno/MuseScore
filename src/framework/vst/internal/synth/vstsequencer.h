@@ -70,7 +70,7 @@ public:
     muse::audio::gain_t currentGain() const;
 
     // Constructor
-    explicit VstSequencer(PlaybackController* playbackController);
+    explicit VstSequencer(mu::playback::PlaybackController* playbackController);
 
     double currentTempo() const;
     bool isPlaying() const;
