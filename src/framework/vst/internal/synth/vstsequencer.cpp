@@ -21,6 +21,7 @@
  */
 
 #include "vstsequencer.h"
+#include "playback/internal/playbackcontroller.h"
 
 #include "global/interpolation.h"
 
