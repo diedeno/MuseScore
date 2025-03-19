@@ -55,10 +55,6 @@ class PlaybackController : public IPlaybackController, public muse::actions::Act
 public:
     void init();
 
-    Tempo currentTempo() const;
-    bool isPlaying() const;
-    MeasureBeat currentBeat() const;
-
     bool isPlayAllowed() const override;
     muse::async::Notification isPlayAllowedChanged() const override;
 
