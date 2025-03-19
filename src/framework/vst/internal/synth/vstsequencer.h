@@ -25,8 +25,7 @@
 
 #include "audio/internal/abstracteventsequencer.h"
 
-#include "musescore/playback/playbackcontroller.h" // Include the header for PlaybackController
-#include "musescore/notation/measurebeat.h" // Include the header for MeasureBeat
+#include "playback/internal/playbackcontroller.h"
 
 #include "vsttypes.h"
 
