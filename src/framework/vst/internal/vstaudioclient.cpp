@@ -160,11 +160,13 @@ muse::audio::samples_t VstAudioClient::process(float* output, muse::audio::sampl
     return samplesPerChannel; // Return the number of processed samples
 }
 
+// In vstaudioclient.cpp
+
 void VstAudioClient::updateProcessContext(double tempo, bool isPlaying, double projectTimeMusic)
 {
     // Update the ProcessContext with the provided data
     m_processContext.tempo = tempo;
-    m_processContext.state = isPlaying ? Steinberg::Vst::ProcessContext::kPlaying : 0;
+    m_processContext.state = isPlaying ? VstProcessContext::kPlaying : 0;
     m_processContext.projectTimeMusic = projectTimeMusic;
 
     // Optionally, log the updated context for debugging
