@@ -74,7 +74,7 @@ public:
 
 private:
     
-    muse::playback::PlaybackController* m_playbackController = nullptr;
+    mu::playback::PlaybackController* m_playbackController = nullptr;
 
     void updateOffStreamEvents(const mpe::PlaybackEventsMap& events, const mpe::PlaybackParamList& params) override;
     void updateMainStreamEvents(const mpe::PlaybackEventsMap& events, const mpe::DynamicLevelLayers& dynamics,
