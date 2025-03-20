@@ -43,18 +43,18 @@ VstSynthesiser::VstSynthesiser(const muse::audio::TrackId trackId, const muse::a
                                const modularity::ContextPtr& iocCtx,
                                mu::playback::PlaybackController* playbackController)
     : AbstractSynthesizer(params, iocCtx),
+      m_vstAudioClient(std::make_unique<VstAudioClient>()),
       m_sequencer(playbackController), // Initialize m_sequencer before m_trackId
-      m_trackId(trackId),
-      m_vstAudioClient(std::make_unique<VstAudioClient>())
+      m_trackId(trackId)
 {
 }
 
 VstSynthesiser::VstSynthesiser(const int trackId, const muse::audio::AudioSourceParams& params,
                                const std::shared_ptr<kors::modularity::Context>& iocCtx)
     : AbstractSynthesizer(params, iocCtx),
-      m_sequencer(iocCtx->playbackController()), // Initialize m_sequencer before m_trackId
-      m_trackId(trackId),
-      m_vstAudioClient(std::make_unique<VstAudioClient>())
+      m_vstAudioClient(std::make_unique<VstAudioClient>()),
+      m_sequencer(iocCtx->resolve<mu::playback::PlaybackController>()), // Use the resolve method to get PlaybackController
+      m_trackId(trackId)
 {
 }
 
