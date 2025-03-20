@@ -50,7 +50,7 @@ VstSynthesiser::VstSynthesiser(const muse::audio::TrackId trackId, const muse::a
       m_trackId(trackId),
       m_sequencer(playbackController) // Initialize m_sequencer after m_trackId
 {
-     LOG_INFO() << "VstSynthesiser Constructor initialized.";
+      LOGI() << "VstSynthesiser Constructor initialized.";
 }
 
 VstSynthesiser::VstSynthesiser(const int trackId, const muse::audio::AudioSourceParams& params,
@@ -65,12 +65,12 @@ VstSynthesiser::VstSynthesiser(const int trackId, const muse::audio::AudioSource
 VstSynthesiser::~VstSynthesiser()
 {
     instancesRegister()->unregisterInstrPlugin(m_params.resourceMeta.id, m_trackId);
-    LOG_INFO() << "VstSynthesiser Destructor called.";
+    LOGI() << "VstSynthesiser Destructor called.";
 }
 
 void VstSynthesiser::init()
 {
-    LOG_INFO() << "VstSynthesiser init started.";
+    LOGI() << "VstSynthesiser init started.";
 
     m_pluginPtr = instancesRegister()->makeAndRegisterInstrPlugin(m_params.resourceMeta.id, m_trackId);
 
@@ -84,7 +84,7 @@ void VstSynthesiser::init()
         m_vstAudioClient->setMaxSamplesPerBlock(blockSize);
         m_vstAudioClient->loadSupportedParams();
         m_sequencer.init(m_vstAudioClient->paramsMapping(SUPPORTED_CONTROLLERS), m_useDynamicEvents);
-        LOG_INFO() << "Plugin loaded.";
+        LOGI() << "Plugin loaded.";
     };
 
     if (m_pluginPtr->isLoaded()) {
@@ -105,10 +105,10 @@ void VstSynthesiser::init()
 
     m_sequencer.setOnOffStreamFlushed([this]() {
         revokePlayingNotes();
-        LOG_INFO() << "OnOff stream flushed.";
+        LOGI() << "OnOff stream flushed.";
     });
 
-    LOG_INFO() << "VstSynthesiser init completed.";
+    LOGI() << "VstSynthesiser init completed.";
 }
 
 
