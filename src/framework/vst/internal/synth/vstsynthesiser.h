@@ -47,8 +47,6 @@ public:
     VstSynthesiser(const muse::audio::TrackId trackId, const muse::audio::AudioInputParams& params,
                    const modularity::ContextPtr& iocCtx,
                    mu::playback::PlaybackController* playbackController);
-    VstSynthesiser(const muse::audio::TrackId trackId, const muse::audio::AudioInputParams& params,
-                   const modularity::ContextPtr& iocCtx);
                    
     ~VstSynthesiser();
 
