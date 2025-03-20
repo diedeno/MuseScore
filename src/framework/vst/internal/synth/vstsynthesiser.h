@@ -47,7 +47,9 @@ public:
     VstSynthesiser(const muse::audio::TrackId trackId, const muse::audio::AudioInputParams& params,
                    const modularity::ContextPtr& iocCtx,
                    mu::playback::PlaybackController* playbackController);
-                   
+    VstSynthesiser(const int trackId, const muse::audio::AudioSourceParams& params,
+                   const std::shared_ptr<kors::modularity::Context>& iocCtx); // Add missing constructor
+
     ~VstSynthesiser();
 
     void init();
