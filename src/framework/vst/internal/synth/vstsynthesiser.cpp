@@ -44,8 +44,8 @@ VstSynthesiser::VstSynthesiser(const muse::audio::TrackId trackId, const muse::a
                                mu::playback::PlaybackController* playbackController)
     : AbstractSynthesizer(params, iocCtx),
       m_vstAudioClient(std::make_unique<VstAudioClient>()),
-      m_sequencer(playbackController), // Initialize m_sequencer before m_trackId
-      m_trackId(trackId)
+      m_trackId(trackId),
+      m_sequencer(playbackController) // Initialize m_sequencer after m_trackId
 {
 }
 
@@ -53,8 +53,8 @@ VstSynthesiser::VstSynthesiser(const int trackId, const muse::audio::AudioSource
                                const std::shared_ptr<kors::modularity::Context>& iocCtx)
     : AbstractSynthesizer(params, iocCtx),
       m_vstAudioClient(std::make_unique<VstAudioClient>()),
-      m_sequencer(new mu::playback::PlaybackController()), // Directly create a PlaybackController instance
-      m_trackId(trackId)
+      m_trackId(trackId),
+      m_sequencer(new mu::playback::PlaybackController()) // Directly create a PlaybackController instance
 {
 }
 
@@ -212,20 +212,6 @@ samples_t VstSynthesiser::process(float* buffer, samples_t samplesPerChannel)
     if (samplesPerChannel > m_vstAudioClient->maxSamplesPerBlock()) {
         m_vstAudioClient->setMaxSamplesPerBlock(samplesPerChannel);
     }
-
-    // Fetch the latest tempo, playback state, and timing information
-    double tempo = m_sequencer.currentTempo();
-    bool isPlaying = m_sequencer.isPlaying();
-    double projectTimeMusic = m_sequencer.currentProjectTimeMusic();
-
-    // Log the values for debugging
-    LOGI() << "Tempo: " << tempo << ", Is Playing: " << isPlaying << ", Project Time Music: " << projectTimeMusic;
-
-    // Update the ProcessContext
-    m_vstAudioClient->updateProcessContext(tempo, isPlaying, projectTimeMusic);
-
-    // Process audio data
-    return m_vstAudioClient->process(buffer, samplesPerChannel, m_sequencer.playbackPosition());
 
     const msecs_t nextMsecs = samplesToMsecs(samplesPerChannel, m_sampleRate);
     const VstSequencer::EventSequenceMap sequences = m_sequencer.movePlaybackForward(nextMsecs);
