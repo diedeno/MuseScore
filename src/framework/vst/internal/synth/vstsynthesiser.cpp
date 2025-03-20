@@ -37,7 +37,7 @@ static const std::set<Steinberg::Vst::CtrlNumber> SUPPORTED_CONTROLLERS = {
     Steinberg::Vst::kPitchBend,
 };
 
-VstSynthesiser::VstSynthesiser(const muse::audio::worker::TrackId trackId, const muse::audio::AudioInputParams& params,
+VstSynthesiser::VstSynthesiser(const muse::audio::TrackId trackId, const muse::audio::AudioInputParams& params,
                                const modularity::ContextPtr& iocCtx,
                                mu::playback::PlaybackController* playbackController)
     : AbstractSynthesizer(params, iocCtx),
