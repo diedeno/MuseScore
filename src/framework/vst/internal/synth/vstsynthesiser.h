@@ -44,12 +44,13 @@ class VstSynthesiser : public muse::audio::synth::AbstractSynthesizer
     Inject<muse::audio::IAudioConfiguration> config = { this };
 
 public:
-      VstSynthesiser(const muse::audio::TrackId trackId, const muse::audio::AudioInputParams& params,
+    VstSynthesiser(const muse::audio::TrackId trackId, const muse::audio::AudioInputParams& params,
                    const modularity::ContextPtr& iocCtx,
                    mu::playback::PlaybackController* playbackController);
-      
-      ~VstSynthesiser();
-
+    VstSynthesiser(const muse::audio::TrackId trackId, const muse::audio::AudioInputParams& params,
+                   const modularity::ContextPtr& iocCtx);
+                   
+    ~VstSynthesiser();
 
     void init();
 
@@ -88,7 +89,6 @@ private:
     async::Channel<unsigned int> m_streamsCountChanged;
 
     VstSequencer m_sequencer;
-
     muse::audio::TrackId m_trackId = muse::audio::INVALID_TRACK_ID;
 
     bool m_useDynamicEvents = false;
