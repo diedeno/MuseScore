@@ -97,7 +97,7 @@ void VstSynthesiser::init()
 
         m_params.configuration = newConfig;
         m_paramsChanges.send(m_params);
-        LOG_INFO() << "Plugin settings changed.";
+        LOGI() << "Plugin settings changed.";
     });
 
     m_sequencer.setOnOffStreamFlushed([this]() {
