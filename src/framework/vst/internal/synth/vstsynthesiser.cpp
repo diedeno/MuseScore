@@ -25,9 +25,6 @@
 #include "context/internal/globalcontext.h" // Include GlobalContext
 #include "playback/internal/playbackcontroller.h" // Include PlaybackController
 
-#include "logger.h"
-
-
 using namespace muse;
 using namespace muse::vst;
 using namespace muse::audio::synth;
