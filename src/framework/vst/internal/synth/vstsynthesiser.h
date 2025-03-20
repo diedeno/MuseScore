@@ -44,11 +44,11 @@ class VstSynthesiser : public muse::audio::synth::AbstractSynthesizer
     Inject<muse::audio::IAudioConfiguration> config = { this };
 
 public:
-      VstSynthesiser(const muse::audio::worker::TrackId trackId, const muse::audio::AudioInputParams& params,
+      VstSynthesiser(const muse::audio::TrackId trackId, const muse::audio::AudioInputParams& params,
                    const modularity::ContextPtr& iocCtx,
                    mu::playback::PlaybackController* playbackController);
-
-    ~VstSynthesiser();
+      
+      ~VstSynthesiser();
 
 
     void init();
