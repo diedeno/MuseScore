@@ -360,7 +360,7 @@ double VstSequencer::currentTempo() const
 double VstSequencer::currentProjectTimeMusic() const
 {
     const auto& beat = m_playbackController->currentBeat();
-    return beat.measureIndex + (beat.beatIndex - 1) / static_cast<double>(beat.beatsPerMeasure); // Use the correct member name
+    return beat.measureIndex + (beat.beatIndex - 1) / static_cast<double>(beat.beatPerMeasure); // Use the correct member name
 }
 
 
