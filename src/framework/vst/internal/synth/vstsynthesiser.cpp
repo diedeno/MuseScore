@@ -53,7 +53,7 @@ VstSynthesiser::VstSynthesiser(const int trackId, const muse::audio::AudioSource
                                const std::shared_ptr<kors::modularity::Context>& iocCtx)
     : AbstractSynthesizer(params, iocCtx),
       m_vstAudioClient(std::make_unique<VstAudioClient>()),
-      m_sequencer(iocCtx->resolve<mu::playback::PlaybackController>()), // Use the resolve method to get PlaybackController
+      m_sequencer(new mu::playback::PlaybackController()), // Directly create a PlaybackController instance
       m_trackId(trackId)
 {
 }
