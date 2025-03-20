@@ -88,9 +88,8 @@ private:
     unsigned int m_audioChannelsCount = 2;
     async::Channel<unsigned int> m_streamsCountChanged;
 
-    VstSequencer m_sequencer;
     muse::audio::TrackId m_trackId = muse::audio::INVALID_TRACK_ID;
-
+    VstSequencer m_sequencer;
     bool m_useDynamicEvents = false;
 };
 
