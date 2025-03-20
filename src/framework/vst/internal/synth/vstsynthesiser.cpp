@@ -41,9 +41,18 @@ VstSynthesiser::VstSynthesiser(const muse::audio::TrackId trackId, const muse::a
                                const modularity::ContextPtr& iocCtx,
                                mu::playback::PlaybackController* playbackController)
     : AbstractSynthesizer(params, iocCtx),
-    m_vstAudioClient(std::make_unique<VstAudioClient>()),
-    m_trackId(trackId),
-    m_sequencer(playbackController) // Pass PlaybackController to the sequencer
+      m_sequencer(playbackController), // Initialize m_sequencer before m_trackId
+      m_trackId(trackId),
+      m_vstAudioClient(std::make_unique<VstAudioClient>())
+{
+}
+
+VstSynthesiser::VstSynthesiser(const muse::audio::TrackId trackId, const muse::audio::AudioInputParams& params,
+                               const modularity::ContextPtr& iocCtx)
+    : AbstractSynthesizer(params, iocCtx),
+      m_sequencer(globalContext()->playbackController()), // Initialize m_sequencer before m_trackId
+      m_trackId(trackId),
+      m_vstAudioClient(std::make_unique<VstAudioClient>())
 {
 }
 
@@ -51,8 +60,6 @@ VstSynthesiser::~VstSynthesiser()
 {
     instancesRegister()->unregisterInstrPlugin(m_params.resourceMeta.id, m_trackId);
 }
-
-
 
 void VstSynthesiser::init()
 {
@@ -204,7 +211,7 @@ samples_t VstSynthesiser::process(float* buffer, samples_t samplesPerChannel)
         m_vstAudioClient->setMaxSamplesPerBlock(samplesPerChannel);
     }
 
-   // Fetch the latest tempo, playback state, and timing information
+    // Fetch the latest tempo, playback state, and timing information
     double tempo = m_sequencer.currentTempo();
     bool isPlaying = m_sequencer.isPlaying();
     double projectTimeMusic = m_sequencer.currentProjectTimeMusic();
@@ -262,13 +269,4 @@ samples_t VstSynthesiser::processSequence(const VstSequencer::EventSequence& seq
     }
 
     return m_vstAudioClient->process(buffer, samples, m_sequencer.playbackPosition());
-}
-
-VstSynthesiser::VstSynthesiser(const TrackId trackId, const muse::audio::AudioInputParams& params,
-                               const modularity::ContextPtr& iocCtx)
-    : AbstractSynthesizer(params, iocCtx),
-    m_vstAudioClient(std::make_unique<VstAudioClient>()),
-    m_trackId(trackId),
-    m_sequencer(globalContext()->playbackController()) // Pass the PlaybackController to the sequencer
-{
 }
