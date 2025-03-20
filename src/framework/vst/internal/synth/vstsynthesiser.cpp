@@ -47,6 +47,7 @@ VstSynthesiser::VstSynthesiser(const muse::audio::TrackId trackId, const muse::a
       m_trackId(trackId),
       m_sequencer(playbackController) // Initialize m_sequencer after m_trackId
 {
+     LOG_INFO() << "VstSynthesiser Constructor initialized.";
 }
 
 VstSynthesiser::VstSynthesiser(const int trackId, const muse::audio::AudioSourceParams& params,
@@ -61,10 +62,13 @@ VstSynthesiser::VstSynthesiser(const int trackId, const muse::audio::AudioSource
 VstSynthesiser::~VstSynthesiser()
 {
     instancesRegister()->unregisterInstrPlugin(m_params.resourceMeta.id, m_trackId);
+    LOG_INFO() << "VstSynthesiser Destructor called.";
 }
 
 void VstSynthesiser::init()
 {
+    LOG_INFO() << "VstSynthesiser init started.";
+
     m_pluginPtr = instancesRegister()->makeAndRegisterInstrPlugin(m_params.resourceMeta.id, m_trackId);
 
     m_audioChannelsCount = config()->audioChannelsCount();
@@ -77,6 +81,7 @@ void VstSynthesiser::init()
         m_vstAudioClient->setMaxSamplesPerBlock(blockSize);
         m_vstAudioClient->loadSupportedParams();
         m_sequencer.init(m_vstAudioClient->paramsMapping(SUPPORTED_CONTROLLERS), m_useDynamicEvents);
+        LOG_INFO() << "Plugin loaded.";
     };
 
     if (m_pluginPtr->isLoaded()) {
@@ -92,12 +97,17 @@ void VstSynthesiser::init()
 
         m_params.configuration = newConfig;
         m_paramsChanges.send(m_params);
+        LOG_INFO() << "Plugin settings changed.";
     });
 
     m_sequencer.setOnOffStreamFlushed([this]() {
         revokePlayingNotes();
+        LOG_INFO() << "OnOff stream flushed.";
     });
+
+    LOG_INFO() << "VstSynthesiser init completed.";
 }
+
 
 void VstSynthesiser::toggleVolumeGain(const bool isActive)
 {
