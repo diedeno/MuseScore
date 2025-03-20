@@ -355,8 +355,10 @@ double VstSequencer::currentTempo() const
 double VstSequencer::currentProjectTimeMusic() const
 {
     const auto& beat = m_playbackController->currentBeat();
+    LOG_INFO() << "Current Beat: measureIndex = " << beat.measureIndex << ", beatIndex = " << beat.beatIndex << ", maxBeatIndex = " << beat.maxBeatIndex;
     return beat.measureIndex + (beat.beatIndex - 1) / static_cast<double>(beat.maxBeatIndex + 1); // Corrected member name
 }
+
 
 
 bool VstSequencer::isPlaying() const {
