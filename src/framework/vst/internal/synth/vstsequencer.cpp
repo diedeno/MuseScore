@@ -28,6 +28,9 @@
 
 #include "global/interpolation.h"
 
+#include "logger.h"
+
+
 using namespace muse;
 using namespace muse::vst;
 using namespace muse::audio::synth;
