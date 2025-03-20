@@ -21,10 +21,16 @@
  */
 
 #include "vstsequencer.h"
+
+#include "log.h"
+#include "context/internal/globalcontext.h" // Include GlobalContext
+#include "playback/internal/playbackcontroller.h" // Include PlaybackController
+
+
+#include "vstsequencer.h"
 #include "context/internal/globalcontext.h" // Include GlobalContext
 #include "playback/internal/playbackcontroller.h"
 
-#include "log.h"
 #include "global/interpolation.h"
 
 using namespace muse;
@@ -354,7 +360,7 @@ double VstSequencer::currentTempo() const
 double VstSequencer::currentProjectTimeMusic() const
 {
     const auto& beat = m_playbackController->currentBeat();
-    return beat.measureIndex + (beat.beatIndex - 1) / static_cast<double>(beat.beatsInMeasure);
+    return beat.measureIndex + (beat.beatIndex - 1) / static_cast<double>(beat.beatsPerMeasure);
 }
 
 bool VstSequencer::isPlaying() const {
