@@ -22,6 +22,8 @@
 #include "vstsynthesiser.h"
 
 #include "log.h"
+#include "context/internal/globalcontext.h" // Include GlobalContext
+#include "playback/internal/playbackcontroller.h" // Include PlaybackController
 
 using namespace muse;
 using namespace muse::vst;
@@ -42,15 +44,6 @@ VstSynthesiser::VstSynthesiser(const muse::audio::TrackId trackId, const muse::a
                                mu::playback::PlaybackController* playbackController)
     : AbstractSynthesizer(params, iocCtx),
       m_sequencer(playbackController), // Initialize m_sequencer before m_trackId
-      m_trackId(trackId),
-      m_vstAudioClient(std::make_unique<VstAudioClient>())
-{
-}
-
-VstSynthesiser::VstSynthesiser(const muse::audio::TrackId trackId, const muse::audio::AudioInputParams& params,
-                               const modularity::ContextPtr& iocCtx)
-    : AbstractSynthesizer(params, iocCtx),
-      m_sequencer(globalContext()->playbackController()), // Initialize m_sequencer before m_trackId
       m_trackId(trackId),
       m_vstAudioClient(std::make_unique<VstAudioClient>())
 {
