@@ -158,6 +158,10 @@ if (MUSE_MODULE_NETWORK_WEBSOCKET)
     set(QT_ADD_WEBSOCKET ON)
 endif()
 
+# It is used to develop new functionality that is not ready and released yet.
+# It should be enabled only for separate build (not master)  used for testing.
+set(QT_ADD_MULTIMEDIA OFF)
+
 include(SetupQt6)
 
 if (MUE_DOWNLOAD_SOUNDFONT)
