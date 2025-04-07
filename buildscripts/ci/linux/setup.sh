@@ -130,7 +130,8 @@ sudo apt-get install -y --no-install-recommends \
 
 # Get newer Qt (only used cached version if it is the same)
 qt_version="624"
-qt_revision="r2" # added websocket module
+#qt_revision="r2" # added websocket module
+qt_revision="r3" # added multimedia module
 qt_dir="$BUILD_TOOLS/Qt/${qt_version}"
 if [[ ! -d "${qt_dir}" ]]; then
   mkdir -p "${qt_dir}"
