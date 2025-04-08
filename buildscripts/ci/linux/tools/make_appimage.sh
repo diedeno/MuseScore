@@ -226,6 +226,11 @@ additional_qt_components=(
   plugins/wayland-decoration-client
   plugins/wayland-graphics-integration-client
   plugins/wayland-shell-integration
+
+  # QtMultimedia components
+  lib/libQt6Multimedia.so.6
+  plugins/mediaservice/libgstmediaplayer.so
+  plugins/audio/libqtaudio_alsa.so
 )
 
 # ADDITIONAL LIBRARIES
@@ -239,6 +244,21 @@ if [[ "$PACKARCH" == "x86_64" ]]; then
 else
   additional_libraries=()
 fi
+
+# Function to copy additional Qt components
+function copy_additional_qt_components() {
+  for file in "${additional_qt_components[@]}"; do
+    if [ -f "${appdir}/${file}" ]; then
+      echo "Warning: ${file} was already deployed. Skipping."
+      continue
+    fi
+    mkdir -p "${appdir}/$(dirname "${file}")"
+    cp -Lr "${QT_PATH}/${file}" "${appdir}/${file}"
+  done
+}
+
+# Call the function to copy additional Qt components
+copy_additional_qt_components
 
 # FALLBACK LIBRARIES
 # These get bundled in the AppImage, but are only loaded if the user does not
