@@ -229,6 +229,7 @@ additional_qt_components=(
 
   # QtMultimedia components
   lib/libQt6Multimedia.so.6
+  qml/QtMultimedia
 )
 
 # ADDITIONAL LIBRARIES
