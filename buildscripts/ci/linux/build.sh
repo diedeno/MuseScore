@@ -70,7 +70,7 @@ if [ "$PACKARCH" == "aarch64" ] || [ "$PACKARCH" == "armv7l" ]; then
 fi
 
 # TODO: https://github.com/musescore/MuseScore/issues/11689
-BUILD_VST=OFF
+BUILD_VST=ON
 
 echo "=== BUILD ==="
 
