@@ -145,11 +145,24 @@ void VstSequencer::updatePlaybackEvents(EventSequenceMap& destination, const mpe
     appendSostenutoEvents(destination, sostenutoTimeAndDurations);
 }
 
-void VstSequencer::updateDynamicEvents(EventSequenceMap& destination, const mpe::DynamicLevelLayers& layers)
+void VstSequencer::updateDynamicEvents(EventSequenceMap& destination, 
+                                     const mpe::DynamicLevelLayers& layers)
 {
-    for (const auto& layer : layers) {
-        for (const auto& dynamic : layer.second) {
-            destination[dynamic.first].emplace(expressionLevel(dynamic.second));
+    
+    const auto cc11_it = m_mapping.find(Steinberg::Vst::kCtrlExpression);
+    const bool has_cc11 = (cc11_it != m_mapping.end());
+
+   
+    for (const auto& [part_id, dyn_layer] : layers) {
+        for (const auto& [timestamp, level] : dyn_layer) {
+            const float gain = expressionLevel(level);
+            auto& events = destination[timestamp];
+            
+            events.emplace(gain); 
+            
+            if (has_cc11) {
+                events.emplace(ParamChangeEvent{cc11_it->second, gain});
+            }
         }
     }
 }
