@@ -30,6 +30,7 @@ using namespace muse::audio;
 using namespace muse::audioplugins;
 
 static const std::set<Steinberg::Vst::CtrlNumber> SUPPORTED_CONTROLLERS = {
+    Steinberg::Vst::kCtrlModWheel, 
     Steinberg::Vst::kCtrlVolume,
     Steinberg::Vst::kCtrlExpression,
     Steinberg::Vst::kCtrlSustainOnOff,
