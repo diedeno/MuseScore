@@ -145,7 +145,7 @@ void VstSequencer::updatePlaybackEvents(EventSequenceMap& destination, const mpe
     appendSostenutoEvents(destination, sostenutoTimeAndDurations);
 }
 
-void VstSequencer::updateDynamicEvents(EventSequenceMap& destination,const mpe::DynamicLevelLayers& layers)
+void VstSequencer::updateDynamicEvents(EventSequenceMap& destination, const mpe::DynamicLevelLayers& layers)
 {
     const auto cc1_it = m_mapping.find(Steinberg::Vst::kCtrlModWheel); 
     const bool use_cc1 = (cc1_it != m_mapping.end()); 
