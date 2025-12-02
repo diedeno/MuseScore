@@ -1,6 +1,6 @@
 /*
  * SPDX-License-Identifier: GPL-3.0-only
- * MuseScore-Studio-CLA-appliesComment out unused cases in switch statement
+ * MuseScore-Studio-CLA-applies
  *
  * MuseScore Studio
  * Music Composition & Notation
