@@ -117,11 +117,36 @@ void VstSequencer::addPlaybackEvents(EventSequenceMap& destination, const mpe::P
     addSostenutoEvents(destination, sostenutoTimeAndDurations);
 }
 
+/*
 void VstSequencer::addDynamicEvents(EventSequenceMap& destination, const mpe::DynamicLevelLayers& layers)
 {
     for (const auto& layer : layers) {
         for (const auto& dynamic : layer.second) {
             destination[dynamic.first].emplace(expressionLevel(dynamic.second));
+        }
+    }
+}
+*/
+
+void VstSequencer::addDynamicEvents(EventSequenceMap& destination, const mpe::DynamicLevelLayers& layers)
+{
+    const auto cc7_it = m_mapping.find(static_cast<ControlIdx>(7));
+    const auto cc11_it = m_mapping.find(static_cast<ControlIdx>(11));
+    const bool has_cc7 = (cc7_it != m_mapping.cend());
+    const bool has_cc11 = (cc11_it != m_mapping.cend());
+
+    for (const auto& layer : layers) {
+        for (const auto& dynamic : layer.second) {
+            const float gain = expressionLevel(dynamic.second);
+            destination[dynamic.first].emplace(gain); // Original volume
+            
+            if (has_cc11) {  
+                destination[dynamic.first].emplace(ParamChangeEvent { cc11_it->second, gain });
+            }
+            if (has_cc7) {
+                // Add a tiny offset to ensure both events are processed
+                destination[dynamic.first + 1].emplace(ParamChangeEvent { cc7_it->second, gain });
+            }
         }
     }
 }
