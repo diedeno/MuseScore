@@ -66,8 +66,8 @@ DockPage {
         case "scores": root.central = scoresComp; break
         case "plugins": root.central = extensionsComp; break // backward compatibility
         case "extensions": root.central = extensionsComp; break
-        case "musesounds": root.central = museSoundsComp; break
-        case "learn": root.central = learnComp; break
+        // case "musesounds": root.central = museSoundsComp; break
+        // case "learn": root.central = learnComp; break
         case "account": root.central = accountComp; break
         }
     }
