@@ -25,6 +25,7 @@
 #include <QApplication>
 #include <QStyleHints>
 #include <QQuickWindow>
+#include <QSslSocket>
 
 #include "appfactory.h"
 #include "internal/commandlineparser.h"
@@ -134,6 +135,15 @@ int main(int argc, char** argv)
     using namespace muse;
     using namespace mu::app;
 
+    auto fixSslBackend = []() {
+#ifdef Q_OS_WIN
+        // NOTE: Force schannel backend. Qt prefers OpenSSL when qopensslbackend.dll
+        //       is present, which can crash on ABI mismatch with bundled OpenSSL.
+        //       see https://github.com/musescore/MuseScore/issues/33401
+        QSslSocket::setActiveBackend("schannel");
+#endif
+    };
+
     // ====================================================
     // Parse command line options
     // ====================================================
@@ -151,11 +161,16 @@ int main(int argc, char** argv)
         qapp = new QApplication(argc, argv);
     }
 
+    fixSslBackend();
+
     commandLineParser.processBuiltinArgs(*qapp);
     CmdOptions opt = commandLineParser.options();
 
 #else
     QCoreApplication* qapp = new QApplication(argc, argv);
+
+    fixSslBackend();
+
     CmdOptions opt;
     opt.runMode = IApplication::RunMode::GuiApp;
 #endif
@@ -166,6 +181,13 @@ int main(int argc, char** argv)
     app->setup();
 
     app->setupNewContext();
+
+    LOGI() << QString("SSL Info: supported: %1, build: %2, runtime: %3, active backend: %4, available backends: %5")
+        .arg(QSslSocket::supportsSsl())
+        .arg(QSslSocket::sslLibraryBuildVersionString())
+        .arg(QSslSocket::sslLibraryVersionString())
+        .arg(QSslSocket::activeBackend())
+        .arg(QSslSocket::availableBackends().join(", "));
 
     // ====================================================
     // Run main loop

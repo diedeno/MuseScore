@@ -153,7 +153,7 @@ set(MUE_COMPILE_MACOS_PRECOMPILED_DEPS_PATH "" CACHE PATH "Path to precompiled d
 
 option(MUSE_GENERATE_COMPILE_COMMANDS "Generate compile commands" OFF)
 option(MUSE_COMPILE_USE_UNITY "Use unity build" ON)
-option(MUSE_COMPILE_USE_COMPILER_CACHE "Try to use compiler cache: tries ccache, sccache, buildcache in that order. Use COMPILER_CACHE_PROGRAM to specify a specific compiler cache program." ON)
+option(MUSE_COMPILE_USE_COMPILER_CACHE "Try to use compiler cache: tries ccache, sccache, buildcache in that order. Use COMPILER_CACHE_PROGRAM to specify a specific compiler cache program." OFF)
 option(MUSE_COMPILE_USE_SHARED_LIBS_IN_DEBUG "Build shared libs if possible in debug" OFF)
 
 # === System libraries ===
@@ -164,6 +164,7 @@ option(MUE_COMPILE_USE_SYSTEM_HARFBUZZ "Try use system harfbuzz" OFF)
 option(MUE_COMPILE_USE_SYSTEM_OPUS "Try use system opus" OFF)
 option(MUE_COMPILE_USE_SYSTEM_OPUSENC "Try use system libopusenc" OFF)
 option(MUE_COMPILE_USE_SYSTEM_MNXDOM "Try use system mnxdom" OFF)
+option(MUE_COMPILE_USE_SYSTEM_PUGIXML "Try use system pugixml" OFF)
 
 # === Debug ===
 option(MUE_ENABLE_LOAD_QML_FROM_SOURCE "Load qml files from source (not resource)" OFF)
