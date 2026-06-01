@@ -131,10 +131,10 @@ void VstSequencer::addDynamicEvents(EventSequenceMap& destination, const mpe::Dy
     for (const auto& layer : layers) {
         for (const auto& dynamic : layer.second) {
             const float gain = expressionLevel(dynamic.second);
-            destination[dynamic.first].emplace(gain); // Original volume
+            destination[dynamic.first].emplace_back(gain); // Original volume
             
             if (has_cc11) {
-                destination[dynamic.first].emplace(ParamChangeEvent { cc11_it->second, gain });
+                destination[dynamic.first].emplace_back(ParamChangeEvent { cc11_it->second, gain });
             }
         }
     }
