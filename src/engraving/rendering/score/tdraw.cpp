@@ -1740,8 +1740,30 @@ void TDraw::draw(const TextBlock& textBlock, const TextBase* item, Painter* pain
 
 void TDraw::draw(const TextFragment& textFragment, const TextBase* item, muse::draw::Painter* painter)
 {
+#ifndef Q_OS_MACOS
+    drawTextWorkaround(textFragment, item, painter);
+    return;
+#endif
     painter->setFont(textFragment.font(item));
     painter->drawText(textFragment.pos, textFragment.text);
+}
+
+void TDraw::drawTextWorkaround(const TextFragment& textFragment, const TextBase* item, muse::draw::Painter* painter)
+{
+    Font f = textFragment.font(item);
+    const String& text = textFragment.text;
+    const PointF& pos = textFragment.pos;
+
+    painter->setFont(f);
+
+    double mm = painter->worldTransform().m11();
+    bool useWorkaround = !(MScore::pdfPrinting) && (mm < 1.0) && f.bold() && !(f.underline() || f.strike());
+    if (!useWorkaround) {
+        painter->drawText(pos, text);
+        return;
+    }
+
+    painter->drawTextWorkaround(pos, text);
 }
 
 void TDraw::drawTextLineBaseSegment(const TextLineBaseSegment* item, Painter* painter, const PaintOptions& opt)
@@ -1807,7 +1829,7 @@ void TDraw::drawTextLineBaseSegment(const TextLineBaseSegment* item, Painter* pa
         if (tl->beginHookType() == HookType::ARROW_FILLED) {
             Brush brush;
             brush.setStyle(BrushStyle::SolidPattern);
-            brush.setColor(item->curColor(opt));
+            brush.setColor(color);
             painter->setBrush(brush);
             painter->setNoPen();
             painter->drawPolygon(ldata->beginArrow);
@@ -1840,7 +1862,7 @@ void TDraw::drawTextLineBaseSegment(const TextLineBaseSegment* item, Painter* pa
         if (tl->endHookType() == HookType::ARROW_FILLED) {
             Brush brush;
             brush.setStyle(BrushStyle::SolidPattern);
-            brush.setColor(item->curColor(opt));
+            brush.setColor(color);
             painter->setBrush(brush);
             painter->setNoPen();
             painter->drawPolygon(ldata->endArrow);
@@ -2016,13 +2038,16 @@ void TDraw::draw(const Image* item, Painter* painter, const PaintOptions& opt)
             } else {
                 s = item->size() * DPMM;
             }
-            if (opt.isPrinting && !MScore::svgPrinting) {
-                // use original image size for printing, but not for svg for reasonable file size.
+            Transform t = painter->worldTransform();
+            muse::Size ss = muse::Size(s.width() * t.m11(), s.height() * t.m22());
+            int maxDim = item->configuration()->maxScaledImageDim();
+            bool useDirectDraw = (opt.isPrinting && !MScore::svgPrinting)
+                                 || (maxDim > 0 && std::max(ss.width(), ss.height()) > maxDim);
+
+            if (useDirectDraw) {
                 painter->scale(s.width() / item->rasterImage()->width(), s.height() / item->rasterImage()->height());
                 painter->drawPixmap(PointF(0, 0), *item->rasterImage());
             } else {
-                Transform t = painter->worldTransform();
-                muse::Size ss = muse::Size(s.width() * t.m11(), s.height() * t.m22());
                 t.setMatrix(1.0, t.m12(), t.m13(), t.m21(), 1.0, t.m23(), t.m31(), t.m32(), t.m33());
                 painter->setWorldTransform(t);
                 if ((item->buffer().size() != ss || item->dirty()) && item->rasterImage() && !item->rasterImage()->isNull()) {

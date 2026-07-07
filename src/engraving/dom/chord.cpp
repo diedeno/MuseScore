@@ -813,7 +813,7 @@ void Chord::remove(EngravingItem* e)
     {
         Articulation* a = toArticulation(e);
         if (!muse::remove(m_articulations, a)) {
-            LOGD("ChordRest::remove(): articulation not found");
+            LOGD("Chord::remove(): articulation not found");
         }
     }
     break;
@@ -1129,34 +1129,6 @@ bool Chord::underBeam() const
         }
     }
     return false;
-}
-
-//---------------------------------------------------------
-//   updatePercussionNotes
-//---------------------------------------------------------
-
-static void updatePercussionNotes(Chord* c, const Drumset* drumset)
-{
-    TRACEFUNC;
-    for (Chord* ch : c->graceNotes()) {
-        updatePercussionNotes(ch, drumset);
-    }
-    std::vector<Note*> lnotes(c->notes());    // we need a copy!
-    for (Note* note : lnotes) {
-        if (!drumset) {
-            note->setLine(0);
-        } else {
-            int pitch = note->pitch();
-            if (!drumset->isValid(pitch)) {
-                note->setLine(0);
-                //! NOTE May be called too often
-                //LOGW("unmapped drum note %d", pitch);
-            } else if (!note->fixed()) {
-                note->undoChangeProperty(Pid::HEAD_GROUP, drumset->noteHead(pitch));
-                note->setLine(drumset->line(pitch));
-            }
-        }
-    }
 }
 
 //---------------------------------------------------------
