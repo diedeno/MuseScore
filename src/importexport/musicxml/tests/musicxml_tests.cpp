@@ -396,14 +396,20 @@ TEST_F(MusicXml_Tests, articulationCombination) {
 TEST_F(MusicXml_Tests, backupRoundingError) {
     musicXmlImportTestRef("testBackupRoundingError");
 }
+TEST_F(MusicXml_Tests, barlineFermatas) {
+    musicXmlIoTest("testBarlineFermatas");
+}
 TEST_F(MusicXml_Tests, barlineLoc) {
     musicXmlImportTestRef("testBarlineLoc");
+}
+TEST_F(MusicXml_Tests, noteflightStartRepeatBarline) {
+    musicXmlImportTestRef("testNoteflightStartRepeatBarline");
 }
 TEST_F(MusicXml_Tests, barlineSpan) {
     musicXmlIoTest("testBarlineSpan");
 }
-TEST_F(MusicXml_Tests, barlineFermatas) {
-    musicXmlIoTest("testBarlineFermatas");
+TEST_F(MusicXml_Tests, barlineTips) {
+    musicXmlIoTest("testBarlineTips");
 }
 TEST_F(MusicXml_Tests, barStyles) {
     musicXmlIoTest("testBarStyles");
@@ -1046,6 +1052,9 @@ TEST_F(MusicXml_Tests, numberedLyrics) {
 }
 TEST_F(MusicXml_Tests, numerals) {
     musicXmlIoTest("testNumerals");
+}
+TEST_F(MusicXml_Tests, octaveShift) {
+    musicXmlIoTest("testOctaveShift");
 }
 TEST_F(MusicXml_Tests, ornaments) {
     musicXmlIoTest("testOrnaments");

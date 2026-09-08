@@ -29,7 +29,6 @@
 
 #include "io/path.h"
 #include "progress.h"
-#include "log.h"
 
 #include "projectmeta.h"
 

@@ -37,15 +37,37 @@ enum class Err {
     CorruptionUponSavingError,
 
     FileOpenError,
+    FileCreateError,
     InvalidCloudScoreId,
 
     UnsupportedUrl,
     MalformedOpenScoreUrl,
+
+    ConvertValidationFailed,
+    ConvertUnsupportedFormat,
+    ConvertMixedFileTypes,
+    ConvertMultiplePdfFiles,
+    ConvertAudioFileTooLarge,
+    ConvertFileTooLarge,
+    ConvertCombinedImageTooLarge,
+    ConvertTooManyAudioFiles,
+    ConvertTooManyImages,
+    ConvertUnsupportedLink,
+    ConvertProcessingFailed,
+    DownloadLinkExpired,
 };
+
+//! NOTE: key for the converted file name stored in Ret::data
+static const std::string CONVERT_FAILED_FILE_NAME_KEY("convertedFileName");
 
 inline muse::Ret make_ret(Err e)
 {
     return muse::Ret(static_cast<int>(e));
+}
+
+inline muse::Ret make_ret(Err e, const std::string& text)
+{
+    return muse::Ret(static_cast<int>(e), text);
 }
 }
 

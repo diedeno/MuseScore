@@ -91,6 +91,7 @@ void ProjectActionsController::init()
     dispatcher()->reg(this, "file-export", this, &ProjectActionsController::exportScore);
     dispatcher()->reg(this, "file-import-pdf", this, &ProjectActionsController::importPdf);
     dispatcher()->reg(this, "file-import-audio-to-score", this, &ProjectActionsController::importAudioToScore);
+    dispatcher()->reg(this, "file-convert-to-score", this, &ProjectActionsController::convertFileToScore);
 
     dispatcher()->reg(this, "print", this, &ProjectActionsController::printScore);
 
@@ -134,6 +135,7 @@ bool ProjectActionsController::canReceiveAction(const ActionCode& code) const
             "file-open",
             "file-import-pdf",
             "file-import-audio-to-score",
+            "file-convert-to-score",
             "continue-last-session",
             "clear-recent",
         };
@@ -1858,6 +1860,12 @@ void ProjectActionsController::importAudioToScore()
     interactive()->openUrl("https://musescore.com/upload?format=audio2score");
 }
 
+void ProjectActionsController::convertFileToScore(const ActionData& args)
+{
+    muse::io::paths_t paths = args.empty() ? muse::io::paths_t() : args.arg<muse::io::paths_t>(0);
+    convertFileToScoreScenario()->convertFiles(paths);
+}
+
 void ProjectActionsController::clearRecentScores()
 {
     recentFilesController()->clearRecentFiles();
@@ -1920,17 +1928,7 @@ async::Promise<io::path_t> ProjectActionsController::selectScoreOpeningFile() co
                                       muse::trc("project", "MuseScore developer files") + " (*.mscs)",
                                       muse::trc("project", "MuseScore backup files") + " (*.mscz~)" };
 
-    muse::io::path_t defaultDir = configuration()->lastOpenedProjectsPath();
-
-    if (defaultDir.empty()) {
-        defaultDir = configuration()->userProjectsPath();
-    }
-
-    if (defaultDir.empty()) {
-        defaultDir = configuration()->defaultUserProjectsPath();
-    }
-
-    return interactive()->selectOpeningFile(muse::trc("project", "Open"), defaultDir, filter);
+    return interactive()->selectOpeningFile(muse::trc("project", "Open"), configuration()->defaultOpenProjectsPath(), filter);
 }
 
 bool ProjectActionsController::hasSelection() const

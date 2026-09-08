@@ -43,6 +43,7 @@ static const std::string module_name("project");
 static const Settings::Key COMPAT_RECENT_FILES_DATA(module_name, "project/recentList");
 static const Settings::Key USER_TEMPLATES_PATH(module_name, "application/paths/myTemplates");
 static const Settings::Key LAST_OPENED_PROJECTS_PATH(module_name, "application/paths/lastOpenedProjectsPath");
+static const Settings::Key LAST_OPENED_CONVERT_FILE_PATH(module_name, "application/paths/lastOpenedConvertFilePath");
 static const Settings::Key LAST_SAVED_PROJECTS_PATH(module_name, "application/paths/lastSavedProjectsPath");
 static const Settings::Key USER_PROJECTS_PATH(module_name, "application/paths/myScores");
 static const Settings::Key SHOULD_ASK_SAVE_LOCATION_TYPE(module_name, "project/shouldAskSaveLocationType");
@@ -62,6 +63,7 @@ static const Settings::Key OPEN_DETAILED_PROJECT_UPLOADED_DIALOG(module_name, "p
 static const Settings::Key HAS_ASKED_AUDIO_GENERATION_SETTINGS(module_name, "project/hasAskedAudioGenerationSettings");
 static const Settings::Key GENERATE_AUDIO_TIME_PERIOD_TYPE_KEY(module_name, "project/generateAudioTimePeriodType");
 static const Settings::Key NUMBER_OF_SAVES_TO_GENERATE_AUDIO_KEY(module_name, "project/numberOfSavesToGenerateAudio");
+static const Settings::Key SHOW_CONVERT_FILE_PROCESSING_DIALOG(module_name, "project/showConvertFileProcessingDialog");
 static const Settings::Key SHOW_CLOUD_IS_NOT_AVAILABLE_WARNING(module_name, "project/showCloudIsNotAvailableWarning");
 static const Settings::Key DISABLE_VERSION_CHECKING(module_name, "project/disableVersionChecking");
 static const Settings::Key CREATE_BACKUP_BEFORE_SAVING(module_name, "project/createBackupBeforeSaving");
@@ -115,6 +117,8 @@ void ProjectConfiguration::init()
 
     settings()->setDefaultValue(SHOW_ALSO_SHARE_AUDIO_COM_DIALOG, Val(true));
     settings()->setDefaultValue(HAS_ASKED_ALSO_SHARE_AUDIO_COM, Val(false));
+
+    settings()->setDefaultValue(SHOW_CONVERT_FILE_PROCESSING_DIALOG, Val(true));
 
     settings()->setDefaultValue(SHOULD_DESTINATION_FOLDER_BE_OPENED_ON_EXPORT, Val(false));
     settings()->setDefaultValue(OPEN_DETAILED_PROJECT_UPLOADED_DIALOG, Val(true));
@@ -242,6 +246,35 @@ muse::async::Channel<muse::io::path_t> ProjectConfiguration::userProjectsPathCha
 muse::io::path_t ProjectConfiguration::defaultUserProjectsPath() const
 {
     return settings()->defaultValue(USER_PROJECTS_PATH).toPath();
+}
+
+muse::io::path_t ProjectConfiguration::defaultOpenProjectsPath() const
+{
+    muse::io::path_t dir = lastOpenedProjectsPath();
+    if (dir.empty()) {
+        dir = userProjectsPath();
+    }
+
+    if (dir.empty()) {
+        dir = defaultUserProjectsPath();
+    }
+
+    return dir;
+}
+
+void ProjectConfiguration::setLastOpenedConvertFilePath(const muse::io::path_t& path)
+{
+    settings()->setSharedValue(LAST_OPENED_CONVERT_FILE_PATH, Val(path));
+}
+
+muse::io::path_t ProjectConfiguration::defaultConvertFilePath() const
+{
+    muse::io::path_t dir = settings()->value(LAST_OPENED_CONVERT_FILE_PATH).toPath();
+    if (dir.empty()) {
+        dir = globalConfiguration()->documentsPath();
+    }
+
+    return dir;
 }
 
 bool ProjectConfiguration::shouldAskSaveLocationType() const
@@ -654,6 +687,11 @@ QUrl ProjectConfiguration::dotComBugReportUrl() const
     return QUrl("https://musescore.com/groups/bug-reports");
 }
 
+QUrl ProjectConfiguration::scoreUploadingGuidelinesUrl() const
+{
+    return QUrl("https://musescore.com/score-uploading-guidelines");
+}
+
 bool ProjectConfiguration::openDetailedProjectUploadedDialog() const
 {
     return settings()->value(OPEN_DETAILED_PROJECT_UPLOADED_DIALOG).toBool();
@@ -745,4 +783,24 @@ bool ProjectConfiguration::disableVersionChecking() const
 void ProjectConfiguration::setDisableVersionChecking(bool disable)
 {
     settings()->setSharedValue(DISABLE_VERSION_CHECKING, Val(disable));
+}
+
+bool ProjectConfiguration::showConvertFileProcessingDialog() const
+{
+    return settings()->value(SHOW_CONVERT_FILE_PROCESSING_DIALOG).toBool();
+}
+
+void ProjectConfiguration::setShowConvertFileProcessingDialog(bool show)
+{
+    settings()->setSharedValue(SHOW_CONVERT_FILE_PROCESSING_DIALOG, Val(show));
+}
+
+muse::io::path_t ProjectConfiguration::convertedScoresPath() const
+{
+    return globalConfiguration()->userAppDataPath() + "/converted_scores";
+}
+
+muse::io::path_t ProjectConfiguration::pendingConvertsJsonPath() const
+{
+    return globalConfiguration()->userAppDataPath().appendingComponent("pending_converts.json");
 }

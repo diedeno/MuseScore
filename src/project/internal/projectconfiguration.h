@@ -71,6 +71,10 @@ public:
     void setUserProjectsPath(const muse::io::path_t& path) override;
     muse::async::Channel<muse::io::path_t> userProjectsPathChanged() const override;
     muse::io::path_t defaultUserProjectsPath() const override;
+    muse::io::path_t defaultOpenProjectsPath() const override;
+
+    muse::io::path_t defaultConvertFilePath() const override;
+    void setLastOpenedConvertFilePath(const muse::io::path_t& path) override;
 
     bool shouldAskSaveLocationType() const override;
     void setShouldAskSaveLocationType(bool shouldAsk) override;
@@ -138,6 +142,8 @@ public:
 
     QUrl dotComBugReportUrl() const override;
 
+    QUrl scoreUploadingGuidelinesUrl() const override;
+
     bool openDetailedProjectUploadedDialog() const override;
     void setOpenDetailedProjectUploadedDialog(bool show) override;
 
@@ -165,13 +171,19 @@ public:
     bool createBackupBeforeSaving() const override;
     void setCreateBackupBeforeSaving(bool create) override;
 
+    bool showConvertFileProcessingDialog() const override;
+    void setShowConvertFileProcessingDialog(bool show) override;
+
+    muse::io::path_t convertedScoresPath() const override;
+    muse::io::path_t pendingConvertsJsonPath() const override;
+
+    std::string uniqueFileNameAddition(const muse::io::path_t& filename, const muse::io::path_t& folderPath,
+                                       const std::string& suffix = std::string()) const override;
+
 private:
     muse::io::path_t appTemplatesPath() const;
     muse::io::path_t legacyCloudProjectsPath() const;
     muse::io::path_t cloudProjectsPath() const;
-
-    std::string uniqueFileNameAddition(const muse::io::path_t& filename, const muse::io::path_t& folderPath,
-                                       const std::string& suffix) const;
 
     muse::async::Channel<muse::io::path_t> m_userTemplatesPathChanged;
     muse::async::Channel<muse::io::path_t> m_userScoresPathChanged;
