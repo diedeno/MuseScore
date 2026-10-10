@@ -2,8 +2,9 @@
 
 # APPDIR and APPIMAGE are environment variables which are set when the user
 # runs the AppImage. They won't be set if you try to run this outside of an
-# AppImage, so here we set them to something sensible instead for testing.
-[[  "${APPDIR}"  ]] || export APPDIR="$(dirname "$(readlink -f "${0}")")"
+# AppImage, so here we set them to something sensible instead for testing.#
+# [[  "${APPDIR}"  ]] || export APPDIR="$(dirname "$(readlink -f "${0}")")"
+[[ "${APPDIR}" ]] || export APPDIR="$(busybox dirname "$(busybox readlink -f "${0}")")"
 [[ "${APPIMAGE}" ]] || export APPIMAGE="${APPDIR}/AppRun"
 
 # Check system libraries and load a fallback if necessary
