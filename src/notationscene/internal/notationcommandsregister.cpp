@@ -674,6 +674,21 @@ static const std::vector<CommandInfo> s_commandInfos = {
     },
 
     CommandInfo{
+        VOICE_ASSIGNMENT_ALL_IN_INSTR_COMMAND,
+        TranslatableString("action", "All voices on instrument"),
+        TranslatableString("action", "Use all voices on instrument"),
+        InputSchema(),
+        Decoration()
+    },
+    CommandInfo{
+        VOICE_ASSIGNMENT_ALL_IN_STAFF_COMMAND,
+        TranslatableString("action", "All voices on staff"),
+        TranslatableString("action", "Use all voices on staff"),
+        InputSchema(),
+        Decoration()
+    },
+
+    CommandInfo{
         FLIP_COMMAND,
         TranslatableString("action", "Flip direction"),
         TranslatableString("action", "Flip direction"),
@@ -1596,7 +1611,7 @@ static const std::vector<CommandInfo> s_commandInfos = {
         TranslatableString("action", "&Parts…"),
         TranslatableString("action", "Parts"),
         InputSchema(),
-        Decoration()
+        Decoration(IconCode::Code::PAGE)
     },
     CommandInfo{
         OPEN_EDITGRIDSIZE_COMMAND,
@@ -1884,6 +1899,15 @@ static const std::vector<CommandInfo> s_commandInfos = {
         RESET_TO_DEFAULT_LAYOUT_COMMAND,
         TranslatableString("action", "Reset entire score to &default layout"),
         TranslatableString("action", "Reset entire score to default layout"),
+        InputSchema(),
+        Decoration()
+    },
+
+    // appearance commands
+    CommandInfo{
+        FREEZE_CURRENT_PLACEMENT_COMMAND,
+        TranslatableString("action", "Freeze current placement"),
+        TranslatableString("action", "Turn off auto-place and freeze the selection’s current position"),
         InputSchema(),
         Decoration()
     },
@@ -3233,6 +3257,20 @@ static const std::vector<CommandInfo> s_commandInfos = {
         TranslatableString("action", "Diagnostic: Check for score corruptions"),
         InputSchema(),
         Decoration()
+    },
+
+    //! NOTE "Read" commands for MCP and maybe API
+    CommandInfo {
+        GET_NOTEINPUT_STATE_COMMAND,
+        TranslatableString("action", "Get note input state"),
+        TranslatableString("action", "Get note input state"),
+        InputSchema(),
+        OutputSchema({
+            { "mode", Arg(DataType::String, u"Note input mode (disabled, by-note-name, by-duration,"
+                                            "repitch, rhythm, realtime-auto, realtime-manual, timewise)") },
+        }),
+        Decoration(),
+        Availability::MCP
     },
 };
 

@@ -33,7 +33,7 @@ class MMRest final : public Rest
     DECLARE_CLASSOF(ElementType::MMREST)
 
 public:
-    MMRest(Segment* s = 0);
+    MMRest(DummyParentOr<Segment> s);
     MMRest(const MMRest&, bool link = false);
 
     MMRest* clone() const override { return new MMRest(*this, false); }
@@ -70,7 +70,7 @@ public:
     DECLARE_LAYOUTDATA_METHODS(MMRest)
 
 private:
-    Spatium m_numberOffset = 0.0_sp; // vertical position of number relative to staff
+    Spatium m_numberOffset = 0.0_sp; // vertical offset of number relative to its style position
     bool m_numberVisible = false; // show or hide number
 };
 }

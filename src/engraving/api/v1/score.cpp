@@ -80,7 +80,6 @@ void Score::addText(const QString& type, const QString& txt)
     }
 
     mu::engraving::Text* text = mu::engraving::Factory::createText(mb, tid);
-    text->setOwnershipParent(mb);
     text->setXmlText(txt);
     score()->undoAddElement(text);
 }
@@ -121,7 +120,7 @@ const mu::engraving::InstrumentTemplate* Score::instrTemplateFromName(const QStr
 
 mu::notation::INotationPtr Score::notation() const
 {
-    return context()->currentNotation();
+    return projectSession()->currentNotation();
 }
 
 mu::notation::INotationUndoStackPtr Score::undoStack() const

@@ -1065,7 +1065,7 @@
         <location filename="../../src/notationscene/widgets/editstyle.ui" line="52"/>
         <location filename="../../src/notationscene/widgets/editstyle.ui" line="266"/>
         <source>Score</source>
-        <translation>Partisyon</translation>
+        <translation>Nota</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/widgets/editstyle.ui" line="57"/>
@@ -3151,7 +3151,7 @@ space unit</extracomment>
         <location filename="../../src/notationscene/widgets/editstyle.ui" line="7326"/>
         <location filename="../../src/notationscene/widgets/editstyle.ui" line="7329"/>
         <source>Override score font</source>
-        <translation>Partisyonun yazı tipini geçersiz kıl</translation>
+        <translation>Notanın yazı tipini geçersiz kıl</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/widgets/editstyle.ui" line="7338"/>
@@ -5611,7 +5611,7 @@ asla sola hizalama</translation>
         <location filename="../../src/appshell/internal/applicationuiactions.cpp" line="213"/>
         <location filename="../../src/web/appshell/internal/applicationuiactions.cpp" line="148"/>
         <source>Score comparison tool</source>
-        <translation>Partisyon karşılaştırma aracı</translation>
+        <translation>Nota karşılaştırma aracı</translation>
     </message>
     <message>
         <location filename="../../src/appshell/internal/applicationuiactions.cpp" line="221"/>
@@ -5674,7 +5674,7 @@ asla sola hizalama</translation>
     <message>
         <location filename="../../src/appshell/internal/applicationuiactions.cpp" line="261"/>
         <location filename="../../src/appshell/internal/applicationuiactions.cpp" line="262"/>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="282"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="281"/>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="2662"/>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="2663"/>
         <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/undoredotoolbarmodel.cpp" line="76"/>
@@ -5685,7 +5685,7 @@ asla sola hizalama</translation>
     <message>
         <location filename="../../src/appshell/internal/applicationuiactions.cpp" line="269"/>
         <location filename="../../src/appshell/internal/applicationuiactions.cpp" line="270"/>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="288"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="287"/>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="2669"/>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="2670"/>
         <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/undoredotoolbarmodel.cpp" line="84"/>
@@ -5706,19 +5706,19 @@ asla sola hizalama</translation>
         <translation>Sil</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="216"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="215"/>
         <source>Parts…</source>
         <translation>Bölümler...</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="283"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="282"/>
         <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/undoredotoolbarmodel.cpp" line="77"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="160"/>
         <source>Undo ‘%1’</source>
         <translation>‘%1’&apos;i geri al</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="289"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="288"/>
         <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/undoredotoolbarmodel.cpp" line="85"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="166"/>
         <source>Redo ‘%1’</source>
@@ -6020,7 +6020,7 @@ asla sola hizalama</translation>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="131"/>
         <source>Select next element in score</source>
-        <translation>Partisyonda sonraki ögeyi seç</translation>
+        <translation>Notada sonraki ögeyi seç</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="136"/>
@@ -6030,7 +6030,7 @@ asla sola hizalama</translation>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="137"/>
         <source>Select previous element in score</source>
-        <translation>Partisyonda önceki ögeyi seç</translation>
+        <translation>Notada önceki ögeyi seç</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="142"/>
@@ -6120,7 +6120,7 @@ asla sola hizalama</translation>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="191"/>
         <source>Go to first element in score</source>
-        <translation>Partisyondaki ilk ögeye git</translation>
+        <translation>Notadaki ilk ögeye git</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="196"/>
@@ -6130,7 +6130,7 @@ asla sola hizalama</translation>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="197"/>
         <source>Go to last element in score</source>
-        <translation>Partisyondaki son ögeye git</translation>
+        <translation>Notadaki son ögeye git</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="202"/>
@@ -6895,12 +6895,12 @@ asla sola hizalama</translation>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="713"/>
         <source>Insert measures at start of score</source>
-        <translation>Partisyonun başına ölçü ekle</translation>
+        <translation>Notanın başına ölçü ekle</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="719"/>
         <source>Insert one measure at end of score</source>
-        <translation>Partisyonun sonuna bir ölçü ekle</translation>
+        <translation>Notanın sonuna bir ölçü ekle</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="700"/>
@@ -6915,22 +6915,22 @@ asla sola hizalama</translation>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="712"/>
         <source>Insert at &amp;start of score…</source>
-        <translation>Partisyonun &amp;başına ekle...</translation>
+        <translation>Notanın &amp;başına ekle...</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="718"/>
         <source>Insert &amp;one measure at end of score</source>
-        <translation>Partisyo&amp;nun sonuna bir ölçü ekle</translation>
+        <translation>Nota&amp;nın sonuna bir ölçü ekle</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="724"/>
         <source>Insert at &amp;end of score…</source>
-        <translation>Partisyonun s&amp;onuna ekle…</translation>
+        <translation>Notanın s&amp;onuna ekle…</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="725"/>
         <source>Insert measures at end of score</source>
-        <translation>Partisyonun sonuna ölçü ekle</translation>
+        <translation>Notanın sonuna ölçü ekle</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="730"/>
@@ -6980,7 +6980,7 @@ asla sola hizalama</translation>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="759"/>
         <source>Insert horizontal frame at end of score</source>
-        <translation>Partisyonun sonuna yatay çerçeve ekle</translation>
+        <translation>Notanın sonuna yatay çerçeve ekle</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="765"/>
@@ -6990,7 +6990,7 @@ asla sola hizalama</translation>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="766"/>
         <source>Insert vertical frame at end of score</source>
-        <translation>Partisyonun sonuna dikey çerçeve ekle</translation>
+        <translation>Notanın sonuna dikey çerçeve ekle</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="772"/>
@@ -7000,7 +7000,7 @@ asla sola hizalama</translation>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="773"/>
         <source>Insert text frame at end of score</source>
-        <translation>Partisyonun sonuna metin çerçevesi ekle</translation>
+        <translation>Notanın sonuna metin çerçevesi ekle</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="779"/>
@@ -7010,7 +7010,7 @@ asla sola hizalama</translation>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="780"/>
         <source>Insert fretboard diagram legend at end of score</source>
-        <translation>Partisyonun sonuna akor şema listesi ekle</translation>
+        <translation>Notanın sonuna akor şema listesi ekle</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="786"/>
@@ -7786,12 +7786,12 @@ asla sola hizalama</translation>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="1506"/>
         <source>Reset entire score to &amp;default layout</source>
-        <translation>&amp;Partisyonun tamamını varsayılan düzene sıfırla</translation>
+        <translation>&amp;Notanın tamamını varsayılan düzene sıfırla</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="1507"/>
         <source>Reset entire score to default layout</source>
-        <translation>Partisyonun tamamını varsayılan düzene sıfırla</translation>
+        <translation>Notanın tamamını varsayılan düzene sıfırla</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="1512"/>
@@ -7873,13 +7873,13 @@ asla sola hizalama</translation>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="1586"/>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="1587"/>
         <source>Select to beginning of score</source>
-        <translation>Partisyonun başına kadar seç</translation>
+        <translation>Notanın başına kadar seç</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="1592"/>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="1593"/>
         <source>Select to end of score</source>
-        <translation>Partisyonun sonuna kadar seç</translation>
+        <translation>Notanın sonuna kadar seç</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="1598"/>
@@ -8602,7 +8602,7 @@ asla sola hizalama</translation>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="2094"/>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="2095"/>
         <source>Toggle automatic placement for entire score</source>
-        <translation>Bütün partisyon için otomatic yerleştirmeyi aç/kapat</translation>
+        <translation>Bütün nota için otomatik yerleştirmeyi aç/kapat</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="2100"/>
@@ -9350,7 +9350,7 @@ asla sola hizalama</translation>
     <message>
         <location filename="../../src/notationscene/internal/notationuiactions.cpp" line="2754"/>
         <source>Check for score corruptions</source>
-        <translation>Partisyondaki bozulmaları kontrol et</translation>
+        <translation>Notadaki bozulmaları kontrol et</translation>
     </message>
     <message>
         <location filename="../../src/palette/internal/paletteuiactions.cpp" line="41"/>
@@ -9541,12 +9541,12 @@ asla sola hizalama</translation>
     <message>
         <location filename="../../src/playback/internal/playbackuiactions.cpp" line="164"/>
         <source>Pan score automatically</source>
-        <translation>Partisyonu otomatik dengele</translation>
+        <translation>Notayı otomatik dengele(pan)</translation>
     </message>
     <message>
         <location filename="../../src/playback/internal/playbackuiactions.cpp" line="165"/>
         <source>Pan score automatically during playback</source>
-        <translation>Çalma sırasında partisyonu dengele</translation>
+        <translation>Çalma sırasında notayı dengele(pan)</translation>
     </message>
     <message>
         <location filename="../../src/playback/internal/playbackuiactions.cpp" line="172"/>
@@ -9574,7 +9574,7 @@ asla sola hizalama</translation>
     <message>
         <location filename="../../src/playback/internal/playbackuiactions.cpp" line="208"/>
         <source>Clear online sounds cache for this score</source>
-        <translation>Bu partisyon için çevrimiçi ses önbelleğini temizle</translation>
+        <translation>Bu nota için çevrimiçi ses önbelleğini temizle</translation>
     </message>
     <message>
         <location filename="../../src/playback/qml/MuseScore/Playback/playbacktoolbarmodel.cpp" line="117"/>
@@ -9693,51 +9693,57 @@ asla sola hizalama</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/projectuiactions.cpp" line="110"/>
+        <source>Convert &amp;file…</source>
+        <translation>Dosyayı d&amp;önüştür…</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/internal/projectuiactions.cpp" line="111"/>
+        <source>Convert file</source>
+        <translation>Dosyayı dönüştür</translation>
+    </message>
+    <message>
         <source>Import P&amp;DF…</source>
         <translation>&amp;PDF&apos;i içe aktar…</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectuiactions.cpp" line="111"/>
         <source>Import PDF</source>
         <translation>PDF&apos;i İçe Aktar</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectuiactions.cpp" line="117"/>
         <source>Import A&amp;udio to Score…</source>
-        <translation>Sesi P&amp;artisyona Aktar…</translation>
+        <translation>Sesi &amp;Notaya Aktar…</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectuiactions.cpp" line="118"/>
         <source>Import Audio to Score</source>
-        <translation>Sesi Partisyona Aktar</translation>
+        <translation>Sesi Notaya Aktar</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectuiactions.cpp" line="128"/>
+        <location filename="../../src/project/internal/projectuiactions.cpp" line="117"/>
         <source>Project propert&amp;ies…</source>
         <translation>Tasarı &amp;özellikleri…</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectuiactions.cpp" line="129"/>
+        <location filename="../../src/project/internal/projectuiactions.cpp" line="118"/>
         <source>Project properties</source>
         <translation>Tasarı özellikleri</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectuiactions.cpp" line="134"/>
+        <location filename="../../src/project/internal/projectuiactions.cpp" line="123"/>
         <source>&amp;Print…</source>
         <translation>&amp;Yazdır…</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectuiactions.cpp" line="135"/>
+        <location filename="../../src/project/internal/projectuiactions.cpp" line="124"/>
         <source>Print</source>
         <translation>Yazdır</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectuiactions.cpp" line="141"/>
+        <location filename="../../src/project/internal/projectuiactions.cpp" line="130"/>
         <source>&amp;Clear list of recent files</source>
         <translation>Son dosyalar listesini &amp;temizle</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectuiactions.cpp" line="142"/>
+        <location filename="../../src/project/internal/projectuiactions.cpp" line="131"/>
         <source>Clear list of recent files</source>
         <translation>Son dosyalar listesini temizle</translation>
     </message>
@@ -9757,7 +9763,7 @@ asla sola hizalama</translation>
     <message>
         <location filename="../../src/appshell/qml/MuseScore/AppShell/HomePage/HomeMenu.qml" line="91"/>
         <source>Scores</source>
-        <translation>Partisyonlar</translation>
+        <translation>Notalar</translation>
     </message>
     <message>
         <location filename="../../src/appshell/qml/MuseScore/AppShell/HomePage/HomeMenu.qml" line="92"/>
@@ -9796,29 +9802,33 @@ asla sola hizalama</translation>
     </message>
     <message>
         <location filename="../../src/appshell/qml/MuseScore/AppShell/MainToolBar.qml" line="67"/>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/WindowContent.qml" line="67"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/WindowContent.qml" line="68"/>
         <source>Main toolbar</source>
         <translation>Ana araç çubuğu</translation>
     </message>
     <message>
         <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="121"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationReviewPage/NotationReviewPage.qml" line="50"/>
         <location filename="../../src/appshell/qml/MuseScore/AppShell/PublishPage/PublishPage.qml" line="56"/>
         <source>Notation toolbar</source>
         <translation>Nota araç çubuğu</translation>
     </message>
     <message>
         <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="143"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationReviewPage/NotationReviewPage.qml" line="74"/>
         <location filename="../../src/appshell/qml/MuseScore/AppShell/PublishPage/PublishPage.qml" line="78"/>
         <source>Playback controls</source>
         <translation>Çalma denetçileri</translation>
     </message>
     <message>
         <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="170"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationReviewPage/NotationReviewPage.qml" line="106"/>
         <source>Extensions toolbar</source>
         <translation>Uzantılar araç çubuğu</translation>
     </message>
     <message>
         <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationPage/NotationPage.qml" line="198"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/NotationReviewPage/NotationReviewPage.qml" line="140"/>
         <source>Undo/redo</source>
         <translation>Geri al/ileri al</translation>
     </message>
@@ -9909,71 +9919,71 @@ asla sola hizalama</translation>
         <translation>Alıcı tarafından destekleniyorsa MIDI 2.0 çıkışı üretin</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/internal/applicationactioncontroller.cpp" line="343"/>
+        <location filename="../../src/appshell/internal/applicationactioncontroller.cpp" line="360"/>
         <source>Are you sure you want to revert to factory settings?</source>
         <translation>Fabrika ayarlarına dönmek istediğinize emin misiniz?</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/internal/applicationactioncontroller.cpp" line="344"/>
+        <location filename="../../src/appshell/internal/applicationactioncontroller.cpp" line="361"/>
         <source>This action will reset all your app preferences and delete all custom palettes and custom shortcuts. The list of recent scores will also be cleared.
 
 This action will not delete any of your scores.</source>
-        <translation>Bu eylem, tüm uygulama tercihlerinizi sıfırlar ve tüm özel paletleri ve özel kısayolları siler. Son partisyon listesi de temizlenecektir.
+        <translation>Bu eylem, tüm uygulama tercihlerinizi sıfırlar ve tüm özel paletleri ve özel kısayolları siler. Son nota listesi de temizlenecektir.
 
-Bu işlem partisyonlarınızın hiçbirini silmez.</translation>
+Bu işlem notalarınızın hiçbirini silmez.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/internal/applicationactioncontroller.cpp" line="354"/>
+        <location filename="../../src/appshell/internal/applicationactioncontroller.cpp" line="371"/>
         <source>Revert</source>
         <translation>Geri al</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/internal/applicationactioncontroller.cpp" line="356"/>
+        <location filename="../../src/appshell/internal/applicationactioncontroller.cpp" line="373"/>
         <source>Revert to factory settings</source>
         <translation>Fabrika ayarlarına dön</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/internal/applicationactioncontroller.cpp" line="368"/>
+        <location filename="../../src/appshell/internal/applicationactioncontroller.cpp" line="385"/>
         <source>Would you like to restart MuseScore Studio now?</source>
         <translation>MuseScore Studio&apos;yu şimdi yeniden başlatmak ister misiniz?</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/internal/applicationactioncontroller.cpp" line="369"/>
+        <location filename="../../src/appshell/internal/applicationactioncontroller.cpp" line="386"/>
         <source>MuseScore Studio needs to be restarted for these changes to take effect.</source>
         <translation>Bu değişikliklerin etkili olması için MuseScore Studio&apos;nun yeniden başlatılması gerekiyor.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/internal/applicationactioncontroller.cpp" line="374"/>
+        <location filename="../../src/appshell/internal/applicationactioncontroller.cpp" line="391"/>
         <source>Restart</source>
         <translation>Yeniden başlat</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/internal/startupscenario.cpp" line="332"/>
+        <location filename="../../src/appshell/internal/startupscenario.cpp" line="330"/>
         <source>The previous session quit unexpectedly.</source>
         <translation>Önceki oturum beklenmedik şekilde sonlandırıldı.</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/internal/startupscenario.cpp" line="333"/>
+        <location filename="../../src/appshell/internal/startupscenario.cpp" line="331"/>
         <source>Do you want to restore the session?</source>
         <translation>Oturumu geri yüklemek istiyor musunuz?</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/maintoolbarmodel.cpp" line="90"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/maintoolbarmodel.cpp" line="105"/>
         <source>Home</source>
         <translation>Başlangıç</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/maintoolbarmodel.cpp" line="91"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/maintoolbarmodel.cpp" line="106"/>
         <source>Score</source>
-        <translation>Partisyon</translation>
+        <translation>Nota</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/maintoolbarmodel.cpp" line="92"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/maintoolbarmodel.cpp" line="107"/>
         <source>Publish</source>
         <translation>Yayınla</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/maintoolbarmodel.cpp" line="95"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/maintoolbarmodel.cpp" line="110"/>
         <source>DevTools</source>
         <translation>Geliştirici Araçları</translation>
     </message>
@@ -9985,7 +9995,7 @@ Bu işlem partisyonlarınızın hiçbirini silmez.</translation>
     <message>
         <location filename="../../src/appshell/widgets/splashscreen/newinstanceloadingscreenview.cpp" line="40"/>
         <source>Loading new score…‎</source>
-        <translation>Yeni partisyon yükleniyor...</translation>
+        <translation>Yeni nota yükleniyor...</translation>
     </message>
     <message>
         <location filename="../../src/appshell/widgets/splashscreen/newinstanceloadingscreenview.cpp" line="44"/>
@@ -9995,7 +10005,7 @@ Bu işlem partisyonlarınızın hiçbirini silmez.</translation>
     <message>
         <location filename="../../src/appshell/widgets/splashscreen/newinstanceloadingscreenview.cpp" line="50"/>
         <source>Loading score…‎</source>
-        <translation>Partisyon yükleniyor…</translation>
+        <translation>Nota yükleniyor…</translation>
     </message>
     <message>
         <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="214"/>
@@ -10007,7 +10017,7 @@ Bu işlem partisyonlarınızın hiçbirini silmez.</translation>
         <source>This action will reset all your app preferences and delete all custom shortcuts. It will not delete any of your scores.
 
 This action cannot be undone.</source>
-        <translation>Bu işlem, tüm uygulama tercihlerinizi sıfırlayacak ve tüm özel kısayolları silecektir. Partisyonlarınızın hiçbiri silinmez.
+        <translation>Bu işlem, tüm uygulama tercihlerinizi sıfırlayacak ve tüm özel kısayolları silecektir. Notalarınızın hiçbiri silinmez.
 
 Bu eylem geri alınamaz.</translation>
     </message>
@@ -10121,7 +10131,7 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
     <message>
         <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/PlaybackPage.qml" line="32"/>
         <source>Discover new sound libraries in MuseHub and enjoy realistic score playback</source>
-        <translation>MuseHub&apos;daki yeni ses kitaplığını keşfedin ve gerçekçi çalınan partisyonların keyfini çıkarın</translation>
+        <translation>MuseHub&apos;daki yeni ses kitaplığını keşfedin ve gerçekçi çalınan notaların keyfini çıkarın</translation>
     </message>
     <message>
         <location filename="../../src/appshell/qml/MuseScore/AppShell/FirstLaunchSetup/PlaybackPage.qml" line="36"/>
@@ -10195,54 +10205,54 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
 <context>
     <name>appshell/menu/add</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="334"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="333"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="205"/>
         <source>&amp;Notes</source>
         <translation>&amp;Notalar</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="335"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="334"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="206"/>
         <source>&amp;Intervals</source>
         <translation>&amp;Aralıklar</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="336"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="335"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="207"/>
         <source>T&amp;uplets</source>
         <translation>&amp;Düzensiz guruplar</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="338"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="337"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="209"/>
         <source>&amp;Measures</source>
         <translation>&amp;Ölçüler</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="339"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="338"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="210"/>
         <source>&amp;Frames</source>
         <translation>&amp;Çerçeveler</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="340"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="339"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="211"/>
         <source>&amp;Text</source>
         <translation>&amp;Metin</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="341"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="340"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="212"/>
         <source>&amp;Lines</source>
         <translation>Ç&amp;izgiler</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="342"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="341"/>
         <source>&amp;Chords and fretboard diagrams</source>
         <translation>Akor ve akor &amp;şeması</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="346"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="345"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="215"/>
         <source>&amp;Add</source>
         <translation>&amp;Ekle</translation>
@@ -10259,52 +10269,52 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
 <context>
     <name>appshell/menu/diagnostics</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="498"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="497"/>
         <source>&amp;System</source>
         <translation>&amp;Sistem</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="510"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="509"/>
         <source>&amp;MuseSampler</source>
         <translation>&amp;MuseSampler</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="567"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="566"/>
         <source>A&amp;ctions</source>
         <translation>E&amp;ylemler</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="568"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="567"/>
         <source>&amp;Accessibility</source>
         <translation>&amp;Erişebilirlik</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="569"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="568"/>
         <source>&amp;Engraving</source>
         <translation>&amp;Gravür</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="570"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="569"/>
         <source>E&amp;xtensions</source>
         <translation>E&amp;klentiler</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="571"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="570"/>
         <source>Auto&amp;bot</source>
         <translation>Auto&amp;bot</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="574"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="573"/>
         <source>&amp;VST</source>
         <translation>&amp;VST</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="577"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="576"/>
         <source>&amp;Audio</source>
         <translation>&amp;Ses</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="581"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="580"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="291"/>
         <source>&amp;Diagnostics</source>
         <translation>&amp;Tanı</translation>
@@ -10313,7 +10323,7 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
 <context>
     <name>appshell/menu/edit</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="266"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="265"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="143"/>
         <source>&amp;Edit</source>
         <translation>D&amp;üzen</translation>
@@ -10337,7 +10347,7 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
         <translation>&amp;Çevrimiçi yayınla</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="223"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="222"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="120"/>
         <source>&amp;File</source>
         <translation>&amp;Dosya</translation>
@@ -10346,13 +10356,13 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
 <context>
     <name>appshell/menu/format</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="362"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="361"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="231"/>
         <source>Str&amp;etch</source>
         <translation>&amp;Esnetme</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="373"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="372"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="239"/>
         <source>F&amp;ormat</source>
         <translation>&amp;Biçimlendirme</translation>
@@ -10361,7 +10371,7 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
 <context>
     <name>appshell/menu/help</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="484"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="483"/>
         <source>&amp;Help</source>
         <translation>&amp;Yardım</translation>
     </message>
@@ -10369,7 +10379,7 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
 <context>
     <name>appshell/menu/plugins</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="431"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="430"/>
         <source>&amp;Plugins</source>
         <translation>E&amp;klentiler</translation>
     </message>
@@ -10377,24 +10387,24 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
 <context>
     <name>appshell/menu/tools</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="404"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="403"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="264"/>
         <source>&amp;Voices</source>
         <translation>&amp;Sesler</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="405"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="404"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="265"/>
         <source>&amp;Measures</source>
         <translation>&amp;Ölçüler</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="413"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="412"/>
         <source>Enharmonic spelling</source>
         <translation>Sesteş yazım</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="426"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="425"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="282"/>
         <source>&amp;Tools</source>
         <translation>&amp;Araçlar</translation>
@@ -10403,25 +10413,25 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
 <context>
     <name>appshell/menu/view</name>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="316"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="315"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="187"/>
         <source>&amp;Toolbars</source>
         <translation>A&amp;raç çubukları</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="320"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="319"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="191"/>
         <source>W&amp;orkspaces</source>
         <translation>Çalı&amp;şma alanları</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="324"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="323"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="195"/>
         <source>&amp;Show</source>
         <translation>Göst&amp;er</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="328"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="327"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="199"/>
         <source>&amp;View</source>
         <translation>&amp;Görünüm</translation>
@@ -10470,12 +10480,12 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
     <message>
         <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="52"/>
         <source>Save your scores privately on MuseScore.com to revisit past versions and invite others to view and comment – and when you’re ready, share your music with the world.</source>
-        <translation>Partisyonlarınızı özel olarak  MuseScore.com &apos;a kaydedin; böylece geçmiş sürümlere geri dönebilir, başkalarını görüntülemeye ve yorum yapmaya davet edebilir ve hazır olduğunuzda müziğinizi tüm dünyayla paylaşabilirsiniz.</translation>
+        <translation>Notalarınız özel olarak  MuseScore.com &apos;a kaydedin; böylece geçmiş sürümlere geri dönebilir, başkalarını görüntülemeye ve yorum yapmaya davet edebilir ve hazır olduğunuzda müziğinizi tüm dünyayla paylaşabilirsiniz.</translation>
     </message>
     <message>
         <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="54"/>
         <source>View my scores online</source>
-        <translation>Partisyonlarımı çevrimiçi görüntüle</translation>
+        <translation>Notalarımı çevrimiçi görüntüle</translation>
     </message>
     <message>
         <location filename="../../src/appshell/qml/MuseScore/AppShell/welcomedialogmodel.cpp" line="42"/>
@@ -10630,19 +10640,19 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
         <translation>Hesabım</translation>
     </message>
     <message>
-        <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="177"/>
+        <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="206"/>
         <source>Sign in buttons</source>
         <translation>Oturum açma düğmeleri</translation>
     </message>
     <message>
-        <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="184"/>
+        <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="213"/>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudItem.qml" line="187"/>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/RequireAuthorizationDialog.qml" line="75"/>
         <source>Create account</source>
         <translation>Hesap oluştur</translation>
     </message>
     <message>
-        <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="194"/>
+        <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="223"/>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudItem.qml" line="159"/>
         <source>Sign in</source>
         <translation>Oturum açın</translation>
@@ -10682,7 +10692,7 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
 <context>
     <name>debugOption</name>
     <message>
-        <location filename="../../src/notation/internal/notationinteraction.cpp" line="8437"/>
+        <location filename="../../src/notation/internal/notationinteraction.cpp" line="8441"/>
         <source>Toggle show gap rests</source>
         <translation>Boşluk suslarını aç/kapat</translation>
     </message>
@@ -10720,7 +10730,7 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
     <message>
         <location filename="../../src/engraving/accessibility/accessibleroot.cpp" line="109"/>
         <source>Score</source>
-        <translation>Partisyon</translation>
+        <translation>Nota</translation>
     </message>
     <message>
         <location filename="../../src/engraving/accessibility/accessibleroot.cpp" line="145"/>
@@ -10755,22 +10765,22 @@ Published under the &lt;a href=&quot;%1&quot;&gt;GNU General Public License vers
         <translation>Seslendirme</translation>
     </message>
     <message>
-        <location filename="../../src/engraving/dom/barline.cpp" line="1030"/>
+        <location filename="../../src/engraving/dom/barline.cpp" line="1029"/>
         <location filename="../../src/engraving/dom/chordrest.cpp" line="1131"/>
         <location filename="../../src/engraving/dom/chordrest.cpp" line="1142"/>
         <location filename="../../src/engraving/dom/note.cpp" line="3504"/>
         <location filename="../../src/engraving/dom/note.cpp" line="3516"/>
-        <location filename="../../src/engraving/dom/segment.cpp" line="2543"/>
+        <location filename="../../src/engraving/dom/segment.cpp" line="2553"/>
         <source>Start of %1</source>
         <translation>%1 başlangıcı</translation>
     </message>
     <message>
-        <location filename="../../src/engraving/dom/barline.cpp" line="1033"/>
+        <location filename="../../src/engraving/dom/barline.cpp" line="1032"/>
         <location filename="../../src/engraving/dom/chordrest.cpp" line="1134"/>
         <location filename="../../src/engraving/dom/chordrest.cpp" line="1144"/>
         <location filename="../../src/engraving/dom/note.cpp" line="3508"/>
         <location filename="../../src/engraving/dom/note.cpp" line="3524"/>
-        <location filename="../../src/engraving/dom/segment.cpp" line="2558"/>
+        <location filename="../../src/engraving/dom/segment.cpp" line="2568"/>
         <source>End of %1</source>
         <translation>%1 sonu</translation>
     </message>
@@ -10795,30 +10805,36 @@ Perde %1 teller %2</translation>
     <message>
         <location filename="../../src/engraving/dom/check.cpp" line="145"/>
         <source>Full score</source>
-        <translation>Tüm partisyon</translation>
+        <translation>Tüm nota</translation>
     </message>
     <message>
         <location filename="../../src/engraving/dom/check.cpp" line="149"/>
         <source>Part score: %1</source>
         <extracomment>%1 is the name of a part score.</extracomment>
-        <translation>Oskestrasyon bölümü: %1</translation>
+        <translation>Orkestrasyon: %1</translation>
     </message>
     <message>
-        <location filename="../../src/engraving/dom/check.cpp" line="191"/>
+        <location filename="../../src/engraving/dom/check.cpp" line="190"/>
         <source>&lt;b&gt;Corrupted measure&lt;/b&gt;: %1, measure %2, staff %3.</source>
         <translation>&lt;b&gt;Bozuk ölçü&lt;/b&gt;: %1, ölçü %2, dizek %3.</translation>
     </message>
     <message>
-        <location filename="../../src/engraving/dom/check.cpp" line="199"/>
+        <location filename="../../src/engraving/dom/check.cpp" line="198"/>
         <source>&lt;b&gt;Incomplete measure&lt;/b&gt;: %1, measure %2, staff %3. Found: %4. Expected: %5.</source>
         <extracomment>%1 describes in which score the corruption is (either `Full score` or `&quot;[part name]&quot; part score`)</extracomment>
         <translation>&lt;b&gt;Tamamlanmamış ölçü&lt;/b&gt;: %1, ölçü %2, dizek %3. Bulunan: %4. Beklenen: %5.</translation>
     </message>
     <message>
-        <location filename="../../src/engraving/dom/check.cpp" line="213"/>
+        <location filename="../../src/engraving/dom/check.cpp" line="212"/>
         <source>&lt;b&gt;Voice too long&lt;/b&gt;: %1, measure %2, staff %3, voice %4. Found: %5. Expected: %6.</source>
         <extracomment>%1 describes in which score the corruption is (either `Full score` or `&quot;[part name]&quot; part score`)</extracomment>
         <translation>&lt;b&gt;Ses çok uzun&lt;/b&gt;: %1, ölçü %2, dizek %3, ses %4. Bulunan: %5. Beklenen: %6.</translation>
+    </message>
+    <message>
+        <location filename="../../src/engraving/dom/check.cpp" line="223"/>
+        <source>&lt;b&gt;Element outside measure&lt;/b&gt;: %1, measure %2, staff %3. Found at: %4. Expected between 0 and %5.</source>
+        <extracomment>%1 describes in which score the corruption is (either `Full score` or `&quot;[part name]&quot; part score`)</extracomment>
+        <translation>&lt;b&gt;Ölçü dışı öge&lt;/b&gt;: %1, ölçü %2, dizek %3. Bulunduğu yer: %4. 0 ile %5 arasında bekleniyor.</translation>
     </message>
     <message>
         <location filename="../../src/engraving/dom/chordrest.cpp" line="494"/>
@@ -11132,12 +11148,12 @@ Perde %1 teller %2</translation>
         <translation>amatörler için çok tiz</translation>
     </message>
     <message>
-        <location filename="../../src/engraving/dom/noteentry.cpp" line="386"/>
+        <location filename="../../src/engraving/dom/noteentry.cpp" line="389"/>
         <source>Note input will remove measure repeat</source>
         <translation>Nota girişi, ölçü tekrarını kaldıracak</translation>
     </message>
     <message>
-        <location filename="../../src/engraving/dom/noteentry.cpp" line="387"/>
+        <location filename="../../src/engraving/dom/noteentry.cpp" line="390"/>
         <source>This measure contains a measure repeat. If you enter notes here, it will be deleted. Do you want to continue?</source>
         <translation>Bu ölçü, bir ölçü tekrarı içerir. Buraya nota girerseniz silinecektir. Devam etmek istiyor musun?</translation>
     </message>
@@ -11157,7 +11173,7 @@ Perde %1 teller %2</translation>
         <translation>%1; Süresi: %2; %3</translation>
     </message>
     <message>
-        <location filename="../../src/engraving/dom/segment.cpp" line="2517"/>
+        <location filename="../../src/engraving/dom/segment.cpp" line="2527"/>
         <source>Annotations:</source>
         <translation>Ek açıklamalar:</translation>
     </message>
@@ -11380,7 +11396,7 @@ Perde %1 teller %2</translation>
         <source>start of score</source>
         <comment>partial tie menu</comment>
         <extracomment>Used at %1 in the string &quot;Tie to %1 (m. %2)&quot;</extracomment>
-        <translation>partisyonun başı</translation>
+        <translation>notanın başı</translation>
     </message>
     <message>
         <location filename="../../src/engraving/dom/tiejumppointlist.cpp" line="101"/>
@@ -11446,28 +11462,28 @@ Perde %1 teller %2</translation>
         <translation>%2 süresi için %1 oranına sahip düzensiz gurup oluşturulamıyor</translation>
     </message>
     <message>
-        <location filename="../../src/engraving/editing/edit.cpp" line="7976"/>
-        <location filename="../../src/engraving/editing/edit.cpp" line="8156"/>
+        <location filename="../../src/engraving/editing/edit.cpp" line="7980"/>
+        <location filename="../../src/engraving/editing/edit.cpp" line="8160"/>
         <source>Remove stale partial tie</source>
         <translation>Bozuk kısmi uzatma bağını kaldırın</translation>
     </message>
     <message>
-        <location filename="../../src/engraving/editing/edit.cpp" line="8042"/>
+        <location filename="../../src/engraving/editing/edit.cpp" line="8046"/>
         <source>Remove invalid incoming partial slur</source>
         <translation>Geçersiz gelen kısmi bağ çizgisini kaldır</translation>
     </message>
     <message>
-        <location filename="../../src/engraving/editing/edit.cpp" line="8050"/>
+        <location filename="../../src/engraving/editing/edit.cpp" line="8054"/>
         <source>Reset incoming partial slur</source>
         <translation>Giren kısmı hece bağını sıfırla</translation>
     </message>
     <message>
-        <location filename="../../src/engraving/editing/edit.cpp" line="8065"/>
+        <location filename="../../src/engraving/editing/edit.cpp" line="8069"/>
         <source>Remove invalid outgoing partial slur</source>
         <translation>Geçersiz giden kısmi bağ çizgisini kaldır</translation>
     </message>
     <message>
-        <location filename="../../src/engraving/editing/edit.cpp" line="8073"/>
+        <location filename="../../src/engraving/editing/edit.cpp" line="8077"/>
         <source>Reset outgoing partial slur</source>
         <translation>Çıkan kısmı hece bağını sıfırla</translation>
     </message>
@@ -11499,7 +11515,7 @@ Perde %1 teller %2</translation>
     <message>
         <location filename="../../src/engraving/engravingerrors.h" line="81"/>
         <source>This file was last saved in a version older than 2.0.0. You can convert this score by opening and then saving in MuseScore version 2.x. Visit the &lt;a href=&quot;%1&quot;&gt;MuseScore download page&lt;/a&gt; to obtain such a 2.x version.</source>
-        <translation>Bu dosya en son 2.0.0&apos;dan daha eski bir sürümde kaydedilmiştir. Bu partisyonu açıp MuseScore sürüm 2.x&apos;e kaydederek dönüştürebilirsiniz. Böyle bir 2.x sürümünü edinmek için &lt;a href=&quot;%1&quot;&gt;MuseScore indirme sayfasını&lt;/a&gt;  ziyaret edin.</translation>
+        <translation>Bu dosya en son 2.0.0&apos;dan daha eski bir sürümde kaydedilmiştir. Bu notayı açıp MuseScore sürüm 2.x&apos;e kaydederek dönüştürebilirsiniz. Böyle bir 2.x sürümünü edinmek için &lt;a href=&quot;%1&quot;&gt;MuseScore indirme sayfasını&lt;/a&gt;  ziyaret edin.</translation>
     </message>
     <message>
         <location filename="../../src/engraving/engravingerrors.h" line="88"/>
@@ -11539,7 +11555,7 @@ Perde %1 teller %2</translation>
     <message>
         <location filename="../../src/engraving/internal/engravingconfiguration.cpp" line="133"/>
         <source>Score grey color</source>
-        <translation>Partisyondaki gri renkler</translation>
+        <translation>Notadaki gri renkler</translation>
     </message>
     <message>
         <location filename="../../src/engraving/internal/engravingconfiguration.cpp" line="137"/>
@@ -11614,12 +11630,12 @@ Perde %1 teller %2</translation>
     <message numerus="yes">
         <location filename="../../src/engraving/types/typesconv.cpp" line="197"/>
         <source>score(s)</source>
-        <translation><numerusform>partisyonlar</numerusform><numerusform>partsiyon</numerusform></translation>
+        <translation><numerusform>nota(lar)</numerusform><numerusform>nota</numerusform></translation>
     </message>
     <message numerus="yes">
         <location filename="../../src/engraving/types/typesconv.cpp" line="198"/>
         <source>Score(s)</source>
-        <translation><numerusform>Partisyonlar</numerusform><numerusform>Partsiyon</numerusform></translation>
+        <translation><numerusform>Notalar</numerusform><numerusform>Nota</numerusform></translation>
     </message>
     <message numerus="yes">
         <location filename="../../src/engraving/types/typesconv.cpp" line="200"/>
@@ -17976,17 +17992,17 @@ Perde %1 teller %2</translation>
     <message>
         <location filename="../../src/engraving/dom/property.cpp" line="485"/>
         <source>position linked to main score</source>
-        <translation>konumu ana partisyona bağlı</translation>
+        <translation>konumu ana notaya bağlı</translation>
     </message>
     <message>
         <location filename="../../src/engraving/dom/property.cpp" line="486"/>
         <source>appearance linked to main score</source>
-        <translation>görünümü ana partisyona bağlı</translation>
+        <translation>görünümü ana notaya bağlı</translation>
     </message>
     <message>
         <location filename="../../src/engraving/dom/property.cpp" line="487"/>
         <source>text linked to main score</source>
-        <translation>metin ana partisyona bağlı</translation>
+        <translation>metin ana notaya bağlı</translation>
     </message>
     <message>
         <location filename="../../src/engraving/dom/property.cpp" line="488"/>
@@ -18011,7 +18027,7 @@ Perde %1 teller %2</translation>
     <message>
         <location filename="../../src/engraving/dom/property.cpp" line="494"/>
         <source>score font</source>
-        <translation>partisyon yazı tipi</translation>
+        <translation>nota yazı tipi</translation>
     </message>
     <message>
         <location filename="../../src/engraving/dom/property.cpp" line="495"/>
@@ -20713,7 +20729,9 @@ Perde %1 teller %2</translation>
         <location filename="../../src/notationscene/qml/MuseScore/NotationScene/SelectMeasuresCountDialog.qml" line="107"/>
         <location filename="../../src/playback/qml/MuseScore/Playback/SoundProfilesDialog.qml" line="261"/>
         <location filename="../../src/project/qml/MuseScore/Project/AudioGenerationSettingsDialog.qml" line="132"/>
+        <location filename="../../src/project/qml/MuseScore/Project/ConvertFileProcessingDialog.qml" line="194"/>
         <location filename="../../src/framework/global/internal/interactive.cpp" line="56"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="583"/>
         <source>OK</source>
         <translation>Tamam</translation>
     </message>
@@ -20732,22 +20750,24 @@ Perde %1 teller %2</translation>
         <translation>Sonraki</translation>
     </message>
     <message>
-        <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="219"/>
+        <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="248"/>
         <location filename="../../src/framework/learn/qml/Muse/Learn/internal/Playlist.qml" line="142"/>
         <location filename="../../src/musesounds/qml/MuseScore/MuseSounds/MuseSoundsPage.qml" line="202"/>
+        <location filename="../../src/project/internal/deletecloudscorescenario.cpp" line="73"/>
+        <location filename="../../src/project/tests/deletecloudscorescenario_tests.cpp" line="248"/>
         <source>Please check your internet connection or try again later.</source>
         <translation>Lütfen internet bağlantınızı kontrol edin veya daha sonra tekrar deneyin.</translation>
     </message>
     <message>
-        <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="210"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/RecentScoresView.qml" line="145"/>
+        <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="220"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/RecentScoresView.qml" line="179"/>
         <source>Size</source>
         <comment>file size</comment>
         <translation>Boyut</translation>
     </message>
     <message>
-        <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="231"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/RecentScoresView.qml" line="166"/>
+        <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="241"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/RecentScoresView.qml" line="200"/>
         <location filename="../../src/framework/uicomponents/qml/Muse/UiComponents/filteredflyoutmodel.cpp" line="63"/>
         <source>Unknown</source>
         <translation>Bilinmeyen</translation>
@@ -20757,11 +20777,13 @@ Perde %1 teller %2</translation>
         <location filename="../../src/framework/ui/qml/Muse/Ui/Dialogs/ProgressDialog.qml" line="98"/>
         <location filename="../../src/palette/qml/MuseScore/Palette/internal/CreateCustomPalettePopup.qml" line="87"/>
         <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/ConvertButtonBox.qml" line="34"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/ScoreListItem.qml" line="166"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/ScoreProcessingPlaceholder.qml" line="93"/>
         <location filename="../../src/project/qml/MuseScore/Project/NewScoreDialog.qml" line="147"/>
         <location filename="../../src/framework/global/internal/interactive.cpp" line="69"/>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="350"/>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="385"/>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="407"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="356"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="391"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="413"/>
         <source>Cancel</source>
         <translation>İptal</translation>
     </message>
@@ -20806,28 +20828,28 @@ Perde %1 teller %2</translation>
         <translation>Detayları göster</translation>
     </message>
     <message>
-        <location filename="../../src/framework/ui/qml/Muse/Ui/Dialogs/StandardDialogPanel.qml" line="92"/>
+        <location filename="../../src/framework/ui/qml/Muse/Ui/Dialogs/StandardDialogPanel.qml" line="97"/>
         <source>Question</source>
         <translation>Soru</translation>
     </message>
     <message>
-        <location filename="../../src/framework/ui/qml/Muse/Ui/Dialogs/StandardDialogPanel.qml" line="93"/>
         <location filename="../../src/framework/ui/qml/Muse/Ui/Dialogs/StandardDialogPanel.qml" line="98"/>
+        <location filename="../../src/framework/ui/qml/Muse/Ui/Dialogs/StandardDialogPanel.qml" line="103"/>
         <source>Information</source>
         <translation>Bilgi</translation>
     </message>
     <message>
-        <location filename="../../src/framework/ui/qml/Muse/Ui/Dialogs/StandardDialogPanel.qml" line="94"/>
+        <location filename="../../src/framework/ui/qml/Muse/Ui/Dialogs/StandardDialogPanel.qml" line="99"/>
         <source>Warning</source>
         <translation>Uyarı</translation>
     </message>
     <message>
-        <location filename="../../src/framework/ui/qml/Muse/Ui/Dialogs/StandardDialogPanel.qml" line="95"/>
+        <location filename="../../src/framework/ui/qml/Muse/Ui/Dialogs/StandardDialogPanel.qml" line="100"/>
         <source>Error</source>
         <translation>Hata</translation>
     </message>
     <message>
-        <location filename="../../src/framework/ui/qml/Muse/Ui/Dialogs/StandardDialogPanel.qml" line="204"/>
+        <location filename="../../src/framework/ui/qml/Muse/Ui/Dialogs/StandardDialogPanel.qml" line="209"/>
         <source>Don’t show this message again</source>
         <translation>Bu mesajı tekrar gösterme</translation>
     </message>
@@ -20841,6 +20863,7 @@ Perde %1 teller %2</translation>
         <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/NotationSwitchButton.qml" line="82"/>
         <location filename="../../src/notationscene/qml/MuseScore/NotationScene/internal/PartsBottomPanel.qml" line="52"/>
         <location filename="../../src/notationscene/qml/MuseScore/NotationScene/PartsDialog.qml" line="99"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/ScoreQualityFeedbackPanel.qml" line="141"/>
         <location filename="../../src/project/qml/MuseScore/Project/ProjectUploadedDialog.qml" line="266"/>
         <location filename="../../src/framework/global/internal/interactive.cpp" line="68"/>
         <source>Close</source>
@@ -20906,7 +20929,7 @@ Perde %1 teller %2</translation>
     </message>
     <message>
         <location filename="../../src/framework/workspace/qml/Muse/Workspace/WorkspacesDialog.qml" line="113"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/SelectFilePage.qml" line="150"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/SelectFilePage.qml" line="151"/>
         <source>Select</source>
         <translation>Seçiniz</translation>
     </message>
@@ -21223,9 +21246,9 @@ Perde %1 teller %2</translation>
         <location filename="../../src/musesounds/qml/MuseScore/MuseSounds/MuseSoundsPage.qml" line="215"/>
         <location filename="../../src/palette/qml/MuseScore/Palette/PalettesPanel.qml" line="129"/>
         <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/TitleListView.qml" line="129"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/ScoreGridItem.qml" line="293"/>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresGridView.qml" line="202"/>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresListView.qml" line="268"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/ScoreGridItem.qml" line="384"/>
+        <location filename="../../src/project/qml/MuseScore/Project/ScoresGridView.qml" line="251"/>
+        <location filename="../../src/project/qml/MuseScore/Project/ScoresListView.qml" line="310"/>
         <location filename="../../src/framework/uicomponents/qml/Muse/UiComponents/filteredflyoutmodel.cpp" line="130"/>
         <source>No results found</source>
         <translation>Sonuç bulunamadı</translation>
@@ -21238,6 +21261,8 @@ Perde %1 teller %2</translation>
     </message>
     <message>
         <location filename="../../src/playback/qml/MuseScore/Playback/internal/AudioProcessingProgressBar.qml" line="90"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/ScoreListItem.qml" line="156"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/ScoreProcessingPlaceholder.qml" line="80"/>
         <source>Processing…</source>
         <translation>İşleniyor…</translation>
     </message>
@@ -21273,6 +21298,7 @@ Perde %1 teller %2</translation>
     </message>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/AskSaveLocationTypeDialog.qml" line="128"/>
+        <location filename="../../src/project/qml/MuseScore/Project/ConvertFileProcessingDialog.qml" line="165"/>
         <source>Don’t show again</source>
         <translation>Tekrar gösterme</translation>
     </message>
@@ -21295,7 +21321,7 @@ Perde %1 teller %2</translation>
     </message>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/ProjectUploadedDialog.qml" line="108"/>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1407"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1429"/>
         <source>Success!</source>
         <translation>Başarılı!</translation>
     </message>
@@ -21412,7 +21438,11 @@ Perde %1 teller %2</translation>
         <translation>İptal</translation>
     </message>
     <message>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/ScoreListItem.qml" line="165"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/ScoreProcessingPlaceholder.qml" line="137"/>
         <location filename="../../src/framework/global/internal/interactive.cpp" line="66"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="600"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="623"/>
         <source>Retry</source>
         <translation>Yeniden dene</translation>
     </message>
@@ -21479,17 +21509,17 @@ Perde %1 teller %2</translation>
         <translation>Daha fazla göster…</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="255"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="298"/>
         <source>Move up</source>
         <translation>Yukarı taşı</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="269"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="312"/>
         <source>Move down</source>
         <translation>Aşağı taşı</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="284"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="327"/>
         <source>Select more</source>
         <translation>Daha fazla seç</translation>
     </message>
@@ -21503,9 +21533,25 @@ Perde %1 teller %2</translation>
         <translation>Kaldır</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="214"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="324"/>
         <source>Proceed</source>
         <translation>Devam ediyor</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="560"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="599"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="622"/>
+        <source>Dismiss</source>
+        <translation>Bırak</translation>
+    </message>
+    <message>
+        <source>Try again</source>
+        <translation>Tekrar deneyin</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/DeleteCloudScoreDialog.qml" line="121"/>
+        <source>Go back</source>
+        <translation>Geri dön</translation>
     </message>
 </context>
 <context>
@@ -23061,7 +23107,7 @@ pickup measure</source>
     <message>
         <location filename="../../src/importexport/mnx/internal/export/mnxexporter.cpp" line="103"/>
         <source>MNX export skipped because the score contains no exportable parts. (Tablature is not supported yet).</source>
-        <translation>MNX dışa aktarma atlandı çünkü partisyon dışa aktarılabilir bölümler içermiyor. (Tablatür henüz desteklenmiyor.)</translation>
+        <translation>MNX dışa aktarma atlandı çünkü nota dışa aktarılabilir bölümler içermiyor. (Tablatür henüz desteklenmiyor.)</translation>
     </message>
     <message>
         <location filename="../../src/importexport/mnx/internal/notationmnxreader.cpp" line="62"/>
@@ -23222,12 +23268,12 @@ pickup measure</source>
     <message>
         <location filename="../../src/inspector/qml/MuseScore/Inspector/common/InspectorPropertyView.qml" line="165"/>
         <source>Save as default style for this score</source>
-        <translation>Bu partisyon için varsayılan biçim olarak kaydet</translation>
+        <translation>Bu nota için varsayılan biçim olarak kaydet</translation>
     </message>
     <message>
         <location filename="../../src/inspector/qml/MuseScore/Inspector/common/InspectorPropertyView.qml" line="167"/>
         <source>This is set as the default style for this score</source>
-        <translation>Bu, bu partisyon için varsayılan biçim olarak ayarlanmıştır</translation>
+        <translation>Bu, bu nota için varsayılan biçim olarak ayarlanmıştır</translation>
     </message>
     <message>
         <location filename="../../src/inspector/qml/MuseScore/Inspector/common/OffsetSection.qml" line="36"/>
@@ -24203,7 +24249,7 @@ pickup measure</source>
     <message>
         <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameChordsTab.qml" line="114"/>
         <source>Add chord symbols to your score and they’ll automatically appear in the legend.</source>
-        <translation>Partisyonunuza akor simgeleri ekleyin, bunlar otomatik olarak listeleme bölümünde görünecektir.</translation>
+        <translation>Notanıza akor simgeleri ekleyin, bunlar otomatik olarak listeleme bölümünde görünecektir.</translation>
     </message>
     <message>
         <location filename="../../src/inspector/qml/MuseScore/Inspector/notation/frames/internal/FretFrameGapsSection.qml" line="53"/>
@@ -25365,7 +25411,7 @@ pickup measure</source>
     <message>
         <location filename="../../src/inspector/qml/MuseScore/Inspector/parts/PartsSettings.qml" line="57"/>
         <source>Synchronize with main score</source>
-        <translation>Ana partisyonla senkronize et</translation>
+        <translation>Ana notayla senkronize et</translation>
     </message>
     <message>
         <location filename="../../src/inspector/qml/MuseScore/Inspector/parts/PartsSettings.qml" line="82"/>
@@ -25380,7 +25426,7 @@ pickup measure</source>
     <message>
         <location filename="../../src/inspector/qml/MuseScore/Inspector/parts/PartsSettings.qml" line="115"/>
         <source>Exclude from score</source>
-        <translation>Pastisyondan hariç tut</translation>
+        <translation>Ana notadan hariç tut</translation>
     </message>
     <message>
         <location filename="../../src/inspector/qml/MuseScore/Inspector/score/HideEmptyStavesSettings.qml" line="51"/>
@@ -26296,12 +26342,12 @@ pickup measure</source>
     <message>
         <location filename="../../src/inspector/qml/MuseScore/Inspector/parts/partssettingsmodel.cpp" line="33"/>
         <source>Score and part synchronization</source>
-        <translation>Partisyon ve bölüm senkronizasyonu</translation>
+        <translation>Ana nota ve bölüm senkronizasyonu</translation>
     </message>
     <message>
         <location filename="../../src/inspector/qml/MuseScore/Inspector/score/scoreappearancesettingsmodel.cpp" line="34"/>
         <source>Score appearance</source>
-        <translation>Partisyon görünümü</translation>
+        <translation>Nota görünümü</translation>
     </message>
     <message>
         <location filename="../../src/inspector/qml/MuseScore/Inspector/text/textsettingsmodel.cpp" line="767"/>
@@ -26367,7 +26413,7 @@ pickup measure</source>
     <message>
         <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/ChooseInstrumentsPage.qml" line="177"/>
         <source>Add selected instruments to score</source>
-        <translation>Seçilen çalgıyı partisyona ekleyin</translation>
+        <translation>Seçilen çalgıyı notaya ekleyin</translation>
     </message>
     <message>
         <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/ChooseInstrumentsPage.qml" line="241"/>
@@ -26397,7 +26443,7 @@ pickup measure</source>
     <message>
         <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="50"/>
         <source>Your score</source>
-        <translation>Partisyonun</translation>
+        <translation>Senin notan</translation>
     </message>
     <message>
         <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="75"/>
@@ -26407,7 +26453,7 @@ pickup measure</source>
     <message>
         <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="91"/>
         <source>Remove selected instruments from score</source>
-        <translation>Seçilen çalgıyı partisyondan kaldır</translation>
+        <translation>Seçilen çalgıyı ana notadan kaldır</translation>
     </message>
     <message>
         <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentsOnScoreView.qml" line="141"/>
@@ -26564,19 +26610,19 @@ pickup measure</source>
     <message>
         <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/SystemObjectsLayerSettingsPopup.qml" line="60"/>
         <source>Display at this position on the score</source>
-        <translation>Partisyonun bu noktasında göster</translation>
+        <translation>Notanın bu noktasında göster</translation>
     </message>
     <message>
         <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/LayoutPanel.qml" line="135"/>
         <source>There are no instruments in your score. To choose some, press &lt;b&gt;Add&lt;/b&gt;, or use the keyboard shortcut %1.</source>
         <extracomment>Keep in sync with the text of the &quot;Add&quot; button at the top of the Layout panel (LayoutControlPanel.qml)</extracomment>
-        <translation>Partisyonunuzda çalgı yok. Çalgıları seçmek için &lt;b&gt;Ekle&lt;/b&gt;&apos;ye basın veya %1 klavye kısayolunu kullanın.</translation>
+        <translation>Notanızda çalgı yok. Çalgıları seçmek için &lt;b&gt;Ekle&lt;/b&gt;&apos;ye basın veya %1 klavye kısayolunu kullanın.</translation>
     </message>
     <message>
         <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/LayoutPanel.qml" line="139"/>
         <source>There are no instruments in your score. To choose some, press &lt;b&gt;Add&lt;/b&gt;.</source>
         <extracomment>Keep in sync with the text of the &quot;Add&quot; button at the top of the Layout panel (LayoutControlPanel.qml)</extracomment>
-        <translation>Partisyonunuzda çalgı yok. Çalgıları seçmek için &lt;b&gt;Ekle&lt;/b&gt;&apos;ye basın.</translation>
+        <translation>Notanızda çalgı yok. Çalgıları seçmek için &lt;b&gt;Ekle&lt;/b&gt;&apos;ye basın.</translation>
     </message>
     <message>
         <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/layoutpanelcontextmenumodel.cpp" line="182"/>
@@ -26601,7 +26647,7 @@ pickup measure</source>
     <message numerus="yes">
         <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/layoutpaneltreemodel.cpp" line="1036"/>
         <source>This will remove the instrument(s) from the full score and all part scores.</source>
-        <translation><numerusform>Bu, enstrümanı/enstrümanları tam notadan ve tüm parça notalarından kaldıracaktır.</numerusform><numerusform>Bu, enstrümanı/enstrümanları tam notadan ve tüm parça notalarından kaldıracaktır.</numerusform></translation>
+        <translation><numerusform>Bu, çalgıları ana notadan ve tüm orkestrasyondan kaldıracaktır.</numerusform><numerusform>Bu, çalgıyı ana notadan ve tüm orkestrasyondan kaldıracaktır.</numerusform></translation>
     </message>
     <message>
         <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/parttreeitem.cpp" line="258"/>
@@ -26652,12 +26698,12 @@ pickup measure</source>
     <message>
         <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="75"/>
         <source>Name on main score</source>
-        <translation>Ana partisyondaki isim</translation>
+        <translation>Ana notadaki isim</translation>
     </message>
     <message>
         <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="76"/>
         <source>Name on part score</source>
-        <translation>Oskestrasyondaki bölüm ismi</translation>
+        <translation>Oskestrasyondaki ismi</translation>
     </message>
     <message>
         <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/InstrumentSettingsPopup.qml" line="104"/>
@@ -26710,7 +26756,7 @@ pickup measure</source>
     <message>
         <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/StaffSettingsPopup.qml" line="109"/>
         <source>Voices visible in the score</source>
-        <translation>Bu partisyonda görünen sesler</translation>
+        <translation>Bu notada görünen sesler</translation>
     </message>
     <message>
         <location filename="../../src/instrumentsscene/qml/MuseScore/InstrumentsScene/internal/StaffSettingsPopup.qml" line="168"/>
@@ -26857,11 +26903,16 @@ Ayrıca, Mastering MuseScore, en iyi müziğinizi yaratmanıza yardımcı olacak
     </message>
     <message>
         <location filename="../../src/framework/musesampler/internal/musesampleractioncontroller.cpp" line="57"/>
+        <source>MuseSampler library could not be initialized, version %1</source>
+        <translation>MuseSampler kütüphanesi başlatılamadı, sürüm %1</translation>
+    </message>
+    <message>
+        <location filename="../../src/framework/musesampler/internal/musesampleractioncontroller.cpp" line="60"/>
         <source>Installed MuseSampler library is not supported, version %1</source>
         <translation>Yüklü MuseSampler kitaplığı desteklenmiyor, sürüm %1</translation>
     </message>
     <message>
-        <location filename="../../src/framework/musesampler/internal/musesampleractioncontroller.cpp" line="60"/>
+        <location filename="../../src/framework/musesampler/internal/musesampleractioncontroller.cpp" line="63"/>
         <source>MuseSampler library is not found</source>
         <translation>MuseSampler kitaplığı bulunamadı</translation>
     </message>
@@ -26884,50 +26935,90 @@ Ayrıca, Mastering MuseScore, en iyi müziğinizi yaratmanıza yardımcı olacak
         <translation>Üzgünüz, şu anda bu sesleri yükleyemiyoruz</translation>
     </message>
     <message>
-        <location filename="../../src/musesounds/internal/musesamplercheckupdatescenario.cpp" line="64"/>
-        <location filename="../../src/musesounds/internal/musesamplercheckupdatescenario.cpp" line="92"/>
+        <location filename="../../src/musesounds/internal/musesamplercheckstatusscenario.cpp" line="78"/>
+        <source>Troubleshoot</source>
+        <translation>Sorun giderme</translation>
+    </message>
+    <message>
+        <location filename="../../src/musesounds/internal/musesamplercheckstatusscenario.cpp" line="83"/>
+        <source>Open MuseSounds Manager</source>
+        <translation>MuseSounds Yöneticisini Aç</translation>
+    </message>
+    <message>
+        <location filename="../../src/musesounds/internal/musesamplercheckstatusscenario.cpp" line="85"/>
+        <source>To load MuseSounds, open MuseSounds Manager and check that you’re running the latest version. Update if needed and restart your machine.
+
+If the issue persists, follow the steps at the troubleshooting link below.</source>
+        <translation>MuseSounds&apos;u yüklemek için MuseSounds Yöneticisini açın ve en son sürümü kullandığınızdan emin olun. Gerekirse güncelleyin ve bilgisayarınızı yeniden başlatın.
+
+Sorun devam ederse, aşağıdaki sorun giderme bağlantısındaki adımları izleyin.
+</translation>
+    </message>
+    <message>
+        <location filename="../../src/musesounds/internal/musesamplercheckstatusscenario.cpp" line="90"/>
+        <source>Open MuseHub</source>
+        <translation>MuseHub&apos;ı aç</translation>
+    </message>
+    <message>
+        <location filename="../../src/musesounds/internal/musesamplercheckstatusscenario.cpp" line="92"/>
+        <source>To load MuseSounds, open MuseHub and check that you’re running the latest version. Update if needed and restart your machine.
+
+If the issue persists, follow the steps at the troubleshooting link below.</source>
+        <translation>MuseSounds&apos;u yüklemek için MuseHub&apos;ı açın ve en son sürümü kullandığınızdan emin olun. Gerekirse güncelleyin ve bilgisayarınızı yeniden başlatın.
+
+Sorun devam ederse, aşağıdaki sorun giderme bağlantısındaki adımları izleyin.
+</translation>
+    </message>
+    <message>
+        <location filename="../../src/musesounds/internal/musesamplercheckstatusscenario.cpp" line="103"/>
+        <source>MuseSounds could not be loaded</source>
+        <translation>MuseSounds yüklenemedi</translation>
+    </message>
+    <message>
+        <location filename="../../src/musesounds/internal/musesamplercheckstatusscenario.cpp" line="122"/>
+        <location filename="../../src/musesounds/internal/musesamplercheckstatusscenario.cpp" line="150"/>
         <source>Not now</source>
         <translation>Şimdi değil</translation>
     </message>
     <message>
-        <location filename="../../src/musesounds/internal/musesamplercheckupdatescenario.cpp" line="68"/>
-        <location filename="../../src/musesounds/internal/musesamplercheckupdatescenario.cpp" line="96"/>
+        <location filename="../../src/musesounds/internal/musesamplercheckstatusscenario.cpp" line="126"/>
+        <location filename="../../src/musesounds/internal/musesamplercheckstatusscenario.cpp" line="154"/>
         <source>Quit &amp; launch MuseSounds Manager</source>
         <translation>Çık ve MuseSounds Yöneticisi’ni başlat</translation>
     </message>
     <message>
-        <location filename="../../src/musesounds/internal/musesamplercheckupdatescenario.cpp" line="70"/>
+        <location filename="../../src/musesounds/internal/musesamplercheckstatusscenario.cpp" line="128"/>
         <source>To apply this update, MuseScore Studio will need to close briefly and MuseSounds Manager will open. Your MuseSounds libraries won’t work until the update is complete.</source>
         <translation>Bu güncellemeyi uygulamak için MuseScore Studio kısa bir süreliğine kapanacak ve MuseSounds Yöneticisi açılacak. Güncelleme tamamlanana kadar MuseSounds kitaplıklarınız çalışmayacak.</translation>
     </message>
     <message>
-        <location filename="../../src/musesounds/internal/musesamplercheckupdatescenario.cpp" line="74"/>
-        <location filename="../../src/musesounds/internal/musesamplercheckupdatescenario.cpp" line="103"/>
+        <location filename="../../src/musesounds/internal/musesamplercheckstatusscenario.cpp" line="132"/>
+        <location filename="../../src/musesounds/internal/musesamplercheckstatusscenario.cpp" line="161"/>
         <source>Quit &amp; launch MuseHub</source>
         <translation>Çık ve MuseHub’ı başlat</translation>
     </message>
     <message>
-        <location filename="../../src/musesounds/internal/musesamplercheckupdatescenario.cpp" line="76"/>
+        <location filename="../../src/musesounds/internal/musesamplercheckstatusscenario.cpp" line="134"/>
         <source>To apply this update, MuseScore Studio will need to close briefly and MuseHub will open. Your MuseSounds libraries won’t work until the update is complete.</source>
         <translation>Bu güncellemeyi uygulamak için MuseScore Studio kısa bir süreliğine kapanacak ve MuseHub açılacak. Güncelleme tamamlanana kadar MuseSounds kitaplıklarınız çalışmayacak.</translation>
     </message>
     <message>
-        <location filename="../../src/musesounds/internal/musesamplercheckupdatescenario.cpp" line="80"/>
+        <location filename="../../src/musesounds/internal/musesamplercheckstatusscenario.cpp" line="138"/>
         <source>MuseSounds needs an update</source>
         <translation>MuseSounds’un güncellenmesi gerekiyor</translation>
     </message>
     <message>
-        <location filename="../../src/musesounds/internal/musesamplercheckupdatescenario.cpp" line="98"/>
+        <location filename="../../src/musesounds/internal/musesamplercheckstatusscenario.cpp" line="156"/>
         <source>To keep MuseSounds running smoothly, MuseScore Studio needs to close briefly so MuseSounds Manager can apply the update. You’ll need to restart MuseScore Studio when the update is complete.</source>
         <translation>MuseSounds’un sorunsuz çalışmaya devam etmesi için, MuseScore Studio’nun kısa süreliğine kapanması gerekiyor. Böylece MuseSounds Yöneticisi güncellemeyi uygulayabilecek. Güncelleme tamamlandığında MuseScore Studio’yu yeniden başlatmanız gerekecek.</translation>
     </message>
     <message>
-        <location filename="../../src/musesounds/internal/musesamplercheckupdatescenario.cpp" line="105"/>
+        <location filename="../../src/musesounds/internal/musesamplercheckstatusscenario.cpp" line="163"/>
         <source>To keep MuseSounds running smoothly, MuseScore Studio needs to close briefly so MuseHub can apply the update. You’ll be prompted to relaunch MuseScore Studio when it’s ready.</source>
         <translation>MuseSounds’un sorunsuz çalışmaya devam etmesi için MuseScore Studio’nun kısa süreliğine kapanması gerekiyor. MuseHub güncellemeyi uyguladıktan sonra MuseScore Studio’yu yeniden başlatmanız istenecek.</translation>
     </message>
     <message>
-        <location filename="../../src/musesounds/internal/musesamplercheckupdatescenario.cpp" line="110"/>
+        <location filename="../../src/musesounds/internal/musesamplercheckstatusscenario.cpp" line="168"/>
         <source>An update for MuseSounds is available</source>
         <translation>MuseSounds için bir güncelleme mevcut</translation>
     </message>
@@ -26942,7 +27033,7 @@ Ayrıca, Mastering MuseScore, en iyi müziğinizi yaratmanıza yardımcı olacak
         <translation>Hayır teşekkürler</translation>
     </message>
     <message>
-        <location filename="../../src/musesounds/internal/musesoundsconfiguration.cpp" line="59"/>
+        <location filename="../../src/musesounds/internal/musesoundsconfiguration.cpp" line="62"/>
         <source>Show occasional MuseHub promotions</source>
         <translation>Ara sıra MuseHub promosyonlarını göster</translation>
     </message>
@@ -27000,12 +27091,12 @@ Ayrıca, Mastering MuseScore, en iyi müziğinizi yaratmanıza yardımcı olacak
     <message>
         <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/InsertMeasuresPopup.qml" line="85"/>
         <source>At start of score</source>
-        <translation>Partisyonun başına</translation>
+        <translation>Notanın başına</translation>
     </message>
     <message>
         <location filename="../../src/inspector/qml/MuseScore/Inspector/measures/InsertMeasuresPopup.qml" line="86"/>
         <source>At end of score</source>
-        <translation>Partisyonun sonuna</translation>
+        <translation>Notanın sonuna</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/qml/MuseScore/NotationScene/EditGridSizeDialog.qml" line="54"/>
@@ -27954,44 +28045,44 @@ Ayrıca, Mastering MuseScore, en iyi müziğinizi yaratmanıza yardımcı olacak
         <translation>Yakınlaştırma menüsü</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="705"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="704"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="367"/>
         <source>Insert &amp;after selection…</source>
         <translation>Seçimden &amp;sonrasına ekle…</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="704"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="703"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="368"/>
         <source>Insert &amp;before selection…</source>
         <translation>Seçimden &amp;öncesine ekle…</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="701"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="700"/>
         <source>&amp;Insert one measure before selection</source>
         <translation>Seç&amp;imden önce bir ölçü ekle</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="702"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="701"/>
         <source>Insert &amp;one measure at end of score</source>
-        <translation>Partisyo&amp;nun sonuna bir ölçü ekle</translation>
+        <translation>Nota&amp;nın sonuna bir ölçü ekle</translation>
+    </message>
+    <message>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="706"/>
+        <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="370"/>
+        <source>Insert at &amp;start of score…</source>
+        <translation>Notanın &amp;başına ekle...</translation>
     </message>
     <message>
         <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="707"/>
-        <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="370"/>
-        <source>Insert at &amp;start of score…</source>
-        <translation>Partisyonun &amp;başına ekle...</translation>
-    </message>
-    <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="708"/>
         <location filename="../../src/web/appshell/view/appmenumodel.cpp" line="371"/>
         <source>Insert at &amp;end of score…</source>
-        <translation>Partisyonun s&amp;onuna ekle…</translation>
+        <translation>Notanın s&amp;onuna ekle…</translation>
     </message>
     <message>
-        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="722"/>
+        <location filename="../../src/appshell/qml/MuseScore/AppShell/appmenumodel.cpp" line="721"/>
         <location filename="../../src/notationscene/qml/MuseScore/NotationScene/noteinputbarmodel.cpp" line="685"/>
         <source>Insert at end of score</source>
-        <translation>Partisyonun sonuna ekle</translation>
+        <translation>Notanın sonuna ekle</translation>
     </message>
     <message>
         <location filename="../../src/appshell/qml/MuseScore/AppShell/notationstatusbarmodel.cpp" line="168"/>
@@ -28216,7 +28307,7 @@ Ayrıca, Mastering MuseScore, en iyi müziğinizi yaratmanıza yardımcı olacak
     <message>
         <location filename="../../src/notation/internal/mscoreerrorscontroller.cpp" line="159"/>
         <source>This score already has part scores. Changing local time signatures while part scores are present is not yet supported.</source>
-        <translation>Bu partinin zaten oskestrasyonu var. Oskestrasyon varken yerel ölçü göstergelerini değiştirme henüz desteklenmemektedir.</translation>
+        <translation>Bu notanın zaten oskestrasyonu var. Oskestrasyon varken yerel ölçü göstergelerini değiştirme henüz desteklenmemektedir.</translation>
     </message>
     <message>
         <location filename="../../src/notation/internal/mscoreerrorscontroller.cpp" line="163"/>
@@ -28433,47 +28524,47 @@ Ayrıca, Mastering MuseScore, en iyi müziğinizi yaratmanıza yardımcı olacak
         <translation>%1 %2</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="993"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1000"/>
         <source>Cannot create tuplet</source>
         <translation>Düzensiz gurup oluşturulamıyor</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="993"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1000"/>
         <source>Note value is too short</source>
         <translation>Nota değeri çok kısa</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1492"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1499"/>
         <source>All Supported Files</source>
         <translation>Desteklenen Tüm Dosyalar</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1493"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1500"/>
         <source>Scalable Vector Graphics</source>
         <translation>Ölçeklendirilebilir Vektör Grafiği</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1494"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1501"/>
         <source>JPEG</source>
         <translation>JPEG</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1495"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1502"/>
         <source>PNG Bitmap Graphic</source>
         <translation>PNG Bitmap Grafiği</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1496"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1503"/>
         <source>Bitmap</source>
         <translation>Bitmap</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1497"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1504"/>
         <source>TIFF</source>
         <translation>TIFF</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1498"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1505"/>
         <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/elementsselectionfiltermodel.cpp" line="51"/>
         <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/notesinchordselectionfiltermodel.cpp" line="147"/>
         <location filename="../../src/notationscene/qml/MuseScore/NotationScene/selectionfilter/voicesselectionfiltermodel.cpp" line="49"/>
@@ -28481,53 +28572,53 @@ Ayrıca, Mastering MuseScore, en iyi müziğinizi yaratmanıza yardımcı olacak
         <translation>Hepsi</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1500"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1507"/>
         <source>Insert Image</source>
         <translation>Resim ekle</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1835"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1842"/>
         <source>MuseScore style files</source>
         <translation>MuseScore biçim dosyaları</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1836"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1843"/>
         <source>MuseScore style file</source>
         <translation>MuseScore biçim dosyası</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1839"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1846"/>
         <location filename="../../src/notationscene/qml/MuseScore/NotationScene/styledialog/chordsymbolspagemodel.cpp" line="123"/>
         <source>Load style</source>
         <translation>Biçim yükle</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1840"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1847"/>
         <source>Save style</source>
         <translation>Biçim kaydet</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1850"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1857"/>
         <source>The style file could not be loaded.</source>
         <translation>Biçim dosyası yüklenemedi.</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1856"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1863"/>
         <source>Since this style file is from a different version of MuseScore Studio, your score is not guaranteed to display correctly.</source>
-        <translation>Bu biçim dosyası MuseScore Studio&apos;nun farklı bir sürümüne ait olduğundan partisyonunuzun doğru şekilde görüntüleneceği garanti edilmez.</translation>
+        <translation>Bu biçim dosyası MuseScore Studio&apos;nun farklı bir sürümüne ait olduğundan notanızın doğru şekilde görüntüleneceği garanti edilmez.</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1858"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1865"/>
         <source>Click OK to load anyway.</source>
         <translation>Yine de yüklemek için Tamam&apos;ı tıklayın.</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1876"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1883"/>
         <source>The style file could not be saved.</source>
         <translation>Biçim dosyası kaydedilemedi.</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1877"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="1884"/>
         <source>An error occurred.</source>
         <translation>Bir hata oluştu.</translation>
     </message>
@@ -28606,12 +28697,12 @@ Ayrıca, Mastering MuseScore, en iyi müziğinizi yaratmanıza yardımcı olacak
     <message>
         <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="298"/>
         <source>At start of score…</source>
-        <translation>Partisyonun başına...</translation>
+        <translation>Notanın başına...</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="299"/>
         <source>At end of score…</source>
-        <translation>Partisyonun sonuna...</translation>
+        <translation>Notanın sonuna...</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/qml/MuseScore/NotationScene/notationcontextmenumodel.cpp" line="308"/>
@@ -29141,12 +29232,12 @@ Ayrıca, Mastering MuseScore, en iyi müziğinizi yaratmanıza yardımcı olacak
     <message>
         <location filename="../../src/notationscene/widgets/editstyle.cpp" line="1407"/>
         <source>MuseScore Studio version this score was last saved with</source>
-        <translation>Bu partisyonun en son kaydedildiği MuseScore Studio sürümü</translation>
+        <translation>Bu notanın en son kaydedildiği MuseScore Studio sürümü</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/widgets/editstyle.cpp" line="1409"/>
         <source>MuseScore Studio revision this score was last saved with</source>
-        <translation>Bu partisyonun en son kaydedildiği MuseScore Studio revizyonu</translation>
+        <translation>Bu notanın en son kaydedildiği MuseScore Studio revizyonu</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/widgets/editstyle.cpp" line="1411"/>
@@ -29161,7 +29252,7 @@ Ayrıca, Mastering MuseScore, en iyi müziğinizi yaratmanıza yardımcı olacak
     <message>
         <location filename="../../src/notationscene/widgets/editstyle.cpp" line="1415"/>
         <source>Type $:tag: into a field above, replacing the word ‘tag’ with one of the labels below. Its associated metadata will be shown on your score.</source>
-        <translation>Üsteki alanlardan birine $:tag: yazın ve ‘tag’ kelimesini aşağıdaki etiketlerden biriyle değiştirin. İlgili üstveri partisyonunuzda gösterilecektir.</translation>
+        <translation>Üsteki alanlardan birine $:tag: yazın ve ‘tag’ kelimesini aşağıdaki etiketlerden biriyle değiştirin. İlgili üstveri notanızda gösterilecektir.</translation>
     </message>
 </context>
 <context>
@@ -30518,12 +30609,12 @@ Ayrıca, Mastering MuseScore, en iyi müziğinizi yaratmanıza yardımcı olacak
     <message>
         <location filename="../../src/notationscene/widgets/timeline.cpp" line="600"/>
         <source>Hide instrument in score</source>
-        <translation>Çalgıyı partisyonda gizle</translation>
+        <translation>Çalgıyı notada gizle</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/widgets/timeline.cpp" line="603"/>
         <source>Show instrument in score</source>
-        <translation>Çalgıyı partisyonda göster</translation>
+        <translation>Çalgıyı notada göster</translation>
     </message>
     <message>
         <location filename="../../src/notationscene/widgets/timeline.cpp" line="765"/>
@@ -30730,7 +30821,7 @@ Ayrıca, Mastering MuseScore, en iyi müziğinizi yaratmanıza yardımcı olacak
     <message>
         <location filename="../../src/palette/qml/MuseScore/Palette/internal/MoreElementsPopup.qml" line="315"/>
         <source>Drag items to the palette or directly on your score</source>
-        <translation>Ögeleri palete veya doğrudan partisyonunuzun üzerine sürükleyin</translation>
+        <translation>Ögeleri palete veya doğrudan notanın üzerine sürükleyin</translation>
     </message>
     <message>
         <location filename="../../src/palette/qml/MuseScore/Palette/internal/PaletteGridView.qml" line="139"/>
@@ -33597,7 +33688,7 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/playback/qml/MuseScore/Playback/SoundProfilesDialog.qml" line="211"/>
         <source>Set as default for new scores</source>
-        <translation>Yeni partisyonlar için varsayılan olarak ayarla</translation>
+        <translation>Yeni notalar için varsayılan olarak ayarla</translation>
     </message>
     <message>
         <location filename="../../src/playback/qml/MuseScore/Playback/SoundProfilesDialog.qml" line="247"/>
@@ -33607,7 +33698,7 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/playback/internal/onlinesoundscontroller.cpp" line="180"/>
         <source>This may be due to a poor internet connection or server issue. Your score will still play, but some sounds may be missing. Please check your connection, and make sure MuseHub is running and you are logged in. &lt;a href=&quot;%1&quot;&gt;Learn more here&lt;/a&gt;.</source>
-        <translation>Bu, zayıf bir internet bağlantısından veya sunucu sorunundan kaynaklanıyor olabilir. Partisyonunuz yine de çalınacaktır, ancak bazı sesler eksik olabilir. Lütfen bağlantınızı kontrol edin, MuseHub’ın çalıştığından ve oturum açtığınızdan emin olun. &lt;a href=&quot;%1&quot;&gt;Daha fazla bilgi için buraya bakın&lt;/a&gt;.</translation>
+        <translation>Bu, zayıf bir internet bağlantısından veya sunucu sorunundan kaynaklanıyor olabilir. Notanız yine de çalınacaktır, ancak bazı sesler eksik olabilir. Lütfen bağlantınızı kontrol edin, MuseHub’ın çalıştığından ve oturum açtığınızdan emin olun. &lt;a href=&quot;%1&quot;&gt;Daha fazla bilgi için buraya bakın&lt;/a&gt;.</translation>
     </message>
     <message>
         <location filename="../../src/playback/internal/onlinesoundscontroller.cpp" line="186"/>
@@ -33634,31 +33725,31 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/playback/internal/onlinesoundscontroller.cpp" line="245"/>
         <source>This will delete online sounds data stored on your computer for this score. Online sounds processing will try to restart immediately.</source>
-        <translation>Bu işlem, bu partisyona ait bilgisayarınızda depolanan çevrimiçi ses verilerini silecek. Çevrimiçi ses işleme hemen yeniden başlatılmaya çalışılacaktır.</translation>
+        <translation>Bu işlem, bu notaya ait bilgisayarınızda depolanan çevrimiçi ses verilerini silecek. Çevrimiçi ses işleme hemen yeniden başlatılmaya çalışılacaktır.</translation>
     </message>
     <message>
-        <location filename="../../src/playback/internal/playbackcontroller.cpp" line="91"/>
+        <location filename="../../src/playback/internal/playbackcontroller.cpp" line="93"/>
         <source>Reverb</source>
         <translation>Yankı</translation>
     </message>
     <message>
-        <location filename="../../src/playback/internal/playbackcontroller.cpp" line="97"/>
+        <location filename="../../src/playback/internal/playbackcontroller.cpp" line="99"/>
         <location filename="../../src/playback/qml/MuseScore/Playback/mixerchannelitem.cpp" line="617"/>
         <source>Aux %1</source>
         <translation>Yard. %1</translation>
     </message>
     <message>
-        <location filename="../../src/playback/internal/playbackcontroller.cpp" line="1073"/>
+        <location filename="../../src/playback/internal/playbackcontroller.cpp" line="1076"/>
         <source>Metronome</source>
         <translation>Metronom</translation>
     </message>
     <message>
-        <location filename="../../src/playback/internal/playbackcontroller.cpp" line="1083"/>
+        <location filename="../../src/playback/internal/playbackcontroller.cpp" line="1086"/>
         <source>Chords</source>
         <translation>Akorlar</translation>
     </message>
     <message>
-        <location filename="../../src/playback/internal/playbackcontroller.cpp" line="1410"/>
+        <location filename="../../src/playback/internal/playbackcontroller.cpp" line="1414"/>
         <source>Loading audio samples</source>
         <translation>Ses örneklemeleri yükleniyor</translation>
     </message>
@@ -33668,28 +33759,28 @@ başarısız: %2</translation>
         <translation>Daha fazla ses alın</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/inputresourceitem.cpp" line="393"/>
+        <location filename="../../src/playback/qml/MuseScore/Playback/inputresourceitem.cpp" line="394"/>
         <source>SoundFonts</source>
         <translation>SoundFontlar</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/inputresourceitem.cpp" line="436"/>
+        <location filename="../../src/playback/qml/MuseScore/Playback/inputresourceitem.cpp" line="437"/>
         <source>Bank %1, preset %2</source>
         <translation>Sıra %1, ön ayar %2</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/inputresourceitem.cpp" line="491"/>
-        <location filename="../../src/playback/qml/MuseScore/Playback/inputresourceitem.cpp" line="556"/>
+        <location filename="../../src/playback/qml/MuseScore/Playback/inputresourceitem.cpp" line="492"/>
+        <location filename="../../src/playback/qml/MuseScore/Playback/inputresourceitem.cpp" line="557"/>
         <source>Choose automatically</source>
         <translation>Otomatik seçim</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/inputresourceitem.cpp" line="537"/>
+        <location filename="../../src/playback/qml/MuseScore/Playback/inputresourceitem.cpp" line="538"/>
         <source>Preset %1</source>
         <translation>Ön ayar %1</translation>
     </message>
     <message>
-        <location filename="../../src/playback/qml/MuseScore/Playback/inputresourceitem.cpp" line="547"/>
+        <location filename="../../src/playback/qml/MuseScore/Playback/inputresourceitem.cpp" line="548"/>
         <source>Bank %1</source>
         <translation>Sıra %1</translation>
     </message>
@@ -34126,7 +34217,7 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MusicXmlSection.qml" line="75"/>
         <source>Apply default typeface (Edwin) to imported scores</source>
-        <translation>İçe aktarılan partisyonlara varsayılan yazı tipini (Edwin) uygula</translation>
+        <translation>İçe aktarılan notalara varsayılan yazı tipini (Edwin) uygula</translation>
     </message>
     <message>
         <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/MusicXmlSection.qml" line="90"/>
@@ -34262,7 +34353,7 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NotePreviewSection.qml" line="147"/>
         <source>Play preview notes with score dynamics</source>
-        <translation>Önizleme notalarını partisyondaki gürlükle çal</translation>
+        <translation>Önizleme notalarını notanızdaki gürlükte çal</translation>
     </message>
     <message>
         <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/NoteInput/NotePreviewSection.qml" line="164"/>
@@ -34342,7 +34433,7 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/PageSection.qml" line="56"/>
         <source>Invert score colors</source>
-        <translation>Partisyon renklerini ters çevir</translation>
+        <translation>Notanın renklerini ters çevir</translation>
     </message>
     <message>
         <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/PageSection.qml" line="74"/>
@@ -34367,7 +34458,7 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ProgramStartSection.qml" line="88"/>
         <source>Choose starting score</source>
-        <translation>Başlangıç partisyonunu seçin</translation>
+        <translation>Başlangıç notasını seçin</translation>
     </message>
     <message>
         <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/PublishMuseScoreComSection.qml" line="30"/>
@@ -34377,7 +34468,7 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/PublishMuseScoreComSection.qml" line="41"/>
         <source>Always prompt to share on Audio.com after publishing to MuseScore.com</source>
-        <translation>MuseScore.com&apos;da yayınladıktan sonra her zaman Audio.com&apos;da paylaşma isteğinde bulunun</translation>
+        <translation>MuseScore.com&apos;da yayınladıktan sonra her zaman Audio.com&apos;da paylaşma isteğinde bulun</translation>
     </message>
     <message>
         <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/RemoteControlSection.qml" line="31"/>
@@ -34397,7 +34488,7 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/SaveToCloudSection.qml" line="41"/>
         <source>Generate MP3 audio for private cloud scores</source>
-        <translation>Bulutunuzdaki partisyonlar için MP3 sesi oluşturun</translation>
+        <translation>Bulutunuzdaki notalar için MP3 sesi oluşturun</translation>
     </message>
     <message>
         <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/ScrollPagesSection.qml" line="32"/>
@@ -34546,7 +34637,7 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/preferences/qml/MuseScore/Preferences/folderspreferencesmodel.cpp" line="100"/>
         <source>Scores</source>
-        <translation>Partisyonlar</translation>
+        <translation>Notalar</translation>
     </message>
     <message>
         <location filename="../../src/preferences/qml/MuseScore/Preferences/folderspreferencesmodel.cpp" line="104"/>
@@ -34556,7 +34647,7 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/preferences/qml/MuseScore/Preferences/folderspreferencesmodel.cpp" line="108"/>
         <source>Instruments and score orders</source>
-        <translation>Çalgı ve partisyon sıralaması</translation>
+        <translation>Çalgı ve nota sıralaması</translation>
     </message>
     <message>
         <location filename="../../src/preferences/qml/MuseScore/Preferences/folderspreferencesmodel.cpp" line="113"/>
@@ -34606,12 +34697,12 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/preferences/qml/MuseScore/Preferences/generalpreferencesmodel.cpp" line="200"/>
         <source>Start with new score</source>
-        <translation>Yeni partisyonla başlat</translation>
+        <translation>Yeni notayla başlat</translation>
     </message>
     <message>
         <location filename="../../src/preferences/qml/MuseScore/Preferences/generalpreferencesmodel.cpp" line="204"/>
         <source>Start with score</source>
-        <translation>Partisyonla başlat</translation>
+        <translation>Notayla başlat</translation>
     </message>
     <message>
         <location filename="../../src/preferences/qml/MuseScore/Preferences/generalpreferencesmodel.cpp" line="248"/>
@@ -34691,7 +34782,7 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="172"/>
         <source>Score</source>
-        <translation>Partisyon</translation>
+        <translation>Nota</translation>
     </message>
     <message>
         <location filename="../../src/preferences/qml/MuseScore/Preferences/preferencesmodel.cpp" line="175"/>
@@ -34759,12 +34850,12 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/DefaultStyleSection.qml" line="47"/>
         <source>Style for full score</source>
-        <translation>Tüm partisyon için biçim</translation>
+        <translation>Notanın tümü için biçim</translation>
     </message>
     <message>
         <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/DefaultStyleSection.qml" line="54"/>
         <source>Choose default style for full score</source>
-        <translation>Tüm partisyon için varsayılan biçimi seçin</translation>
+        <translation>Notanın tümü için varsayılan biçimi seçin</translation>
     </message>
     <message>
         <location filename="../../src/preferences/qml/MuseScore/Preferences/internal/DefaultStyleSection.qml" line="55"/>
@@ -34775,49 +34866,49 @@ başarısız: %2</translation>
 <context>
     <name>project</name>
     <message>
-        <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="129"/>
+        <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="158"/>
         <source>You don’t have any online scores yet</source>
-        <translation>Henüz çevrimiçi partiyonunuz yok</translation>
+        <translation>Henüz çevrimiçi notanız yok</translation>
     </message>
     <message>
-        <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="130"/>
+        <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="159"/>
         <source>Scores will appear here when you save a file to the cloud, or publish a score on &lt;a href=&quot;%1&quot;&gt;MuseScore.com&lt;/a&gt;.</source>
-        <translation>Bir dosyayı buluta kaydettiğinizde veya &lt;a href=&quot;%1&quot;&gt;MuseScore.com&lt;/a&gt;’da bir partisyon yayımladığınızda, partisyonlar burada görünecektir.</translation>
+        <translation>Bir dosyayı buluta kaydettiğinizde veya &lt;a href=&quot;%1&quot;&gt;MuseScore.com&lt;/a&gt;’da bir nota yayınladığınızda, notalar burada görünecektir.</translation>
     </message>
     <message>
-        <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="154"/>
+        <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="183"/>
         <source>You are not signed in</source>
         <translation>Oturum açmadınız</translation>
     </message>
     <message>
-        <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="155"/>
+        <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="184"/>
         <source>Log in or create a new account on &lt;a href=&quot;%1&quot;&gt;MuseScore.com&lt;/a&gt; to view online scores.</source>
-        <translation>Çevrim içi partisyonları görüntülemek için &lt;a href=&quot;%1&quot;&gt;MuseScore.com&lt;/a&gt;’da oturum açın veya yeni bir hesap oluşturun.</translation>
+        <translation>Çevrim içi notaları görüntülemek için &lt;a href=&quot;%1&quot;&gt;MuseScore.com&lt;/a&gt;’da oturum açın veya yeni bir hesap oluşturun.</translation>
     </message>
     <message>
-        <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="218"/>
+        <location filename="../../src/framework/cloud/qml/Muse/Cloud/CloudScoresView.qml" line="247"/>
         <source>Unable to load online scores</source>
-        <translation>Çevrimiçi partisyonlar yüklenemiyor</translation>
+        <translation>Çevrimiçi notalar yüklenemiyor</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresGridView.qml" line="32"/>
         <source>Online scores grid</source>
-        <translation>Çevrimiçi partisyonlar tablosu</translation>
+        <translation>Çevrimiçi notalar tablosu</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="35"/>
         <source>Online scores list</source>
-        <translation>Çevrimiçi partisyon listesi</translation>
+        <translation>Çevrimiçi notalar listesi</translation>
     </message>
     <message>
-        <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="171"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/RecentScoresView.qml" line="106"/>
+        <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="181"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/RecentScoresView.qml" line="140"/>
         <source>Modified</source>
         <extracomment>Stands for &quot;Last time that this score was modified&quot;. Used as the header of this column in the scores list.</extracomment>
         <translation>Değiştiriliş</translation>
     </message>
     <message>
-        <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="252"/>
+        <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="262"/>
         <source>Views</source>
         <comment>number of views</comment>
         <extracomment>Stands for &quot;The number of times this score was viewed on MuseScore.com&quot;. Used as the header of this column in the scores list.</extracomment>
@@ -34831,9 +34922,10 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/GeneralInfoView.qml" line="71"/>
         <location filename="../../src/project/internal/notationproject.cpp" line="88"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="200"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="183"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="339"/>
         <source>Untitled score</source>
-        <translation>İsimsiz partisyon</translation>
+        <translation>İsimsiz nota</translation>
     </message>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/GeneralInfoView.qml" line="83"/>
@@ -34873,24 +34965,24 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/CloudScoreIndicatorButton.qml" line="44"/>
         <source>Download score</source>
-        <translation>Partisyonu indir</translation>
+        <translation>Notayı indir</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/RecentScoresView.qml" line="59"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/RecentScoresView.qml" line="60"/>
         <source>Recent scores grid</source>
-        <translation>Son partisyonlar tablosu</translation>
+        <translation>Son notalar tablosu</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/RecentScoresView.qml" line="90"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/RecentScoresView.qml" line="108"/>
         <source>Recent scores list</source>
-        <translation>Son partisyonlar listesi</translation>
+        <translation>Son notaların listesi</translation>
     </message>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/NewScoreDialog.qml" line="34"/>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresListView.qml" line="105"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/recentscoresmodel.cpp" line="68"/>
+        <location filename="../../src/project/qml/MuseScore/Project/ScoresListView.qml" line="113"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/recentscoresmodel.cpp" line="73"/>
         <source>New score</source>
-        <translation>Yeni partisyon</translation>
+        <translation>Yeni nota</translation>
     </message>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/ProjectPropertiesDialog.qml" line="112"/>
@@ -34905,7 +34997,7 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/ProjectUploadedDialog.qml" line="162"/>
         <source>Publish your finished scores on MuseScore.com</source>
-        <translation>Bitmiş partisyonlarınızı MuseScore.com&apos;da yayınlayın</translation>
+        <translation>Bitmiş notalarınızı MuseScore.com&apos;da yayınlayın</translation>
     </message>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/ProjectUploadedDialog.qml" line="187"/>
@@ -34915,7 +35007,7 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/ProjectUploadedDialog.qml" line="188"/>
         <source>Gain followers and receive score comments and ratings</source>
-        <translation>Takipçiler kazanın, partisyon yorumları ve derecelendirmeleri alın</translation>
+        <translation>Takipçiler kazanın, nota yorumları ve derecelendirmeleri alın</translation>
     </message>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/ProjectUploadedDialog.qml" line="189"/>
@@ -34930,87 +35022,92 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/ProjectUploadedDialog.qml" line="251"/>
         <source>View score online</source>
-        <translation>Partisyonu çevrimiçi görüntüle</translation>
+        <translation>Notayı çevrimiçi görüntüle</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresGridView.qml" line="85"/>
+        <location filename="../../src/project/qml/MuseScore/Project/ScoresGridView.qml" line="93"/>
         <source>Scores grid</source>
-        <translation>Partisyon tablosu</translation>
+        <translation>Nota tablosu</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresListView.qml" line="79"/>
+        <location filename="../../src/project/qml/MuseScore/Project/ScoresListView.qml" line="87"/>
         <source>Scores list</source>
-        <translation>Partisyon listesi</translation>
+        <translation>Nota listesi</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresListView.qml" line="150"/>
+        <location filename="../../src/project/qml/MuseScore/Project/ScoresListView.qml" line="159"/>
         <source>Name</source>
         <translation>Adı</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="88"/>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="95"/>
+        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="104"/>
+        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="111"/>
         <source>Scores</source>
-        <translation>Partisyonlar</translation>
+        <translation>Notalar</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="108"/>
+        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="124"/>
         <source>Search recent scores</source>
-        <translation>Son partisyonları ara</translation>
+        <translation>Son notları ara</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="143"/>
+        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="159"/>
         <source>Scores tab bar</source>
-        <translation>Partisyon sekmesi çubuğu</translation>
+        <translation>Nota sekmesi çubuğu</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="154"/>
+        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="170"/>
         <source>New &amp; recent</source>
         <translation>Yeni &amp; Son Açılanlar</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="162"/>
+        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="178"/>
         <source>My online scores</source>
-        <translation>Çevrimiçi partisyonlarım</translation>
+        <translation>Çevrimiçi notalarım</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="177"/>
+        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="193"/>
         <source>View buttons</source>
         <translation>Görünüm düğmeleri</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="189"/>
+        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="205"/>
         <source>Refresh</source>
         <translation>Yenile</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="201"/>
+        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="217"/>
         <source>Grid view</source>
         <translation>Izgara görünümü</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="202"/>
+        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="218"/>
         <source>List view</source>
         <translation>Liste görünümü</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="322"/>
+        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="362"/>
         <source>Scores actions</source>
         <extracomment>accessibility name for the panel at the bottom of the &quot;Scores&quot; page</extracomment>
-        <translation>Partisyon eylemleri</translation>
+        <translation>Nota eylemleri</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="335"/>
+        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="375"/>
         <source>Score manager (online)</source>
-        <translation>Partisyon yöneticisi (çevrimiçi)</translation>
+        <translation>Nota yöneticisi (çevrimiçi)</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="354"/>
+        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="395"/>
         <source>New</source>
         <translation>Yeni</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="366"/>
+        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="407"/>
+        <source>Convert…</source>
+        <translation>Dönüştür…</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/ScoresPage.qml" line="419"/>
         <source>Open other…</source>
         <translation>Başkasını aç…</translation>
     </message>
@@ -35020,273 +35117,306 @@ başarısız: %2</translation>
         <translation>Çevrimiçi kaydediliyor…</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="2355"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="2362"/>
         <source>File “%1” seems not corrupted</source>
         <translation>“%1” dosyası bozulmamış gibi görünüyor</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="2356"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="2363"/>
         <source>This file does not seem to contain errors.</source>
         <translation>Bu dosya hata içermiyor gibi görünüyor.</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="2359"/>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1795"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="2366"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1817"/>
         <source>File “%1” is corrupted</source>
         <translation>“%1” dosyası bozuk</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="2361"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="2368"/>
         <source>This file contains errors that could cause MuseScore Studio to malfunction. Please fix those at the earliest, to prevent crashes and further corruptions.</source>
         <translation>Bu dosya, MuseScore Studio&apos;nun yanlış çalışmasına neden olabilecek hatalar içeriyor. Çökme ve daha fazla bozulmayı önlemek için lütfen bunları en kısa sürede düzeltin.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="107"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="113"/>
         <source>MuseScore file</source>
         <translation>MuseScore dosyaları</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="108"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="114"/>
         <source>Uncompressed MuseScore folder (experimental)</source>
         <translation>Sıkıştırılmamış MuseScore klasörü(deneysel)</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="485"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="491"/>
         <source>Your score could not be opened</source>
-        <translation>Partisyonunuz açılamadı</translation>
+        <translation>Notanız açılamadı</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="490"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="496"/>
         <source>This score is invalid.</source>
-        <translation>Bu partisyon geçersiz.</translation>
+        <translation>Bu nota geçersiz.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="751"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="773"/>
         <source>Do you want to save changes to the score “%1” before closing?</source>
-        <translation>Kapatmadan önce &quot;%1&quot; partisyonundaki değişiklikleri kaydetmek ister misiniz?</translation>
+        <translation>Kapatmadan önce &quot;%1&quot; notasındaki değişiklikleri kaydetmek ister misiniz?</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="754"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="776"/>
         <source>Your changes will be lost if you don’t save them.</source>
         <translation>Kaydetmezseniz değişiklikleriniz kaybolacak.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1531"/>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1623"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1553"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1645"/>
         <source>Your score cannot be uploaded to the cloud</source>
-        <translation>Partisyonunuz buluta yüklenemez</translation>
+        <translation>Notanız buluta yüklenemez</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1534"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1556"/>
         <source>This score has become corrupted and contains errors. You can fix the errors manually, or save the score to your computer and get help for this issue on MuseScore.org.</source>
-        <translation>Bu partisyon bozuldu ve hatalar içeriyor. Hataları manuel olarak düzeltebilir veya MuseScore.org üzerinden skoru bilgisayarınıza kaydedip bu konuda yardım alabilirsiniz.</translation>
+        <translation>Bu nota bozulmuş ve hatalar içeriyor. Hataları manuel olarak düzeltebilir veya MuseScore.org üzerinden notayı bilgisayarınıza kaydedip bu konuda yardım alabilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1542"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1564"/>
         <source>Save as…</source>
         <translation>Farklı kaydet…</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1547"/>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1589"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1569"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1611"/>
         <source>Revert to last saved</source>
         <translation>Son kaydedilene dön</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1570"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1592"/>
         <source>This score has become corrupted and contains errors</source>
-        <translation>Bu partisyon bozuldu ve hatalar içeriyor</translation>
+        <translation>Bu nota bozulmuş ve hatalar içeriyor</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1574"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1596"/>
         <source>You can continue saving it locally, although the file may become unusable. You can try to fix the errors manually, or get help for this issue on MuseScore.org.</source>
         <translation>Dosya kullanılamaz hâle gelse de yerel olarak kaydetmeye devam edebilirsiniz. Hataları manuel olarak düzeltmeyi deneyebilir veya bu sorun için MuseScore.org&apos;dan yardım alabilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1576"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1598"/>
         <source>You can continue saving it locally, although the file may become unusable. To preserve your score, revert to the last saved version, or fix the errors manually. You can also get help for this issue on MuseScore.org.</source>
-        <translation>Dosya kullanılamaz hâle gelse de yerel olarak kaydetmeye devam edebilirsiniz. Partisyonunuzu korumak için en son kaydedilen sürüme dönün veya hataları manuel olarak düzeltin. Bu konuda MuseScore.org adresinden de yardım alabilirsiniz.</translation>
+        <translation>Dosya kullanılamaz hâle gelse de yerel olarak kaydetmeye devam edebilirsiniz. Notanızı korumak için en son kaydedilen sürüme dönün veya hataları elle düzeltin. Bu konuda MuseScore.org adresinden de yardım alabilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1584"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1606"/>
         <source>Save anyway</source>
         <translation>Yine de kaydet</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1622"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1644"/>
         <source>Your score cannot be saved</source>
-        <translation>Partisyonunuz kaydedilemiyor</translation>
+        <translation>Notanız kaydedilemiyor</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1626"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1648"/>
         <source>This score is corrupted. You can get help for this issue on MuseScore.org.</source>
-        <translation>Bu partisyon bozuk. Bu konuda MuseScore.org üzerinden yardım alabilirsiniz.</translation>
+        <translation>Bu nota bozulmuş. Bu konuda MuseScore.org üzerinden yardım alabilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1629"/>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1817"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1651"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1839"/>
         <source>Get help</source>
         <translation>Yardım alın</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1679"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1701"/>
         <source>Try again</source>
         <translation>Tekrar deneyin</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1694"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1716"/>
         <source>Revert to last saved?</source>
         <translation>Son kaydedilene dönülsün mü?</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1695"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1717"/>
         <source>Your changes will be lost. This action cannot be undone.</source>
         <translation>Değişiklikleriniz kaybolacak. Bu işlem geri alınamaz.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1775"/>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1800"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1797"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1822"/>
         <source>Open anyway</source>
         <translation>Yine de aç</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1787"/>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1831"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1809"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1853"/>
         <source>Cannot read file %1</source>
         <translation>%1 dosyası okunamıyor</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1788"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1810"/>
         <source>This file was saved using a newer version of MuseScore Studio. Please visit &lt;a href=&quot;%1&quot;&gt;MuseScore.org&lt;/a&gt; to obtain the latest version.</source>
         <translation>Bu dosya daha yeni bir MuseScore Studio sürümü kullanılarak kaydedildi. Lütfen en son sürümü edinmek için &lt;a href=&quot;%1&quot;&gt;MuseScore.org&lt;/a&gt; adresini ziyaret edin.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1797"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1819"/>
         <source>This file contains errors that could cause MuseScore Studio to malfunction.</source>
         <translation>Bu dosya MuseScore Studio&apos;nun çalışmamasına neden olabilecek hatalar içeriyor.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1812"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1834"/>
         <source>File “%1” is corrupted and cannot be opened</source>
         <translation>“%1” dosyası bozuk ve açılamıyor</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1814"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1836"/>
         <source>Get help for this issue on MuseScore.org.</source>
         <translation>Bu sorun için MuseScore.org&apos;dan yardım alın.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1836"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1858"/>
         <source>This file does not exist or cannot be accessed at the moment.</source>
         <translation>Bu dosya şu anda mevcut değil veya erişilemiyor.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1839"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1861"/>
         <source>This file could not be opened. Please make sure that MuseScore Studio has permission to read this file.</source>
         <translation>Bu dosya açılamadı. Lütfen MuseScore Studio&apos;nun bu dosyayı okuma iznine sahip olduğundan emin olun.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1846"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1868"/>
         <source>An error occurred while reading this file.</source>
         <translation>Bu dosya okunurken bir hata oluştu.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1927"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1925"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="390"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="76"/>
         <source>All supported files</source>
         <translation>Desteklenen tüm dosyalar</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1928"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1926"/>
         <source>MuseScore files</source>
         <translation>MuseScore dosyaları</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1929"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1927"/>
         <source>MusicXML files</source>
         <translation>MusicXML dosyaları</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1930"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1928"/>
         <source>MIDI files</source>
         <translation>MIDI dosyaları</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1931"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1929"/>
         <source>MNX files (experimental)</source>
         <translation>MNX dosyaları (deneysel)</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1932"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1930"/>
         <source>MuseData files</source>
         <translation>MuseData Dosyaları</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1933"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1931"/>
         <source>Capella files</source>
         <translation>Capella dosyaları</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1934"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1932"/>
         <source>BB files (experimental)</source>
         <translation>BB dosyaları (deneysel)</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1935"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1933"/>
         <source>Overture / Score Writer files (experimental)</source>
         <translation>Overture / Score Writer dosyaları(deneysel)</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1936"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1934"/>
         <source>Bagpipe Music Writer files (experimental)</source>
         <translation>Bagpipe Music Writer dosyaları (deneysel)</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1937"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1935"/>
         <source>Guitar Pro files</source>
         <translation>Guitar Pro dosyaları</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1938"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1936"/>
         <source>Power Tab Editor files (experimental)</source>
         <translation>Power Tab Editor Dosyaları (deneysel)</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1939"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1937"/>
         <source>MEI files</source>
         <translation>MEI dosyaları</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1940"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1938"/>
         <source>TablEdit files (experimental)</source>
         <translation>TablEdit dosyaları (deneysel)</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1941"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1939"/>
         <source>Uncompressed MuseScore folders (experimental)</source>
         <translation>Sıkıştırılmamış MuseScore dosyaları(deneysel)</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1942"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1940"/>
         <source>MuseScore developer files</source>
         <translation>MuseScore geliştirici dosyaları</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1943"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1941"/>
         <source>MuseScore backup files</source>
         <translation>MuseScore yedekleme dosyaları</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1945"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/ScoreItemMenuButton.qml" line="68"/>
+        <source>Show in Explorer</source>
+        <translation>Explorer&apos;da göster</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/ScoreItemMenuButton.qml" line="69"/>
+        <source>Show in Finder</source>
+        <translation>Finder&apos;da Göster</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/ScoreItemMenuButton.qml" line="70"/>
+        <source>Show in File Manager</source>
+        <translation>Dosya Yöneticisinde Göster</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/ScoreItemMenuButton.qml" line="80"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1943"/>
         <source>Open</source>
         <translation>Aç</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectconfiguration.cpp" line="139"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/ScoreItemMenuButton.qml" line="84"/>
+        <source>View online</source>
+        <translation>Çevrimiçi görüntüle</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/ScoreItemMenuButton.qml" line="94"/>
+        <source>Remove from recent files list</source>
+        <translation>Son kullanılan dosyalar listesinden kaldır</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/ScoreItemMenuButton.qml" line="98"/>
+        <source>Delete score</source>
+        <translation>Notayı sil</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/internal/projectconfiguration.cpp" line="142"/>
         <source>Create backup of file on disk before saving new changes</source>
         <translation>Yeni değişiklikleri kaydetmeden önce dosyanın diskte yedeğini oluşturun</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectconfiguration.cpp" line="386"/>
+        <location filename="../../src/project/internal/projectconfiguration.cpp" line="389"/>
         <source>Untitled</source>
         <translation>İsimsiz</translation>
     </message>
@@ -35345,11 +35475,24 @@ başarısız: %2</translation>
         <source>Audio.com URL</source>
         <translation>Audio.com URL</translation>
     </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/ScoreGridItem.qml" line="74"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/ScoreListItem.qml" line="73"/>
+        <source>Processing %1</source>
+        <extracomment>%1 is the name of the score being converted</extracomment>
+        <translation>İşleniyor %1</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="391"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="77"/>
+        <source>All</source>
+        <translation>Hepsine</translation>
+    </message>
 </context>
 <context>
     <name>project/cloud</name>
     <message>
-        <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="97"/>
+        <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="107"/>
         <location filename="../../src/project/qml/MuseScore/Project/SaveToCloudDialog.qml" line="186"/>
         <location filename="../../src/project/qml/MuseScore/Project/SaveToCloudDialog.qml" line="199"/>
         <source>Visibility</source>
@@ -35357,17 +35500,17 @@ başarısız: %2</translation>
         <translation>Görünürlük</translation>
     </message>
     <message>
-        <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="115"/>
+        <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="125"/>
         <source>Private</source>
         <translation>Özel</translation>
     </message>
     <message>
-        <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="117"/>
+        <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="127"/>
         <source>Unlisted</source>
         <translation>Listelenmemiş</translation>
     </message>
     <message>
-        <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="119"/>
+        <location filename="../../src/framework/cloud/qml/Muse/Cloud/internal/CloudScoresListView.qml" line="129"/>
         <source>Public</source>
         <translation>Halka açık</translation>
     </message>
@@ -35379,26 +35522,26 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/AlsoShareAudioComDialog.qml" line="126"/>
         <source>Share your score’s audio with millions of listeners on this free streaming platform</source>
-        <translation>Partisyonunuzun sesini bu ücretsiz yayın platformunda milyonlarca dinleyiciyle paylaşın</translation>
+        <translation>Notanızın sesini bu ücretsiz yayın platformunda milyonlarca dinleyiciyle paylaşın</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="438"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="444"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="450"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="456"/>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="462"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="468"/>
         <source>MuseScore.com returned an error code: %1.</source>
         <extracomment>%1 will be replaced with the error code that MuseScore.com returned; this might contain english text that is deliberately not translated</extracomment>
         <translation>MuseScore.com bir hata kodu döndürdü: %1.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="468"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="474"/>
         <source>MuseScore.com returned an unknown error code: %1.</source>
         <extracomment>%1 will be replaced with the error code that MuseScore.com returned, which is a number.</extracomment>
         <translation>MuseScore.com bilinmeyen bir hata kodu döndürdü: %1.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="471"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="477"/>
         <source>MuseScore.com returned an unknown error code.</source>
         <translation>MuseScore.com bilinmeyen bir hata kodu döndürdü.</translation>
     </message>
@@ -35407,42 +35550,69 @@ başarısız: %2</translation>
         <translation>Lütfen daha sonra tekrar deneyin veya bu sorun için MuseScore.org&apos;dan yardım alın.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="477"/>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="609"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="483"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="615"/>
         <source>Please try again later, or get help for this problem on MuseScore.com.</source>
         <translation>Lütfen daha sonra tekrar deneyin veya bu sorunla ilgili olarak MuseScore.com&apos;dan yardım alın.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="493"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="499"/>
         <source>The file could not be downloaded to your disk.</source>
         <translation>Dosya diskinize indirilemedi</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="496"/>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="563"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="502"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="569"/>
         <source>Your MuseScore.com account needs to be verified first. Please activate your account via the link in the activation email.</source>
         <translation>Önce MuseScore.com hesabınızın doğrulanması gerekiyor. Lütfen hesabınızı etkinleştirme e-postasındaki bağlantı aracılığıyla etkinleştirin.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="500"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="506"/>
         <source>This score does not belong to this account. To access this score, make sure you are logged in to the desktop app with the account to which this score belongs.</source>
-        <translation>Bu partisyon bu hesaba ait değil. Bu partisyona erişmek için masaüstü uygulamasında bu partisyonun ait olduğu hesapla oturum açtığınızdan emin olun.</translation>
+        <translation>Bu nota bu hesaba ait değil. Bu notaya erişmek için masaüstü uygulamasında bu notanın ait olduğu hesapla oturum açtığınızdan emin olun.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="504"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="510"/>
         <source>The score could not be found, or cannot be accessed by your account.</source>
-        <translation>Partisyon bulunamadı veya hesabınızdan erişilemiyor.</translation>
+        <translation>Nota bulunamadı veya hesabınızdan erişilemiyor.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="517"/>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="604"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="523"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="610"/>
         <source>Could not connect to &lt;a href=&quot;%1&quot;&gt;MuseScore.com&lt;/a&gt;. Please check your internet connection or try again later.</source>
         <translation>&lt;a href=&quot;%1&quot;&gt;MuseScore.com&lt;/a&gt;’a bağlanılamadı. Lütfen internet bağlantınızı kontrol edin veya daha sonra tekrar deneyin.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="522"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="528"/>
         <source>Please try again later.</source>
         <translation>Lütfen daha sonra tekrar deneyiniz.</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/DeleteCloudScoreDialog.qml" line="82"/>
+        <source>Are you sure you want to delete “%1”?</source>
+        <extracomment>%1 is the name of the score that is about to be deleted</extracomment>
+        <translation>“%1”&apos;i silmek istediğinize emin misiniz?</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/DeleteCloudScoreDialog.qml" line="83"/>
+        <source>Are you sure you want to delete this score?</source>
+        <translation>Bu partisyonu silmek istediğinize emin misiniz?</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/DeleteCloudScoreDialog.qml" line="95"/>
+        <source>I understand that deleting is permanent and can’t be undone.</source>
+        <translation>Silmenin kalıcı olduğunu ve geri alınamayacağını anlıyorum.</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/DeleteCloudScoreDialog.qml" line="130"/>
+        <source>Delete score</source>
+        <translation>Notayı sil</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/internal/deletecloudscorescenario.cpp" line="72"/>
+        <location filename="../../src/project/tests/deletecloudscorescenario_tests.cpp" line="247"/>
+        <source>Unable to delete the score</source>
+        <translation>Nota silinemedi</translation>
     </message>
 </context>
 <context>
@@ -35453,12 +35623,23 @@ başarısız: %2</translation>
         <translation>Dosyayı notaya dönüştür</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ConvertFileToScoreDialog.qml" line="86"/>
+        <location filename="../../src/project/qml/MuseScore/Project/ConvertFileToScoreDialog.qml" line="55"/>
+        <location filename="../../src/project/qml/MuseScore/Project/ConvertFileToScoreDialog.qml" line="60"/>
         <source>Convert audio to score (beta)</source>
         <translation>Sesi notaya dönüştür (beta)</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/ConvertFileToScoreDialog.qml" line="87"/>
+        <location filename="../../src/project/qml/MuseScore/Project/ConvertFileToScoreDialog.qml" line="62"/>
+        <source>Convert PDF to score</source>
+        <translation>PDF&apos;yi notaya dönüştür</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/ConvertFileToScoreDialog.qml" line="64"/>
+        <source>Convert images to score</source>
+        <translation>Görselleri notaya dönüştür</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/ConvertFileToScoreDialog.qml" line="69"/>
         <source>Convert a file to score</source>
         <translation>Bir dosyayı notaya dönüştür</translation>
     </message>
@@ -35469,7 +35650,7 @@ başarısız: %2</translation>
         <translation>Dosya gereksinimleri</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/SaveAsField.qml" line="45"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/SaveAsField.qml" line="47"/>
         <source>Save as</source>
         <translation>Farklı kaydet</translation>
     </message>
@@ -35485,257 +35666,404 @@ başarısız: %2</translation>
     </message>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/SelectFilePage.qml" line="125"/>
+        <source>Use a PDF, images, or an audio file (beta)</source>
+        <translation>PDF, görsel veya ses dosyası kullanın (beta)</translation>
+    </message>
+    <message>
         <source>Use a PDF, images, or MP3 (beta)</source>
         <translation>Bir PDF, görsel veya MP3 (beta) kullanın</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="190"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="398"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="250"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="827"/>
         <source>Log in or create a free account on MuseScore.com to convert a file.</source>
         <translation>Bir dosyayı dönüştürmek için MuseScore.com&apos;da oturum açın veya ücretsiz bir hesap oluşturun.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="216"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="761"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="795"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="828"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="327"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="1271"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="1320"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="1368"/>
         <source>Would you like to convert this file to a score?</source>
         <translation>Bu dosyayı bir notaya dönüştürmek ister misiniz?</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="217"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="762"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="796"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="829"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="328"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="1272"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="1321"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="1369"/>
         <source>This file needs to be converted online before it can be edited. Would you like to proceed?</source>
         <translation>Bu dosyanın düzenlenebilmesi için önce çevrimiçi olarak dönüştürülmesi gerekiyor. Devam etmek ister misiniz?</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="269"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="340"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="703"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="423"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="617"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="450"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="783"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="860"/>
         <source>Unable to connect to MuseScore.com</source>
         <translation>MuseScore.com&apos;a bağlanılamıyor</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="270"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="341"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="704"/>
         <source>An internet connection is required to convert a file. Please check your internet connection or try again later.</source>
         <translation>Bir dosyayı dönüştürmek için internet bağlantısı gereklidir. Lütfen internet bağlantınızı kontrol edin veya daha sonra tekrar deneyin.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="278"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="512"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="523"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="431"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="566"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="1153"/>
+        <source>Something went wrong</source>
+        <translation>Bir şeyler ters gitti.</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="432"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="567"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="1154"/>
+        <source>Check your internet connection and try again.</source>
+        <translation>İnternet bağlantınızı kontrol edin ve tekrar deneyin.</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="452"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="597"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="608"/>
         <source>The maximum file size is %1. Reduce the size of your file and try again.</source>
         <translation>Maksimum dosya boyutu %1. Dosyanızın boyutunu küçültüp tekrar deneyin.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="280"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="515"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="526"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="454"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="600"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="611"/>
         <source>This file is too large</source>
         <translation>This file is too large</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/SelectFilePage.qml" line="218"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/SelectFilePage.qml" line="240"/>
+        <source>Make sure you’re importing a suitable PDF, image or MP3 file.</source>
+        <translation>Uygun bir PDF, resim veya MP3 dosyası içe aktardığınızdan emin olun.</translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="509"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="630"/>
+        <source>You can convert up to %n audio file(s) at a time. Remove some files and try again.</source>
+        <translation><numerusform>Aynı anda en fazla %n ses dosyası dönüştürebilirsiniz. Bazı dosyaları kaldırın ve tekrar deneyin.</numerusform><numerusform>Aynı anda en fazla %n ses dosyası dönüştürebilirsiniz. Bazı dosyaları kaldırın ve tekrar deneyin.</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="517"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="641"/>
+        <source>You can convert up to %n image(s) at a time. Remove some images and try again.</source>
+        <translation><numerusform>Tek seferde en fazla %n görsel dönüştürebilirsiniz. Bazı görselleri kaldırın ve tekrar deneyin.</numerusform><numerusform>Tek seferde en fazla %n görsel dönüştürebilirsiniz. Bazı görselleri kaldırın ve tekrar deneyin.</numerusform></translation>
+    </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/SelectFilePage.qml" line="220"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/SelectFilePage.qml" line="242"/>
         <source>Uploading guidelines</source>
         <translation>Yükleme yönergeleri</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="287"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="534"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="461"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="619"/>
         <source>The maximum combined file size for all images is %1. Choose a smaller file or remove some images to continue.</source>
         <translation>Tüm görseller için toplam en fazla dosya boyutu %1&apos;dir. Devam etmek için daha küçük bir dosya seçin veya bazı görselleri kaldırın.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="290"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="538"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="464"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="623"/>
         <source>Maximum file size exceeded</source>
         <translation>En fazla dosya boyutu aşıldı</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="296"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="488"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="732"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="470"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="573"/>
         <source>This file type is not compatible</source>
         <translation>Bu dosya türü uyumlu değil.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="297"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="489"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="733"/>
         <source>Make sure you’ve selected a PDF, image or MP3 file.</source>
         <translation>Bir PDF, görsel veya MP3 dosyası seçtiğinizden emin olun.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="308"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="592"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="619"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="191"/>
+        <source>Continue converting</source>
+        <translation>Dönüştürmeye devam et</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="198"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="1429"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="1476"/>
+        <source>Are you sure you want to cancel this file conversion?</source>
+        <translation>Bu dosya dönüştürme işlemini iptal etmek istediğinize emin misiniz?</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="199"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="1430"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="1477"/>
+        <source>Processing will be canceled and this score will be removed from your scores.</source>
+        <translation>İşlem iptal edilecek ve bu nota, notalarınız arasından kaldırılacak.</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="424"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="618"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="451"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="784"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="861"/>
+        <source>An internet connection is required for file conversion. Please check your internet connection or try again later.</source>
+        <translation>Dosya dönüştürme işlemi için internet bağlantısı gerekli. Lütfen internet bağlantınızı kontrol edin veya daha sonra tekrar deneyin.</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="439"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="1123"/>
+        <source>One or more files could not be read</source>
+        <translation>Bir veya daha fazla dosya okunamadı</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="440"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="1124"/>
+        <source>Make sure the files still exist and that you have permission to open them.</source>
+        <translation>Dosyaların hâlâ mevcut olduğundan ve bunları açma izninizin olduğundan emin olun.</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="443"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="1088"/>
+        <source>This file could not be read</source>
+        <translation>Bu dosya okunamadı</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="444"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="1089"/>
+        <source>Make sure the file still exists and that you have permission to open it.</source>
+        <translation>Dosyanın hala mevcut olduğundan ve açma izninizin olduğundan emin olun.</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="471"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="574"/>
+        <source>Make sure you’re importing a suitable PDF, image or audio file.</source>
+        <translation>Uygun bir PDF, görsel veya ses dosyasını içe aktardığınızdan emin olun.</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="481"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="677"/>
         <source>Make sure you’re using a valid link from YouTube or Audio.com.</source>
         <translation>YouTube veya Audio.com’dan geçerli bir bağlantı kullandığınıza emin olun.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="310"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="646"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="483"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="728"/>
         <source>Make sure you’re using a valid link from YouTube.</source>
         <translation>YouTube&apos;dan geçerli bir bağlantı kullandığınıza emin olun.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="312"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="673"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="485"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="754"/>
         <source>Make sure you’re using a valid link from Audio.com.</source>
         <translation>Audio.com’dan geçerli bir bağlantı kullandığınıza emin olun.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="315"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="591"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="618"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="645"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="672"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="488"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="676"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="702"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="727"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="753"/>
         <source>Please use a compatible URL</source>
         <translation>Lütfen uyumlu bir URL kullanın</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="321"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="495"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="494"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="580"/>
         <source>Please select files of the same type</source>
         <translation>Lütfen aynı türden dosyalar seçin.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="322"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="496"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="495"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="581"/>
+        <source>Per conversion, you may select either one audio file, one PDF file, or multiple image files.</source>
+        <translation>Her dönüştürme işlemi için bir ses dosyası, bir PDF dosyası ya da birden fazla resim dosyası seçebilirsiniz.</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="582"/>
+        <source>Try another file</source>
+        <translation>Başka bir dosya deneyin</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="593"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="1185"/>
+        <source>We weren’t able to upload ‘%1’. Check your internet connection and try again.</source>
+        <translation>&apos;%1&apos; dosyası yükleyemedik. İnternet bağlantınızı kontrol edin ve tekrar deneyin.</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="596"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="1184"/>
+        <source>Error uploading score</source>
+        <translation>Nota yüklenirken hata oluştu</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="611"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="431"/>
+        <source>We’re having trouble connecting to MuseScore.com.</source>
+        <translation>MuseScore.com&apos;a bağlanırken sorun yaşıyoruz.</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="612"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="432"/>
+        <source>We’ll keep trying intermittently.</source>
+        <translation>Belirli aralıklarla yeniden deneyeceğiz.</translation>
+    </message>
+    <message>
         <source>Per conversion, you may select either one MP3 file, one PDF file, or multiple image files.</source>
         <translation>Dönüştürme başına bir MP3 dosyası, bir PDF dosyası veya birden fazla görüntü dosyası seçebilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="329"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="503"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="502"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="588"/>
         <source>Please select a single PDF file</source>
         <translation>Lütfen tek bir PDF dosyası seçin.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="330"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="504"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="503"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="589"/>
         <source>Only one PDF file can be converted at a time.</source>
         <translation>Aynı anda yalnızca bir PDF dosyası dönüştürülebilir.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="336"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="545"/>
         <source>You can convert up to %1 audio files at a time. Remove some files and try again.</source>
         <translation>Tek seferde en fazla %1 ses dosyası dönüştürebilirsiniz. Bazı dosyaları kaldırın ve tekrar deneyin.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="338"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="549"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="511"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="634"/>
         <source>Too many files selected</source>
         <translation>Çok fazla dosya seçildi</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="344"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="556"/>
         <source>You can convert up to %1 images at a time. Remove some images and try again.</source>
         <translation>Tek seferde en fazla %1 görsel dönüştürebilirsiniz. Bazı görselleri kaldırıp tekrar deneyin.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="346"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="559"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="519"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="644"/>
         <source>Too many images selected</source>
         <translation>Çok fazla görsel seçildi</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="355"/>
         <source>Upload more</source>
         <translation>Daha fazla yükle</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="356"/>
+        <source>Home &gt; Scores</source>
+        <translation>Başlangıç &gt; Notalar</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/ConvertFileProcessingDialog.qml" line="39"/>
+        <source>Home &gt; Scores &gt; My online scores</source>
+        <translation>Anasayfa &gt; Notalar &gt; Çevrimiçi notalarım</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/ConvertFileProcessingDialog.qml" line="44"/>
+        <source>We’ll notify you once the score is ready to open. You can check the status of the score in %1.</source>
+        <translation>Nota açılmaya hazır olduğunda sizi bilgilendireceğiz. Notanın durumunu %1 üzerinden kontrol edebilirsiniz.</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/ConvertFileProcessingDialog.qml" line="203"/>
+        <source>Convert more</source>
+        <translation>Daha fazla dönüştür</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/ConvertFileProcessingDialog.qml" line="212"/>
         <source>Go to scores</source>
         <translation>Notaya git</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="359"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="865"/>
         <source>We’ll notify you once the score is ready to open. You can check the status of the score in Home &gt; Scores.</source>
         <translation>Nota açılmaya hazır olduğunda size bildirim göndereceğiz. Notanın durumunu Ana Sayfa &gt; Notalar bölümünden kontrol edebilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="363"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="864"/>
+        <location filename="../../src/project/qml/MuseScore/Project/ConvertFileProcessingDialog.qml" line="144"/>
         <source>Your score is being processed</source>
         <translation>Notanız işleniyor</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="392"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="561"/>
         <source>Open score</source>
         <translation>Nota aç</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="393"/>
         <source>Dismiss</source>
         <translation>Bırak</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="396"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="195"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="554"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="243"/>
         <source>‘%1’ has finished processing and is ready to open.</source>
         <translation>&apos;%1&apos; işlenmesi tamamladı ve açılmaya hazır.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="400"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="194"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="557"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="242"/>
         <source>Your score is ready!</source>
         <translation>Notanız hazır!</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="414"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="576"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="343"/>
+        <source>We weren’t able to convert ‘%1’. Please try again with a better quality file.</source>
+        <translation>‘%1’ dosyasını dönüştüremedik. Lütfen daha kaliteli bir dosyayla tekrar deneyin.</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="579"/>
+        <location filename="../../src/project/tests/convertfiletoscorescenario_tests.cpp" line="342"/>
+        <source>Error processing score</source>
+        <translation>Nota işlenirken hata oluştu</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/ScoreQualityRatingPanel.qml" line="84"/>
         <source>Good</source>
+        <extracomment>Button to rate the quality of a converted score as good</extracomment>
         <translation>İyi</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="415"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/ScoreQualityRatingPanel.qml" line="99"/>
         <source>Bad</source>
+        <extracomment>Button to rate the quality of a converted score as bad</extracomment>
         <translation>Kötü</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="419"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="261"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="293"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/ScoreQualityRatingPanel.qml" line="36"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/ScoreQualityRatingPanel.qml" line="64"/>
         <source>How does your score look?</source>
         <translation>Notanız nasıl görünüyor?</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="420"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="262"/>
-        <location filename="../../src/project/tests/convertfiletoscorescenariotest.cpp" line="294"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/ScoreQualityRatingPanel.qml" line="37"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/ScoreQualityRatingPanel.qml" line="72"/>
         <source>We’re always improving our score conversion accuracy. Let us know how we did with this one.</source>
         <translation>Nota dönüştürme doğruluğumuzu sürekli geliştiriyoruz. Bu dönüştürme hakkında ne düşündüğünüzü bize bildirin.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="59"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="62"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="379"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="393"/>
         <source>%1 max</source>
+        <extracomment>%1 is a pre-formatted file size including units, e.g. &quot;20 MB max&quot;; shown as a short label/badge</extracomment>
         <translation>en fazla %1</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="65"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="69"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="387"/>
         <source>%1 max combined</source>
+        <extracomment>%1 is a pre-formatted file size including units, e.g. &quot;20 MB max combined&quot;; shown as a short label/badge</extracomment>
         <translation>toplamda en fazla %1</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="224"/>
         <source>%1 pages max</source>
         <translation>en fazla %1 sayfa</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="228"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="215"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="368"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="410"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="428"/>
         <source>PDF</source>
         <translation>PDF</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="255"/>
         <source>Max %1 images</source>
         <translation>En fazla %1 görsel</translation>
     </message>
@@ -35744,23 +36072,30 @@ başarısız: %2</translation>
         <translation>Görseller, yüklediğiniz sıraya göre tek bir notada birleştirilecek</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/filelistmodel.cpp" line="145"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/filelistmodel.cpp" line="156"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/filelistmodel_tests.cpp" line="325"/>
         <source>Images will be combined into one score in the order shown here</source>
         <translation>Görseller, burada gösterilen sıraya göre tek bir nota dosyasında birleştirilecektir.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/filelistmodel.cpp" line="268"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/filelistmodel.cpp" line="298"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/filelistmodel_tests.cpp" line="448"/>
         <source>%1/%2 used</source>
+        <extracomment>%1 and %2 are pre-formatted file sizes including units, e.g. &quot;15 MB/20 MB used&quot;</extracomment>
         <translation>%1/%2 kullanıldı</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="259"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="243"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="369"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="416"/>
         <source>Images</source>
         <translation>Görüntüler</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="267"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="252"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="392"/>
         <source>%1 format</source>
+        <extracomment>%1 is one or more file format names, e.g. &quot;MP3 format&quot; or &quot;MP3, WAV format&quot;</extracomment>
         <translation>%1 formatı</translation>
     </message>
     <message>
@@ -35772,79 +36107,127 @@ başarısız: %2</translation>
         <translation>Yükleme başına %1 dosya</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="282"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="265"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="370"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="422"/>
         <source>Audio</source>
         <translation>Ses</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="111"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="113"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="546"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="547"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="559"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="560"/>
         <source>Paste a link from %1 (beta)</source>
+        <extracomment>%1 is a source name, e.g. &quot;YouTube&quot;; may include HTML markup (bold/link) depending on where this text is shown</extracomment>
         <translation> %1den bir bağlantısını yapıştırın (beta)</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="107"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="108"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="533"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="535"/>
         <source>Paste a link from %1 or %2 (beta)</source>
+        <extracomment>%1 and %2 are source names, e.g. &quot;YouTube&quot;; may include HTML markup (bold/link) depending on where this text is shown</extracomment>
         <translation>%1 veya %2 (beta) üzerinden bir bağlantı yapıştırın</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="227"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="275"/>
         <source>1 file per conversion</source>
         <translation>Dönüştürme başına 1 dosya</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="277"/>
         <source>%1 files per conversion</source>
         <translation>Dönüştürme başına %1 dosya</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="342"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="322"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="531"/>
         <source>Or paste a link from %1 or %2 (beta)</source>
+        <extracomment>%1 and %2 are source names, e.g. &quot;YouTube&quot;, with HTML markup (bold/link)</extracomment>
         <translation>Ya da %1 veya %2 (beta) üzerinden bir bağlantı yapıştırın.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="346"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="327"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="545"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="558"/>
         <source>Or paste a link from %1 (beta)</source>
+        <extracomment>%1 is a source name, e.g. &quot;YouTube&quot;, with HTML markup (bold/link)</extracomment>
         <translation>Veya %1 üzerinden bir bağlantı yapıştırın (beta)</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="406"/>
         <source>Supported files</source>
         <translation>Desteklenen dosyalar</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="407"/>
         <source>All files</source>
         <translation>Tüm dosyalar</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="414"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="417"/>
         <source>Choose file</source>
         <translation>Dosya seçin</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="496"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="481"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="503"/>
         <source>No, stay here</source>
         <translation>Hayır, burada kal</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="497"/>
+        <location filename="../../src/project/internal/convertfiletoscorescenario.cpp" line="194"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="484"/>
+        <source>Yes, cancel</source>
+        <translation>Evet, iptal et</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="488"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="815"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="832"/>
+        <source>Are you sure you want to cancel?</source>
+        <translation>İptal etmek istediğine emin misin?</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="506"/>
         <source>Yes, go back</source>
         <translation>Evet, geri dön</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="500"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="510"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="849"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="868"/>
         <source>Are you sure you want to go back?</source>
         <translation>Geri dönmek istediğinizden emin misiniz?</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="501"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="489"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="511"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="149"/>
         <source>Your current selection will be lost.</source>
         <translation>Mevcut seçiminiz kaybolacak.</translation>
     </message>
+    <message numerus="yes">
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="208"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="380"/>
+        <source>%n page(s) max.</source>
+        <extracomment>%n is the maximum number of pages; shown as a short label/badge, e.g. &quot;20 pages max&quot;</extracomment>
+        <translation><numerusform>En fazla %n sayfa.</numerusform><numerusform>En fazla %n sayfa.</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="212"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="260"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="381"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="394"/>
+        <source>%n file(s) per conversion</source>
+        <translation><numerusform>Dönüştürme başına %n dosya</numerusform><numerusform>Dönüştürme başına %n dosya</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="239"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="388"/>
+        <source>Max. %n image(s)</source>
+        <translation><numerusform>En fazla %n görsel</numerusform><numerusform>En fazla %n görsel</numerusform></translation>
+    </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="485"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="470"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="802"/>
         <source>“%1” cannot be used as a file name. Please choose a different name.</source>
         <translation>&quot;%1&quot; dosya adı olarak kullanılamaz. Lütfen farklı bir ad seçin.</translation>
     </message>
@@ -35854,30 +36237,77 @@ başarısız: %2</translation>
         <translation>Bağlantıdan dönüştürme</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/LinkEntryPage.qml" line="120"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/LinkEntryPage.qml" line="121"/>
         <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/LinkPastePanel.qml" line="82"/>
         <source>Link</source>
         <translation>Bağlantı</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/LinkEntryPage.qml" line="131"/>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="281"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/LinkEntryPage.qml" line="132"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="264"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="395"/>
         <source>Recommended for solo arrangements only</source>
         <translation>Yalnızca solo düzenlemeler için önerilir.</translation>
     </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="83"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="116"/>
         <source>Selected files</source>
         <translation>Seçilen dosyalar</translation>
     </message>
+    <message numerus="yes">
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="268"/>
+        <source>%1/%n file(s) max.</source>
+        <extracomment>%1 is the number of files currently selected, %n is the maximum allowed, e.g. &quot;3/5 max files&quot;</extracomment>
+        <translation><numerusform>%1/%n dosya(lar) maksimum.</numerusform><numerusform>Seçilen dosya sayısı: %1/%n (en fazla)</numerusform></translation>
+    </message>
     <message>
-        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/MultipleFilesPanel.qml" line="225"/>
         <source>%1/%2 max files</source>
         <translation>En fazla %1/%2 dosya</translation>
     </message>
     <message>
         <source>Maximum files selected (%1)</source>
         <translation>En fazla %1 dosya seçilebilir.</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/ScoreQualityFeedbackPanel.qml" line="37"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/ScoreQualityFeedbackPanel.qml" line="73"/>
+        <source>Help us improve score processing with your thoughts on what went wrong</source>
+        <translation>Nota işleme sürecini iyileştirmemize yardımcı olmak için neyin yanlış gittiğini bizimle paylaşın</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/ScoreQualityFeedbackPanel.qml" line="82"/>
+        <source>Tell us how your score could look better</source>
+        <translation>Notanızın nasıl daha iyi görünebileceğini bize söyleyin</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/ScoreQualityFeedbackPanel.qml" line="88"/>
+        <source>Feedback</source>
+        <translation>Geri bildirim</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/ScoreQualityFeedbackPanel.qml" line="113"/>
+        <source>%1/%2 characters</source>
+        <extracomment>%1 is the current number of characters typed, %2 is the maximum allowed</extracomment>
+        <translation>%1/%2 karakter</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/ScoreQualityFeedbackPanel.qml" line="118"/>
+        <source>Submit feedback</source>
+        <translation>Geri bildirim gönder</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/ScoreGridItem.qml" line="70"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/ScoreListItem.qml" line="69"/>
+        <source>Processing failed: %1</source>
+        <extracomment>%1 is the name of the score whose conversion failed</extracomment>
+        <translation>İşlem başarısız: %1</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/ScoreListItem.qml" line="155"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/ScoreProcessingPlaceholder.qml" line="124"/>
+        <source>Processing failed</source>
+        <extracomment>Status label shown on a score's thumbnail when its conversion failed</extracomment>
+        <translation>İşlem başarısız</translation>
     </message>
 </context>
 <context>
@@ -35965,7 +36395,7 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/internal/Export/ExportScoresListView.qml" line="81"/>
         <source>Main score</source>
-        <translation>Ana partisyon</translation>
+        <translation>Ana nota</translation>
     </message>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/internal/Export/LrcSettingsPage.qml" line="31"/>
@@ -36081,7 +36511,7 @@ başarısız: %2</translation>
         <location filename="../../src/project/internal/exportprojectscenario.cpp" line="72"/>
         <source>Score_and_Parts</source>
         <extracomment>Used in export filename suggestion. Please use only characters that are valid for filenames.</extracomment>
-        <translation>Partisyon_ve_Bölümler</translation>
+        <translation>Nota_ve_Bölümler</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/exportprojectscenario.cpp" line="75"/>
@@ -36390,7 +36820,7 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/internal/Migration/MigrationContentFor362.qml" line="75"/>
         <source>Please note that the appearance of your score will change due to improvements we have made to default settings for beaming, ties, slurs, system objects and horizontal spacing.</source>
-        <translation>Lütfen, nota kirişi, uzatma bağı, hece bağı, sistem nesneleri ve yatay boşluk için varsayılan ayarlarda yaptığımız iyileştirmeler nedeniyle partisyonunuzun görünümünün değişeceğini unutmayın.</translation>
+        <translation>Lütfen, nota kirişi, uzatma bağı, hece bağı, sistem nesneleri ve yatay boşluk için varsayılan ayarlarda yaptığımız iyileştirmeler nedeniyle notanızın görünümünün değişeceğini unutmayın.</translation>
     </message>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/internal/Migration/MigrationContentFor362.qml" line="85"/>
@@ -36405,7 +36835,7 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/internal/Migration/MigrationContentForPre362.qml" line="83"/>
         <source>Select the engraving improvements you would like to apply to your score</source>
-        <translation>Partisyonunuza uygulamak istediğiniz gravür iyileştirmelerini seçin</translation>
+        <translation>Notanıza uygulamak istediğiniz gravür iyileştirmelerini seçin</translation>
     </message>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/internal/Migration/MigrationContentForPre362.qml" line="112"/>
@@ -36425,7 +36855,7 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/internal/Migration/MigrationContentForPre362.qml" line="157"/>
         <source>Please note: score layouts will be affected by improvements to MuseScore Studio</source>
-        <translation>Lütfen unutmayın: partisyon düzeni MuseScore Studio&apos;daki iyileştirmelerden etkilenecektir.</translation>
+        <translation>Lütfen unutmayın: nota düzeni MuseScore Studio&apos;daki iyileştirmelerden etkilenecektir.</translation>
     </message>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/internal/Migration/MigrationContentForPre362.qml" line="162"/>
@@ -36438,7 +36868,7 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/AdditionalInfoView.qml" line="71"/>
         <source>Score options</source>
-        <translation>Partisyon seçenekleri</translation>
+        <translation>Nota seçenekleri</translation>
     </message>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/AdditionalInfoView.qml" line="91"/>
@@ -36493,7 +36923,7 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/GeneralInfoView.qml" line="49"/>
         <source>General score info</source>
-        <translation>Genel partisyon bilgisi</translation>
+        <translation>Genel nota bilgisi</translation>
     </message>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/KeySignatureListView.qml" line="91"/>
@@ -36542,12 +36972,12 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/MeasuresSettings.qml" line="190"/>
         <source>Hint: You can also add &amp; delete measures after you have created your score</source>
-        <translation>İpucu: Partisyonunuzu oluşturduktan sonra da ölçü ekleyebilir &amp; silebilirsiniz.</translation>
+        <translation>İpucu: Notanızı oluşturduktan sonra da ölçü ekleyebilir ve silebilirsiniz.</translation>
     </message>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/ScoreInfoPage.qml" line="71"/>
         <source>Additional score information</source>
-        <translation>Ek partisyon bilgileri</translation>
+        <translation>Ek nota bilgileri</translation>
     </message>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/TemplatePreview.qml" line="48"/>
@@ -36557,7 +36987,7 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/TempoSettings.qml" line="99"/>
         <source>Show tempo marking on my score</source>
-        <translation>Partisyonumda hız işaretini göster</translation>
+        <translation>Notamda hız işaretini göster</translation>
     </message>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/internal/NewScore/additionalinfomodel.cpp" line="97"/>
@@ -36812,8 +37242,8 @@ başarısız: %2</translation>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/RequireAuthorizationDialog.qml" line="75"/>
         <location filename="../../src/project/qml/MuseScore/Project/AskSaveLocationTypeDialog.qml" line="98"/>
         <location filename="../../src/project/qml/MuseScore/Project/SaveToCloudDialog.qml" line="248"/>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="408"/>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="552"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="414"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="558"/>
         <source>Save to computer</source>
         <translation>Bilgisayara kaydedin</translation>
     </message>
@@ -36830,7 +37260,7 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/AskSaveLocationTypeDialog.qml" line="79"/>
         <source>Files are saved privately on your own personal account. You can share drafts with others and publish your finished scores publicly too.</source>
-        <translation>Dosyalar kendi kişisel hesabınıza özel olarak kaydedilir. Taslakları başkalarıyla paylaşabilir ve bitmiş partisyonlarınızı da herkese açık olarak yayınlayabilirsiniz.</translation>
+        <translation>Dosyalar kendi kişisel hesabınıza özel olarak kaydedilir. Taslakları başkalarıyla paylaşabilir ve bitmiş notalarınızı herkese açık olarak da yayınlayabilirsiniz.</translation>
     </message>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/AskSaveLocationTypeDialog.qml" line="81"/>
@@ -36888,7 +37318,7 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/AudioGenerationSettingsDialog.qml" line="87"/>
         <source>This could take a few minutes each time you save, depending on the size of your score. These settings can always be changed in Preferences.</source>
-        <translation>Bu, partisyonunuzun boyutuna bağlı olarak her kaydettiğinizde birkaç dakika sürebilir. Bu ayarlar her zaman Tercihler&apos;de değiştirilebilir.</translation>
+        <translation>Bu, notanızın boyutuna bağlı olarak her kaydettiğinizde birkaç dakika sürebilir. Bu ayarlar her zaman Tercihler&apos;de değiştirilebilir.</translation>
     </message>
     <message>
         <location filename="../../src/project/qml/MuseScore/Project/SaveToCloudDialog.qml" line="136"/>
@@ -36924,12 +37354,12 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/appshell/qml/MuseScore/AppShell/PublishPage/publishtoolbarmodel.cpp" line="48"/>
         <source>Share this score and its audio on MuseScore.com</source>
-        <translation>Bu partisyonu ve ses dosyasını MuseScore.com’da paylaşın</translation>
+        <translation>Bu notayı ve ses dosyasını MuseScore.com’da paylaşın</translation>
     </message>
     <message>
         <location filename="../../src/appshell/qml/MuseScore/AppShell/PublishPage/publishtoolbarmodel.cpp" line="49"/>
         <source>Share the audio from this score on Audio.com</source>
-        <translation>Bu partisyonun sesini Audio.com’da paylaşın</translation>
+        <translation>Bu notanın sesini Audio.com’da paylaşın</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/cloudsmodel.cpp" line="162"/>
@@ -36955,17 +37385,17 @@ başarısız: %2</translation>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/cloudsmodel.cpp" line="189"/>
         <source>Replace the existing &lt;a href=&quot;%1&quot;&gt;online score&lt;/a&gt;</source>
         <extracomment>The text between `&lt;a href=&quot;%1&quot;&gt;` and `&lt;/a&gt;` will be a clickable link to the online score in question</extracomment>
-        <translation>Mevcut &lt;a href=&quot;%1&quot;&gt;çevrimiçi partisyonu&lt;/a&gt; değiştirin</translation>
+        <translation>Mevcut &lt;a href=&quot;%1&quot;&gt;çevrimiçi notayı&lt;/a&gt; değiştirin</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/cloudsmodel.cpp" line="192"/>
         <source>Publish as new online score</source>
-        <translation>Yeni çevrimiçi partisyon olarak yayınla</translation>
+        <translation>Yeni çevrimiçi nota olarak yayınla</translation>
     </message>
     <message>
         <location filename="../../src/framework/cloud/qml/Muse/Cloud/cloudsmodel.cpp" line="195"/>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="351"/>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="386"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="357"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="392"/>
         <source>Publish</source>
         <translation>Yayınla</translation>
     </message>
@@ -37001,223 +37431,223 @@ başarısız: %2</translation>
         <translation>“%1” bozuk veya hasarlı.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="93"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="99"/>
         <source>Save score</source>
-        <translation>Partisyonu kaydet</translation>
+        <translation>Notayı kaydet</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="98"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="104"/>
         <source>copy</source>
         <comment>a copy of a file</comment>
         <extracomment>used to form a filename suggestion, like &quot;originalFile - copy&quot;</extracomment>
         <translation>kopyala</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="101"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="107"/>
         <source>selection</source>
         <extracomment>used to form a filename suggestion, like &quot;originalFile - selection&quot;</extracomment>
         <translation>seçim</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="183"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="189"/>
         <source>Log in or create a new account on Audio.com to share your music.</source>
         <translation>Müziğinizi paylaşmak için Audio.com&apos;da oturum açın veya yeni bir hesap oluşturun.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="235"/>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1034"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="241"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1056"/>
         <source>Log in to MuseScore.com to save this score to the cloud.</source>
-        <translation>Bu partisyonu buluta kaydetmek için MuseScore.com&apos;da oturum açın.</translation>
+        <translation>Bu notayı buluta kaydetmek için MuseScore.com&apos;da oturum açın.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="236"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="242"/>
         <source>Log in to MuseScore.com to publish this score.</source>
-        <translation>Bu partisyonu yayınlamak için MuseScore.com&apos;a giriş yapın.</translation>
+        <translation>Bu notayı yayınlamak için MuseScore.com&apos;a giriş yapın.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="357"/>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="390"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="363"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="396"/>
         <source>Publish changes online?</source>
         <translation>Değişiklikler çevrimiçi yayınlansın mı?</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="358"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="364"/>
         <source>We will need to generate a new MP3 for web playback.</source>
         <translation>Webde çalması için yeni bir MP3 oluşturmamız gerekecek.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="360"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="366"/>
         <source>Publish this score online?</source>
-        <translation>Bu partisyon çevrimiçi yayınlansın mı?</translation>
+        <translation>Bu nota çevrimiçi yayınlansın mı?</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="361"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="367"/>
         <source>All saved changes will be publicly visible on MuseScore.com. If you want to make frequent changes, we recommend saving this score privately until you’re ready to share it to the world.</source>
-        <translation>Kaydedilen tüm değişiklikler MuseScore.com&apos;da herkese açık olarak görünür olacaktır. Sık sık değişiklik yapmak istiyorsanız, bu partisyonu dünyayla paylaşmaya hazır olana kadar özel olarak kaydetmenizi öneririz.</translation>
+        <translation>Kaydedilen tüm değişiklikler MuseScore.com&apos;da herkese açık olarak görünür olacaktır. Sık sık değişiklik yapmak istiyorsanız, bu notayı dünyayla paylaşmaya hazır olana kadar özel olarak kaydetmenizi öneririz.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="391"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="397"/>
         <source>Your saved changes will be publicly visible. We will also need to generate a new MP3 for public playback.</source>
         <translation>Kaydedilen değişiklikleriniz herkes tarafından görülebilir. Ayrıca halka açık çalma için yeni bir MP3 oluşturmamız gerekecek.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="401"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="407"/>
         <source>Unable to connect to MuseScore.com</source>
         <translation>MuseScore.com&apos;a bağlanılamıyor</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="402"/>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="412"/>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="426"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="408"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="418"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="432"/>
         <source>Please check your internet connection or try again later.</source>
         <translation>Lütfen internet bağlantınızı kontrol edin veya daha sonra tekrar deneyin.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="411"/>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1479"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="417"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1501"/>
         <source>Unable to connect to the cloud</source>
         <translation>Buluta bağlanılamıyor</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="425"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="431"/>
         <source>Unable to connect to Audio.com</source>
         <translation>Audio.com&apos;a bağlanılamıyor</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="535"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="541"/>
         <source>Your score could not be published</source>
-        <translation>Partisyonunuz yayınlanamadı</translation>
+        <translation>Notanız yayınlanamadı</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="536"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="542"/>
         <source>Your score could not be saved to the cloud</source>
-        <translation>Partisyonunuz buluta kaydedilemedi</translation>
+        <translation>Notanız buluta kaydedilemedi</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="539"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="545"/>
         <source>Your score cannot be published</source>
-        <translation>Partisyonunuz yayınlanamaz</translation>
+        <translation>Notanız yayınlanamaz</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="540"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="546"/>
         <source>Your score cannot be saved to the cloud</source>
-        <translation>Partisyonunuz buluta kaydedilemez</translation>
+        <translation>Notanız buluta kaydedilemez</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="553"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="559"/>
         <source>Get help</source>
         <translation>Yardım al</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="568"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="574"/>
         <source>There are conflicting changes in the online score</source>
-        <translation>Çevrimiçi partisonda çelişkili değişiklikler var</translation>
-    </message>
-    <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="570"/>
-        <source>You can replace the &lt;a href=&quot;%1&quot;&gt;online score&lt;/a&gt;, or publish this as a new score to avoid losing changes in the current online version.</source>
-        <translation>Mevcut çevrimiçi sürümdeki değişiklikleri kaybetmemek için &lt;a href=&quot;%1&quot;&gt;çevrimiçi partisyonu&lt;/a&gt; değiştirebilir veya bunu yeni bir partisyon olarak yayınlayabilirsiniz.</translation>
+        <translation>Çevrimiçi notada çelişkili değişiklikler var</translation>
     </message>
     <message>
         <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="576"/>
-        <source>Publish as new score</source>
-        <translation>Yeni partisyon olarak yayınla</translation>
+        <source>You can replace the &lt;a href=&quot;%1&quot;&gt;online score&lt;/a&gt;, or publish this as a new score to avoid losing changes in the current online version.</source>
+        <translation>Mevcut çevrimiçi sürümdeki değişiklikleri kaybetmemek için &lt;a href=&quot;%1&quot;&gt;çevrimiçi notayı&lt;/a&gt; değiştirebilir veya bunu yeni bir nota olarak yayınlayabilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="577"/>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="588"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="582"/>
+        <source>Publish as new score</source>
+        <translation>Yeni nota olarak yayınla</translation>
+    </message>
+    <message>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="583"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="594"/>
         <source>Replace</source>
         <translation>Değiştir</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="581"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="587"/>
         <source>You can replace the &lt;a href=&quot;%1&quot;&gt;online score&lt;/a&gt;, or save this as a new file to avoid losing changes in the current online version.</source>
-        <translation>Mevcut çevrimiçi sürümdeki değişiklikleri kaybetmemek için &lt;a href=&quot;%1&quot;&gt;çevrimiçi partisyonu&lt;/a&gt;,  değiştirebilir veya bunu yeni bir dosya olarak kaydedebilirsiniz.</translation>
+        <translation>Mevcut çevrimiçi sürümdeki değişiklikleri kaybetmemek için &lt;a href=&quot;%1&quot;&gt;çevrimiçi notayı&lt;/a&gt;,  değiştirebilir veya bunu yeni bir dosya olarak kaydedebilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="587"/>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1675"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="593"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1697"/>
         <source>Save as…</source>
         <translation>Farklı kaydet…</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="466"/>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="559"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="488"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="581"/>
         <source>Log in or create a free account on MuseScore.com to open this score.</source>
-        <translation>Bu partisyonu açmak için MuseScore.com&apos;a giriş yapın veya ücretsiz bir hesap oluşturun.</translation>
+        <translation>Bu notayı açmak için MuseScore.com&apos;a giriş yapın veya ücretsiz bir hesap oluşturun.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1401"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1423"/>
         <source>View online</source>
         <translation>Çevrimiçi görüntüle</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1404"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1426"/>
         <source>All saved changes will now update to the cloud. You can manage this file in the score manager on MuseScore.com.</source>
-        <translation>Kaydedilen tüm değişiklikler şimdi bulutta güncellenecek. Bu dosyayı MuseScore.com&apos;daki partisyon yöneticisinden yönetebilirsiniz.</translation>
+        <translation>Kaydedilen tüm değişiklikler şimdi bulutta güncellenecek. Bu dosyayı MuseScore.com&apos;daki nota yöneticisinden yönetebilirsiniz.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1480"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1502"/>
         <source>Your changes will be saved to a local file until the connection resumes.</source>
         <translation>Bağlantı sağlanana kadar değişiklikleriniz yerel bir dosyaya kaydedilecek.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1495"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1517"/>
         <source>Please add at least one instrument to enable saving.</source>
         <translation>Lütfen kaydetmeyi etkinleştirmek için en az bir çalgı ekleyin.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1645"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1667"/>
         <source>An unknown error occurred while saving this file.</source>
         <translation>Bu dosya kaydedilirken bilinmeyen bir hata oluştu.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1653"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1675"/>
         <source>Your score could not be saved</source>
-        <translation>Partisyonunuz kaydedilemedi</translation>
+        <translation>Notanız kaydedilemedi</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1663"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1685"/>
         <source>An error occurred while saving your score</source>
-        <translation>Partisyonunuz kaydedilirken bir hata oluştu</translation>
+        <translation>Notanız kaydedilirken bir hata oluştu</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1665"/>
+        <location filename="../../src/project/internal/projectactionscontroller.cpp" line="1687"/>
         <source>To preserve your score, try saving it again. If this message still appears, please save your score as new copy. You can also get help for this issue on %1.&lt;br/&gt;&lt;br/&gt;Error details (please cite when asking for support): %2</source>
-        <translation>Partisyonunuzu korumak için tekrar kaydetmeyi deneyin. Bu mesaj hala görünüyorsa, lütfen partisyonunuzu yeni bir kopya olarak kaydedin. Ayrıca bu sorun için %1 adresinden yardım alabilirsiniz. &lt;br/&gt;&lt;br/&gt;Hata ayrıntıları (destek isterken lütfen belirtin): %2</translation>
+        <translation>Notanızı korumak için tekrar kaydetmeyi deneyin. Bu mesaj hala görünüyorsa, lütfen notanızı yeni bir kopya olarak kaydedin. Ayrıca bu sorun için %1 adresinden yardım alabilirsiniz. &lt;br/&gt;&lt;br/&gt;Hata ayrıntıları (destek isterken lütfen belirtin): %2</translation>
     </message>
 </context>
 <context>
     <name>project/share</name>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="633"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="639"/>
         <source>Your audio could not be shared</source>
         <translation>Sesiniz paylaşılamadı</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="641"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="647"/>
         <source>Your Audio.com account needs to be verified first. Please activate your account via the link in the activation email.</source>
         <translation>Önce Audio.com hesabınızın doğrulanması gerekiyor. Lütfen hesabınızı etkinleştirme e-postasındaki bağlantı aracılığıyla etkinleştirin.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="647"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="653"/>
         <source>Audio.com returned an unknown error code: %1.</source>
         <extracomment>%1 will be replaced with the error code that audio.com returned, which is a number.</extracomment>
         <translation>Audio.com bilinmeyen bir hata kodu döndürdü: %1.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="650"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="656"/>
         <source>Audio.com returned an unknown error code.</source>
         <translation>Audio.com bilinmeyen bir hata kodu döndürdü.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="652"/>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="659"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="658"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="665"/>
         <source>Please try again later, or get help for this problem on Audio.com.</source>
         <translation>Lütfen daha sonra tekrar deneyin veya Audio.com adresinden bu sorun için yardım alın.</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="655"/>
+        <location filename="../../src/project/internal/opensaveprojectscenario.cpp" line="661"/>
         <source>Could not connect to Audio.com. Please check your internet connection or try again later.</source>
         <translation> Audio.com&apos;a bağlanılamadı. Lütfen internet bağlantınızı kontrol edin veya daha sonra tekrar deneyin.</translation>
     </message>
@@ -37483,6 +37913,62 @@ başarısız: %2</translation>
     </message>
 </context>
 <context>
+    <name>toast</name>
+    <message>
+        <location filename="../../src/framework/toast/qml/Muse/Toast/ToastItem.qml" line="98"/>
+        <source>%1 of %2</source>
+        <translation>%2&apos;den %1&apos;i</translation>
+    </message>
+    <message>
+        <location filename="../../src/framework/toast/qml/Muse/Toast/ToastItem.qml" line="264"/>
+        <source>Dismiss</source>
+        <translation>Reddet</translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../../src/framework/toast/qml/Muse/Toast/ToastProgressBar.qml" line="69"/>
+        <source>%n hour(s) remaining</source>
+        <comment>amount of time left until the requested operation is finished</comment>
+        <translation><numerusform>%n saat kaldı</numerusform><numerusform>%n saat kaldı</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../../src/framework/toast/qml/Muse/Toast/ToastProgressBar.qml" line="72"/>
+        <source>%n minute(s) remaining</source>
+        <comment>amount of time left until the requested operation is finished</comment>
+        <translation><numerusform>%n dakika kaldı</numerusform><numerusform>%n dakika kaldı</numerusform></translation>
+    </message>
+    <message numerus="yes">
+        <location filename="../../src/framework/toast/qml/Muse/Toast/ToastProgressBar.qml" line="75"/>
+        <source>%n second(s) remaining</source>
+        <comment>amount of time left until the requested operation is finished</comment>
+        <translation><numerusform>%n saniye kaldı</numerusform><numerusform>%n saniye kaldı</numerusform></translation>
+    </message>
+    <message>
+        <location filename="../../src/framework/toast/qml/Muse/Toast/toastlistmodel.cpp" line="43"/>
+        <source>Error</source>
+        <translation>Hata</translation>
+    </message>
+    <message>
+        <location filename="../../src/framework/toast/qml/Muse/Toast/toastlistmodel.cpp" line="45"/>
+        <source>Warning</source>
+        <translation>Uyarı</translation>
+    </message>
+    <message>
+        <location filename="../../src/framework/toast/qml/Muse/Toast/toastlistmodel.cpp" line="47"/>
+        <source>Information</source>
+        <translation>Bilgi</translation>
+    </message>
+    <message>
+        <location filename="../../src/framework/toast/qml/Muse/Toast/toastlistmodel.cpp" line="49"/>
+        <source>Success</source>
+        <translation>Başarılı</translation>
+    </message>
+    <message>
+        <location filename="../../src/framework/toast/qml/Muse/Toast/toastlistmodel.cpp" line="106"/>
+        <source>Press F6 to go to the notification.</source>
+        <translation>Bildirimlere gitmek için F6 tuşuna basın.</translation>
+    </message>
+</context>
+<context>
     <name>tours</name>
     <message>
         <location filename="../../src/framework/tours/qml/Muse/Tours/internal/TourStepPopup.qml" line="142"/>
@@ -37514,6 +38000,9 @@ başarısız: %2</translation>
     </message>
     <message>
         <location filename="../../src/framework/uicomponents/qml/Muse/UiComponents/FilePicker.qml" line="131"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="396"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ConvertFileToScore/convertfiletoscoremodel.cpp" line="399"/>
+        <location filename="../../src/project/qml/MuseScore/Project/tests/convertfiletoscoremodel_tests.cpp" line="684"/>
         <source>Choose file</source>
         <translation>Dosya seçin</translation>
     </message>
@@ -37588,6 +38077,7 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/framework/uicomponents/qml/Muse/UiComponents/internal/StyledMenuItem.qml" line="93"/>
         <location filename="../../src/framework/uicomponents/qml/Muse/UiComponents/MenuButton.qml" line="50"/>
+        <location filename="../../src/project/qml/MuseScore/Project/internal/ScoresPage/ScoreItemMenuButton.qml" line="112"/>
         <source>Menu</source>
         <extracomment>a type of ui item</extracomment>
         <translation>Menü</translation>
@@ -37857,7 +38347,7 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/engraving/api/v1/qmlpluginapi.cpp" line="404"/>
         <source>New score</source>
-        <translation>Yeni partisyon</translation>
+        <translation>Yeni nota</translation>
     </message>
     <message>
         <location filename="../../src/engraving/api/v1/score.cpp" line="598"/>
@@ -37914,7 +38404,7 @@ başarısız: %2</translation>
         <location filename="../../src/engraving/qml/MuseScore/Engraving/devtools/corruptscoredevtoolsmodel.cpp" line="44"/>
         <source>Corrupt score</source>
         <extracomment>&quot;Corrupt&quot; is used as a verb here, i.e. &quot;Make the current score corrupted&quot; (for testing purposes).</extracomment>
-        <translation>Partisyonu boz</translation>
+        <translation>Notayı boz</translation>
     </message>
     <message>
         <location filename="../../src/engraving/tests/voiceswitching_tests.cpp" line="209"/>
@@ -37961,13 +38451,13 @@ başarısız: %2</translation>
     </message>
     <message>
         <location filename="../../src/inspector/qml/MuseScore/Inspector/general/generalsettingsmodel.cpp" line="162"/>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="501"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="503"/>
         <source>Make element(s) visible</source>
         <translation>Ögeyi görünür yap</translation>
     </message>
     <message>
         <location filename="../../src/inspector/qml/MuseScore/Inspector/general/generalsettingsmodel.cpp" line="163"/>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="503"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="505"/>
         <source>Make element(s) invisible</source>
         <translation>Ögeyi görünmez yap</translation>
     </message>
@@ -38347,7 +38837,7 @@ başarısız: %2</translation>
     </message>
     <message>
         <location filename="../../src/notation/internal/notationinteraction.cpp" line="5720"/>
-        <location filename="../../src/notation/internal/notationinteraction.cpp" line="8277"/>
+        <location filename="../../src/notation/internal/notationinteraction.cpp" line="8281"/>
         <source>Toggle articulation</source>
         <translation>Seslendirmeyi aç/kapat</translation>
     </message>
@@ -38597,7 +39087,7 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/notation/internal/notationinteraction.cpp" line="6610"/>
         <source>Set score view settings</source>
-        <translation>Partisyon görünüm ayarlarını belirle</translation>
+        <translation>Nota görünüm ayarlarını belirle</translation>
     </message>
     <message>
         <location filename="../../src/notation/internal/notationinteraction.cpp" line="6780"/>
@@ -38616,102 +39106,102 @@ başarısız: %2</translation>
         <translation>Kısmi söz tiresi ekle</translation>
     </message>
     <message>
-        <location filename="../../src/notation/internal/notationinteraction.cpp" line="7137"/>
+        <location filename="../../src/notation/internal/notationinteraction.cpp" line="7141"/>
         <source>Navigate to verse</source>
         <translation>Söze git</translation>
     </message>
     <message>
-        <location filename="../../src/notation/internal/notationinteraction.cpp" line="7194"/>
-        <location filename="../../src/notation/internal/notationinteraction.cpp" line="7284"/>
+        <location filename="../../src/notation/internal/notationinteraction.cpp" line="7198"/>
+        <location filename="../../src/notation/internal/notationinteraction.cpp" line="7288"/>
         <source>Navigate to next chord symbol</source>
         <translation>Sonraki akor simgesine git</translation>
     </message>
     <message>
-        <location filename="../../src/notation/internal/notationinteraction.cpp" line="7327"/>
+        <location filename="../../src/notation/internal/notationinteraction.cpp" line="7331"/>
         <source>Navigate to chord symbol</source>
         <translation>Akor simgesine git</translation>
     </message>
     <message>
-        <location filename="../../src/notation/internal/notationinteraction.cpp" line="7384"/>
-        <location filename="../../src/notation/internal/notationinteraction.cpp" line="7430"/>
+        <location filename="../../src/notation/internal/notationinteraction.cpp" line="7388"/>
+        <location filename="../../src/notation/internal/notationinteraction.cpp" line="7434"/>
         <source>Navigate to next figured bass</source>
         <translation>Sonraki şifreli bas&apos;a git</translation>
     </message>
     <message>
-        <location filename="../../src/notation/internal/notationinteraction.cpp" line="7478"/>
+        <location filename="../../src/notation/internal/notationinteraction.cpp" line="7482"/>
         <source>Navigate to figured bass</source>
         <translation>Şifreli bas&apos;a git</translation>
     </message>
     <message>
-        <location filename="../../src/notation/internal/notationinteraction.cpp" line="7776"/>
-        <location filename="../../src/notation/internal/notationinteraction.cpp" line="7805"/>
-        <location filename="../../src/notation/internal/notationinteraction.cpp" line="7866"/>
-        <location filename="../../src/notation/internal/notationinteraction.cpp" line="7926"/>
+        <location filename="../../src/notation/internal/notationinteraction.cpp" line="7780"/>
+        <location filename="../../src/notation/internal/notationinteraction.cpp" line="7809"/>
+        <location filename="../../src/notation/internal/notationinteraction.cpp" line="7870"/>
+        <location filename="../../src/notation/internal/notationinteraction.cpp" line="7930"/>
         <source>Enter lyrics extension line</source>
         <translation>Söz uzatma çizgisi ekle</translation>
     </message>
     <message>
-        <location filename="../../src/notation/internal/notationinteraction.cpp" line="7951"/>
+        <location filename="../../src/notation/internal/notationinteraction.cpp" line="7955"/>
         <source>Add lyrics verse</source>
         <translation>Şarkı sözü ekle</translation>
     </message>
     <message>
-        <location filename="../../src/notation/internal/notationinteraction.cpp" line="7991"/>
+        <location filename="../../src/notation/internal/notationinteraction.cpp" line="7995"/>
         <source>Enter guitar bend</source>
         <translation>Gitar bendi gir</translation>
     </message>
     <message>
-        <location filename="../../src/notation/internal/notationinteraction.cpp" line="8060"/>
+        <location filename="../../src/notation/internal/notationinteraction.cpp" line="8064"/>
         <source>Add fretboard diagram</source>
         <translation>Akor şeması ekle</translation>
     </message>
     <message>
-        <location filename="../../src/notation/internal/notationinteraction.cpp" line="8201"/>
+        <location filename="../../src/notation/internal/notationinteraction.cpp" line="8205"/>
         <source>Format text</source>
         <translation>Metni biçimlendir</translation>
     </message>
     <message>
-        <location filename="../../src/notation/internal/notationinteraction.cpp" line="8221"/>
+        <location filename="../../src/notation/internal/notationinteraction.cpp" line="8225"/>
         <source>Toggle subscript</source>
         <translation>Alt-simge&apos;yi aç/kapat</translation>
     </message>
     <message>
-        <location filename="../../src/notation/internal/notationinteraction.cpp" line="8223"/>
+        <location filename="../../src/notation/internal/notationinteraction.cpp" line="8227"/>
         <source>Toggle superscript</source>
         <translation>Üst-simge&apos;yi aç/kapat</translation>
     </message>
     <message>
-        <location filename="../../src/notation/internal/notationinteraction.cpp" line="8225"/>
+        <location filename="../../src/notation/internal/notationinteraction.cpp" line="8229"/>
         <source>Toggle subscript/superscript</source>
         <translation>Alt-simge/üst-simgeyi&apos;i aç/kapat</translation>
     </message>
     <message>
-        <location filename="../../src/notation/internal/notationinteraction.cpp" line="8282"/>
+        <location filename="../../src/notation/internal/notationinteraction.cpp" line="8286"/>
         <source>Toggle ornament</source>
         <translation>Süsleme&apos;yi aç/kapat</translation>
     </message>
     <message>
-        <location filename="../../src/notation/internal/notationinteraction.cpp" line="8287"/>
+        <location filename="../../src/notation/internal/notationinteraction.cpp" line="8291"/>
         <source>Toggle automatic placement</source>
         <translation>Otomatik yerleştirme&apos;yi aç/kapat</translation>
     </message>
     <message>
-        <location filename="../../src/notation/internal/notationinteraction.cpp" line="8298"/>
+        <location filename="../../src/notation/internal/notationinteraction.cpp" line="8302"/>
         <source>Add clef</source>
         <translation>Açkı ekle</translation>
     </message>
     <message>
-        <location filename="../../src/notation/internal/notationinteraction.cpp" line="8303"/>
+        <location filename="../../src/notation/internal/notationinteraction.cpp" line="8307"/>
         <source>Add accidental</source>
         <translation>Değiştirici işaret ekle</translation>
     </message>
     <message>
-        <location filename="../../src/notation/internal/notationinteraction.cpp" line="8308"/>
+        <location filename="../../src/notation/internal/notationinteraction.cpp" line="8312"/>
         <source>Transpose semitone</source>
         <translation>Yarım aralık aktar</translation>
     </message>
     <message>
-        <location filename="../../src/notation/internal/notationinteraction.cpp" line="8315"/>
+        <location filename="../../src/notation/internal/notationinteraction.cpp" line="8319"/>
         <source>Transpose diatonically</source>
         <translation>Dizi içinde aktar</translation>
     </message>
@@ -38760,7 +39250,7 @@ başarısız: %2</translation>
     <message>
         <location filename="../../src/notation/internal/notationparts.cpp" line="251"/>
         <source>Set score order</source>
-        <translation>Partisyonun sırasını ayarla</translation>
+        <translation>Nota sırasını ayarla</translation>
     </message>
     <message>
         <location filename="../../src/notation/internal/notationparts.cpp" line="273"/>
@@ -38865,32 +39355,32 @@ başarısız: %2</translation>
         <translation>Biçim yükle</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="479"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="481"/>
         <source>Toggle multimeasure rests</source>
         <translation>Çok ölçülü susu aç/kapat</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="481"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="483"/>
         <source>Toggle empty staves</source>
         <translation>Boş dizekleri aç/kapat</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="484"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="486"/>
         <source>Mirror notehead</source>
         <translation>Notabaşının aynada yansıması</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="499"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="501"/>
         <source>Enter full-measure rest</source>
         <translation>Tam-ölçü sus ekle</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="2179"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="2186"/>
         <source>Display concert pitch</source>
         <translation>Konser perdesinde göster</translation>
     </message>
     <message>
-        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="2180"/>
+        <location filename="../../src/notationscene/internal/notationactioncontroller.cpp" line="2187"/>
         <source>Display transposed</source>
         <translation>Aktarılmışları göster</translation>
     </message>
@@ -38965,7 +39455,7 @@ başarısız: %2</translation>
         <translation>&apos;Ses işaretlerini tüm dizeklere uygula&apos;yı aç/kapat</translation>
     </message>
     <message>
-        <location filename="../../src/project/internal/notationproject.cpp" line="1226"/>
+        <location filename="../../src/project/internal/notationproject.cpp" line="1231"/>
         <source>Edit project properties</source>
         <translation>Proje özelliklerini düzenle</translation>
     </message>

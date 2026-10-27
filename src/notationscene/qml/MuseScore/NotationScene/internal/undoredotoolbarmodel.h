@@ -26,7 +26,7 @@
 #include "uicomponents/qml/Muse/UiComponents/abstracttoolbarmodel.h"
 
 #include "modularity/ioc.h"
-#include "context/iglobalcontext.h"
+#include "project/iprojectsession.h"
 
 namespace mu::notation {
 class UndoRedoToolbarModel : public muse::uicomponents::AbstractToolBarModel
@@ -34,7 +34,7 @@ class UndoRedoToolbarModel : public muse::uicomponents::AbstractToolBarModel
     Q_OBJECT
     QML_ELEMENT;
 
-    muse::ContextInject<context::IGlobalContext> context = { this };
+    muse::ContextInject<project::IProjectSession> context = { this };
 
 public:
     explicit UndoRedoToolbarModel(QObject* parent = nullptr);
@@ -42,10 +42,8 @@ public:
     Q_INVOKABLE void load() override;
 
 private:
-    void onActionsStateChanges(const muse::actions::ActionCodeList& codes) override;
+    void onCommandStateChanged(const muse::rcommand::Command& command, const muse::rcommand::CommandState& state) override;
 
     INotationUndoStackPtr undoStack() const;
-    void updateItems();
-    void subsribeOnUndoStackChanges();
 };
 }

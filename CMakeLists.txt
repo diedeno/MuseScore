@@ -27,6 +27,11 @@ else()
     cmake_minimum_required(VERSION 3.28)
 endif()
 
+set(MUSE_FRAMEWORK_PATH "${CMAKE_CURRENT_LIST_DIR}/muse" CACHE PATH "Path to muse framework")
+set(MUSE_FRAMEWORK_SRC_PATH ${MUSE_FRAMEWORK_PATH}/framework)
+
+include(${MUSE_FRAMEWORK_PATH}/buildscripts/cmake/SetupMacOSDeploymentTarget.cmake)
+
 project(MuseScoreStudio LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 20)
@@ -35,10 +40,6 @@ set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
 
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-
-set(MUSE_FRAMEWORK_PATH "${CMAKE_CURRENT_LIST_DIR}/muse" CACHE PATH "Path to muse framework")
-
-set(MUSE_FRAMEWORK_SRC_PATH ${MUSE_FRAMEWORK_PATH}/framework)
 
 set(CMAKE_MODULE_PATH
     ${CMAKE_CURRENT_LIST_DIR}
@@ -81,6 +82,8 @@ set(MUSE_APP_BUILD_MODE "dev" CACHE STRING "Build mode")
 # - release - for stable release builds
 
 set(MUSESCORE_REVISION "" CACHE STRING "Build revision")
+
+option(MUSE_MODULE_DOCKWINDOW_KDDOCKWIDGETS_V2 "Use KDDockWidgets v2" ON)
 
 include(${MUSE_FRAMEWORK_SRC_PATH}/cmake/MuseDeclareOptions.cmake)
 
@@ -128,6 +131,7 @@ option(MUE_BUILD_INSTRUMENTSSCENE_QML "Build instruments scene QML" ${MUE_BUILD_
 
 option(MUE_BUILD_MUSESOUNDS_MODULE "Build MuseSounds module" ON)
 option(MUE_BUILD_MUSESOUNDS_QML "Build musesounds QML" ${MUE_BUILD_MUSESOUNDS_MODULE})
+option(MUE_BUILD_MUSESOUNDS_TESTS "Build musesounds tests" ${MUE_BUILD_MUSESOUNDS_MODULE})
 
 option(MUE_BUILD_NOTATION_MODULE "Build notation module" ON)
 option(MUE_BUILD_NOTATION_TESTS "Build notation tests" ${MUE_BUILD_NOTATION_MODULE})
@@ -192,10 +196,7 @@ set(QT_QPROCESS_SUPPORTED ON)
 set(QT_CONCURRENT_SUPPORTED ON)
 set(QT_NO_PRIVATE_MODULE_WARNING ON)
 set(MUSE_MODULE_MULTIWINDOWS_SINGLEPROC_MODE ON)
-
-if(NOT DEFINED MUSE_MODULE_DOCKWINDOW_KDDOCKWIDGETS_V2)
-    set(MUSE_MODULE_DOCKWINDOW_KDDOCKWIDGETS_V2 ON)
-endif()
+set(MUSE_MODULE_SHORTCUTS_V2 ON)
 
 if(EXISTS "${CMAKE_CURRENT_LIST_DIR}/SetupConfigure.local.cmake")
     include(${CMAKE_CURRENT_LIST_DIR}/SetupConfigure.local.cmake)

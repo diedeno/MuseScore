@@ -36,7 +36,7 @@ class MeasureRepeat final : public Rest
     DECLARE_CLASSOF(ElementType::MEASURE_REPEAT)
 
 public:
-    MeasureRepeat(Segment* parent);
+    MeasureRepeat(DummyParentOr<Segment> parent);
     MeasureRepeat(const MeasureRepeat&) = default;
     MeasureRepeat& operator=(const MeasureRepeat&) = delete;
 
@@ -48,8 +48,8 @@ public:
     void setNumMeasures(int n);
     int numMeasures() const { return m_numMeasures; }
 
-    void setNumberPos(const Spatium d) { m_numberPos = d; }
-    Spatium numberPos() const { return m_numberPos; }
+    void setNumberOffset(const Spatium y) { m_numberOffset = y; }
+    Spatium numberOffset() const { return m_numberOffset; }
 
     Measure* firstMeasureOfGroup() const;
     const Measure* referringMeasure(const Measure* measure) const;
@@ -88,11 +88,8 @@ public:
     DECLARE_LAYOUTDATA_METHODS(MeasureRepeat)
 
 private:
-
-    Sid getPropertyStyle(Pid) const override;
-
     int m_numMeasures = 0;
-    Spatium m_numberPos = 0.0_sp;
+    Spatium m_numberOffset = 0.0_sp; // vertical offset of number relative to its style position
 };
 } // namespace mu::engraving
 #endif

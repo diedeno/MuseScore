@@ -42,8 +42,20 @@ void PaletteCommandsState::init()
         return;
     }
 
-    globalContext()->currentProjectChanged().onNotify(this, [this]() {
+    projectSession()->projectChanged().onNotify(this, [this]() {
         updateCommandStates();
+    });
+
+    configuration()->isSingleClickToOpenPalette().ch.onReceive(this, [this](bool) {
+        updateCommandStates({ PALETTE_TOGGLE_SINGLE_CLICK_TO_OPEN_COMMAND });
+    });
+
+    configuration()->isSinglePalette().ch.onReceive(this, [this](bool) {
+        updateCommandStates({ PALETTE_TOGGLE_SINGLE_PALETTE_COMMAND });
+    });
+
+    configuration()->isPaletteDragEnabled().ch.onReceive(this, [this](bool) {
+        updateCommandStates({ PALETTE_TOGGLE_DRAG_ENABLED_COMMAND });
     });
 
     updateCommandStates();
@@ -51,7 +63,7 @@ void PaletteCommandsState::init()
 
 void PaletteCommandsState::deinit()
 {
-    globalContext()->currentProjectChanged().disconnect(this);
+    projectSession()->projectChanged().disconnect(this);
 }
 
 void PaletteCommandsState::updateCommandStates(const std::vector<Command>& commands)
@@ -96,9 +108,9 @@ async::Channel<Command, CommandState> PaletteCommandsState::commandStateChanged(
 
 bool PaletteCommandsState::isProjectOpened() const
 {
-    if (!globalContext()->currentProject()) {
-        return false;
+    if (projectSession()->project()) {
+        return true;
     }
 
-    return true;
+    return false;
 }

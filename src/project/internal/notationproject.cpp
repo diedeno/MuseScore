@@ -543,7 +543,7 @@ Ret NotationProject::save(const muse::io::path_t& path, SaveMode saveMode, bool 
                 }
             }
             if (timestampsUpdated) {
-                globalContext()->currentNotation()->notationChanged().send(muse::RectF());
+                projectSession()->currentNotation()->notationChanged().send(muse::RectF());
             }
         }
     } break;
@@ -1065,6 +1065,11 @@ void NotationProject::markAsUnsaved()
 
 void NotationProject::listenIfNeedSaveChanges()
 {
+    if (isCloudProject()) {
+        //! NOTE: master is always open once loaded; set before listening so it doesn't count as a change
+        m_masterNotation->notation()->setIsOpen(true);
+    }
+
     m_masterNotation->notation()->undoStack()->changesChannel().onReceive(this, [this](const ScoreChanges&) {
         bool isStackClean = m_masterNotation && m_masterNotation->notation()->undoStack()->isStackClean();
 

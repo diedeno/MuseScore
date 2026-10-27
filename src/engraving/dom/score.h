@@ -48,11 +48,11 @@
 #include "../editing/cmd.h"
 
 #include "chordlist.h"
+#include "dummyparent.h"
 #include "guitarbend.h"
 #include "input.h"
 #include "mscore.h"
 #include "property.h"
-#include "rootitem.h"
 #include "scoreorder.h"
 #include "segment.h"
 #include "select.h"
@@ -125,6 +125,7 @@ class RehearsalMark;
 class RepeatList;
 struct RepeatSegmentInfo;
 class Rest;
+class RootItem;
 class Score;
 class IEngravingFont;
 class Segment;
@@ -302,7 +303,7 @@ public:
     void scanElements(std::function<void(EngravingItem*)> func) override;
 
     RootItem* rootItem() const { return m_rootItem; }
-    compat::DummyElement* dummy() const { return m_rootItem->dummy(); }
+    DummyParent* dummy() const { return m_dummy; }
 
     ShadowNote* shadowNote() const;
 
@@ -323,15 +324,9 @@ public:
     void cmdRemoveStaff(staff_idx_t staffIdx);
     void removeStaff(Staff*);
     void addMeasure(MeasureBase*, MeasureBase*);
-    void setResetAutoplace() { m_resetAutoplace = true; }
-    void setResetCrossBeams() { m_resetCrossBeams = true; }
 
     Excerpt* excerpt() { return m_excerpt; }
     void setExcerpt(Excerpt* e) { m_excerpt = e; }
-
-    // methods for resetting elements for pre-4.0 score migration
-    void resetAutoplace();
-    void resetCrossBeams();
 
     void cmdRemovePart(Part*);
     void cmdAddOttava(OttavaType);
@@ -367,7 +362,8 @@ public:
     const std::vector<Staff*>& systemObjectStaves() const { return m_systemObjectStaves; }
     const std::vector<Staff*> systemObjectStavesWithTopStaff() const;
 
-    Measure* pos2measure(const PointF&, staff_idx_t* staffIdx, int* pitch, Segment**, PointF* offset) const;
+    MeasureBase* pos2measureBase(const PointF&, bool scanMeasuresOnly, staff_idx_t* staffIdx, int* pitch, Segment**, PointF* offset) const;
+    Measure* pos2measure(const PointF& p, staff_idx_t* staffIdx, int* pitch, Segment** seg, PointF* offset) const;
     void dragPosition(const PointF&, staff_idx_t* staffIdx, Segment**, double spacingFactor = 0.5, bool allowTimeAnchor = false) const;
 
     void undoAddElement(EngravingItem* element, bool addToLinkedStaves = true, bool ctrlModifier = false,
@@ -422,6 +418,10 @@ public:
     Chord* addChord(const Fraction& tick, TDuration d, Chord* oc, bool genTie, Tuplet* tuplet);
 
     Tuplet* addTuplet(ChordRest* destinationChordRest, Fraction ratio, TupletNumberType numberType, TupletBracketType bracketType);
+    Tuplet* addTuplet(ChordRest* destinationChordRest, const Fraction& ratio, const TDuration& baseLen, TupletNumberType numberType,
+                      TupletBracketType bracketType);
+    bool canAddTuplet(const ChordRest* chordRest, const Fraction& ratio, const TDuration& baseLen) const;
+    void selectNewTuplet(Tuplet* tuplet);
 
     ChordRest* addClone(ChordRest* cr, const Fraction& tick, const TDuration& d);
     Rest* setRest(const Fraction& tick, track_idx_t track, const Fraction&, bool useDots, Tuplet* tuplet, bool useFullMeasureRest = true);
@@ -641,10 +641,10 @@ public:
     void lassoSelectEnd();
 
     Page* searchPage(const PointF&) const;
-    std::vector<System*> searchSystem(const PointF& p, const System* preferredSystem = nullptr, double spacingFactor = 0.5,
-                                      double preferredSpacingFactor = 1.0) const;
-    Measure* searchMeasure(const PointF& p, const System* preferredSystem = nullptr, double spacingFactor = 0.5,
-                           double preferredSpacingFactor = 1.0) const;
+    std::vector<System*> searchSystem(const PointF& p, bool includeMeasurelessSystems = true, const System* preferredSystem = nullptr,
+                                      double spacingFactor = 0.5, double preferredSpacingFactor = 1.0) const;
+    MeasureBase* searchMeasureBase(const PointF& p, bool scanMeasuresOnly = false, const System* preferredSystem = nullptr,
+                                   double spacingFactor = 0.5, double preferredSpacingFactor = 1.0) const;
 
     bool getPosition(Position* pos, const PointF&, voice_idx_t voice) const;
 
@@ -846,10 +846,8 @@ public:
 
     void forAllLyrics(std::function<void(Lyrics*)> f);
 
-    void createPaddingTable();
-    const PaddingTable& paddingTable() const { return m_paddingTable; }
-
-    void autoUpdateSpatium();
+    void updatePaddingTables();
+    const PaddingTables& paddingTables() const { return m_paddingTables; }
 
     const RangeLocks* systemLocks() const { return &m_systemLocks; }
     void addSystemLock(const RangeLock* lock);
@@ -914,6 +912,7 @@ private:
 
     bool trySelectSimilarInRange(EngravingItem* e);
     bool tryExtendSingleSelectionToRange(EngravingItem* e, staff_idx_t staffIdx);
+    bool tryExtendRangeSelectionToElem(EngravingItem* e);
 
     void rebuildTimeSigMap(Measure* m);
 
@@ -993,8 +992,6 @@ private:
     ShowAnchors m_showAnchors;
 
     ScoreOrder m_scoreOrder;                 // used for score ordering
-    bool m_resetAutoplace = false;
-    bool m_resetCrossBeams = false;
     int m_mscVersion = Constants::MSC_VERSION;     // version of current loading *.msc file
 
     bool m_isOpen = false;
@@ -1005,6 +1002,7 @@ private:
     SelectionFilter m_selectionFilter;
 
     RootItem* m_rootItem = nullptr;
+    DummyParent* m_dummy = nullptr;
     LayoutOptions m_layoutOptions;
 
     muse::async::Channel<EngravingItem*> m_elementDestroyed;
@@ -1015,7 +1013,7 @@ private:
 
     muse::async::Channel<float> m_layoutProgressChannel;
 
-    PaddingTable m_paddingTable;
+    PaddingTables m_paddingTables;
     double m_minimumPaddingUnit = 0.0;
 };
 

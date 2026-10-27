@@ -33,7 +33,7 @@
 
 #include "modularity/ioc.h"
 #include "async/asyncable.h"
-#include "context/iglobalcontext.h"
+#include "project/iprojectsession.h"
 #include "propertiespanelabstractmodel.h"
 
 namespace mu::propertiespanel {
@@ -44,7 +44,7 @@ class PropertiesPanelListModel : public QAbstractListModel, public QQmlParserSta
     Q_INTERFACES(QQmlParserStatus)
     QML_ELEMENT
 
-    muse::ContextInject<context::IGlobalContext> context = { this };
+    muse::ContextInject<project::IProjectSession> context = { this };
 
 public:
     explicit PropertiesPanelListModel(QObject* parent = nullptr);
@@ -75,7 +75,7 @@ private:
 
     bool alwaysUpdateModelList(const QList<mu::engraving::EngravingItem*>& selectedElementList);
     void setElementList(const QList<mu::engraving::EngravingItem*>& selectedElementList,
-                        engraving::SelState selectionState = engraving::SelState::NONE);
+                        engraving::SelState selectionState = engraving::SelState::NONE, bool selectionHasStartOrEndFrame = false);
 
     void buildModelsForEmptySelection();
     void buildModelsForSelectedElements(const ElementKeySet& selectedElementKeySet, bool isRangeSelection,

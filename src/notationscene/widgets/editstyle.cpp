@@ -52,6 +52,7 @@
 #include "notation/inotationstyle.h" // IWYU pragma: keep
 #include "notation/inotationundostack.h" // IWYU pragma: keep
 #include "notation/inotationviewstate.h" // IWYU pragma: keep
+#include "notation/utilities/offsetutilities.h"
 
 #include "ui/view/widgetstatestore.h"
 #include "ui/view/widgetutils.h"
@@ -137,7 +138,7 @@ static const QStringList ALL_TEXT_STYLE_SUBPAGE_CODES {
     "rehearsal-mark",
     "system",
     "staff",
-    "staveSharing",
+    "stave-sharing",
     "expression",
     "hairpin",
     "lyrics-odd-lines",
@@ -419,6 +420,9 @@ void EditStyle::classBegin()
         { StyleId::lyricsMelismaForce,      false, lyricsMelismaForce,   resetLyricsMelismaForce },
         { StyleId::lyricsDashPosAtStartOfSystem, false, lyricsDashStartSystemPlacement, resetLyricsDashStartSystemPlacement },
         { StyleId::lyricsAvoidBarlines, false, lyricsAvoidBarlines, resetLyricsAvoidBarlines },
+        { StyleId::lyricsAutoCenterOnGrandStaff, false, lyricsAutoCenterOnGrandStaff, resetLyricsAutoCenterOnGrandStaff },
+        { StyleId::lyricsAutoCenterOnVocalStaves, false, lyricsAutoCenterOnVocalStaves, resetLyricsAutoCenterOnVocalStaves },
+        { StyleId::lyricsStackingOrder,    false, lyricsUseLegacyStackingOrder, resetLyricsStackingOrder },
         { StyleId::lyricsLimitDashCount, false, limitDashCount, 0 },
         { StyleId::lyricsMaxDashCount, false, lyricsMaxDashCount, resetLyricsMaxDashCount },
         { StyleId::lyricsCenterDashedSyllables, false, lyricsCenterDashedSyllables, lyricsResetCenterDashedSyllables },
@@ -646,6 +650,7 @@ void EditStyle::classBegin()
 
         { StyleId::dynamicsHairpinVoiceBasedPlacement, false, dynamicsAndHairpinPos, resetDynamicsAndHairpinPos },
         { StyleId::dynamicsHairpinsAutoCenterOnGrandStaff, false, dynamicsAndHairpinsCenterOnGrandStaff, 0 },
+        { StyleId::dynamicsHairpinsAutoCenterOnVocalStaves, false, dynamicsAndHairpinsCenterOnVocalStaves, 0 },
         { StyleId::dynamicsHairpinsAboveForVocalStaves, false, dynamicsAndHairpinsAboveOnVocalStaves, 0 },
 
         { StyleId::tempoPlacement,          false, tempoTextPlacement,          resetTempoTextPlacement },
@@ -1126,7 +1131,7 @@ void EditStyle::classBegin()
     connect(setSignalMapper, &QSignalMapper::mappedInt, this, &EditStyle::valueChanged);
     connect(resetSignalMapper, &QSignalMapper::mappedInt, this, &EditStyle::resetStyleValue);
 
-    const INotationPtr notation = globalContext()->currentNotation();
+    const INotationPtr notation = projectSession()->currentNotation();
     IF_ASSERT_FAILED(notation) {
         return;
     }
@@ -1346,8 +1351,8 @@ void EditStyle::showEvent(QShowEvent* ev)
 {
     setValues();
     pageList->setFocus();
-    globalContext()->currentNotation()->undoStack()->prepareChanges(muse::TranslatableString("undoableAction", "Edit style"));
-    buttonApplyToAllParts->setEnabled(globalContext()->currentNotation()->style()->canApplyToAllParts());
+    projectSession()->currentNotation()->undoStack()->prepareChanges(muse::TranslatableString("undoableAction", "Edit style"));
+    buttonApplyToAllParts->setEnabled(projectSession()->currentNotation()->style()->canApplyToAllParts());
 
     WidgetStateStore::restoreGeometry(this);
     QWidget::showEvent(ev);
@@ -1424,7 +1429,7 @@ void EditStyle::retranslate()
 
     setHeaderFooterMacroInfoText();
 
-    Score* score = globalContext()->currentNotation()->elements()->msScore();
+    Score* score = projectSession()->currentNotation()->elements()->msScore();
 
     int idx = 0;
     for (TextStyleType textStyleType : allTextStyles()) {
@@ -1495,7 +1500,7 @@ void EditStyle::setHeaderFooterMacroInfoText()
           % "<br/></p><table>"_L1;
 
     // show all tags for current score/part
-    Score* score = globalContext()->currentNotation()->elements()->msScore();
+    Score* score = projectSession()->currentNotation()->elements()->msScore();
     if (!score->isMaster()) {
         for (const auto& tag : score->masterScore()->metaTags()) {
             toolTipHeaderFooter += "<tr><td>%1</td><td width=\"12\"/><td><i>%2</i></td></tr>"_L1
@@ -1667,7 +1672,7 @@ void EditStyle::buttonClicked(QAbstractButton* b)
         break;
     default:
         if (b == buttonApplyToAllParts) {
-            globalContext()->currentNotation()->style()->applyToAllParts();
+            projectSession()->currentNotation()->style()->applyToAllParts();
         }
         break;
     }
@@ -1679,8 +1684,8 @@ void EditStyle::buttonClicked(QAbstractButton* b)
 
 void EditStyle::accept()
 {
-    globalContext()->currentNotation()->undoStack()->commitChanges();
-    globalContext()->currentNotation()->style()->styleChanged().notify();
+    projectSession()->currentNotation()->undoStack()->commitChanges();
+    projectSession()->currentNotation()->style()->styleChanged().notify();
 
     QDialog::accept();
 }
@@ -1691,8 +1696,8 @@ void EditStyle::accept()
 
 void EditStyle::reject()
 {
-    globalContext()->currentNotation()->undoStack()->rollbackChanges();
-    globalContext()->currentNotation()->style()->styleChanged().notify();
+    projectSession()->currentNotation()->undoStack()->rollbackChanges();
+    projectSession()->currentNotation()->style()->styleChanged().notify();
 
     QDialog::reject();
 }
@@ -1745,7 +1750,7 @@ void EditStyle::on_resetStylesButton_clicked()
         Sid::createMultiMeasureRests
     };
 
-    globalContext()->currentNotation()->style()->resetAllStyleValues(dontResetTheseStyles);
+    projectSession()->currentNotation()->style()->resetAllStyleValues(dontResetTheseStyles);
     setValues();
 }
 
@@ -1755,10 +1760,10 @@ void EditStyle::on_resetStylesButton_clicked()
 
 void EditStyle::on_pageRowSelectionChanged()
 {
-    IF_ASSERT_FAILED(globalContext()->currentNotation()) {
+    IF_ASSERT_FAILED(projectSession()->currentNotation()) {
         return;
     }
-    globalContext()->currentNotation()->viewState()->setStyleDialogLastPageIndex(pageList->currentRow());
+    projectSession()->currentNotation()->viewState()->setStyleDialogLastPageIndex(pageList->currentRow());
 }
 
 //---------------------------------------------------------
@@ -1802,6 +1807,11 @@ PropertyValue EditStyle::getValue(StyleId idx)
     switch (type) {
     case P_TYPE::SPATIUM: {
         QDoubleSpinBox* sb = qobject_cast<QDoubleSpinBox*>(sw.widget);
+        if (idx == StyleId::mmRestNumberPos) {
+            // Displayed: positive = up, negative = down
+            // Internal:  negative = up, positive = down
+            return Spatium(OffsetUtils::flipSign(sb->value()));
+        }
         return Spatium(sb->value() * (sw.showPercent ? 0.01 : 1.0));
     } break;
     case P_TYPE::REAL: {
@@ -1817,7 +1827,7 @@ PropertyValue EditStyle::getValue(StyleId idx)
         if (idx == StyleId::figuredBassYOffset) {
             // Displayed: positive = up, negative = down
             // Internal:  negative = up, positive = down
-            value = -value;
+            value = OffsetUtils::flipSign(value);
         }
         return value;
     } break;
@@ -1850,7 +1860,11 @@ PropertyValue EditStyle::getValue(StyleId idx)
     case P_TYPE::TIMESIG_STYLE:
     case P_TYPE::TIMESIG_MARGIN:
     case P_TYPE::INT: {
-        if (qobject_cast<QComboBox*>(sw.widget)) {
+        if (sw.idx == StyleId::lyricsStackingOrder) { // special case for enum represented by a checkbox
+            return int(sw.widget->property("checked").toBool()
+                       ? LyricsStackingOrder::LYRICS_AFTER_PEDALS
+                       : LyricsStackingOrder::LYRICS_BEFORE_DYNAMICS);
+        } else if (qobject_cast<QComboBox*>(sw.widget)) {
             QComboBox* cb = qobject_cast<QComboBox*>(sw.widget);
             return cb->currentData().toInt();
         } else if (qobject_cast<QSpinBox*>(sw.widget)) {
@@ -1882,12 +1896,10 @@ PropertyValue EditStyle::getValue(StyleId idx)
         // Internal:  negative = up, positive = down
         if (idx == StyleId::lyricsPosAbove || idx == StyleId::lyricsPosBelow) {
             QDoubleSpinBox* dsb = qobject_cast<QDoubleSpinBox*>(sw.widget);
-            return PointF(0.0, -dsb->value());
+            return PointF(0.0, OffsetUtils::flipSign(dsb->value()));
         }
         if (OffsetSelect* cb = qobject_cast<OffsetSelect*>(sw.widget)) {
-            PointF offset = cb->offset();
-            offset.setY(-offset.y());
-            return offset;
+            return OffsetUtils::flipYSign(cb->offset());
         } else {
             ASSERT_X("unhandled muse::PointF");
         }
@@ -1929,7 +1941,9 @@ void EditStyle::setValues()
         // Displayed: positive = up, negative = down
         // Internal:  negative = up, positive = down
         PropertyValue val = sw.idx == StyleId::lyricsPosAbove || sw.idx == StyleId::lyricsPosBelow
-                            ? Spatium(-styleValue(sw.idx).value<PointF>().y())
+                            ? Spatium(OffsetUtils::flipSign(styleValue(sw.idx).value<PointF>().y()))
+                            : sw.idx == StyleId::mmRestNumberPos
+                            ? Spatium(OffsetUtils::flipSign(styleValue(sw.idx).value<Spatium>().val()))
                             : styleValue(sw.idx);
         if (sw.reset) {
             sw.reset->setEnabled(!hasDefaultStyleValue(sw.idx));
@@ -1952,7 +1966,7 @@ void EditStyle::setValues()
             if (sw.idx == StyleId::figuredBassYOffset) {
                 // Displayed: positive = up, negative = down
                 // Internal:  negative = up, positive = down
-                value = -value;
+                value = OffsetUtils::flipSign(value);
             }
             if (!sw.widget->setProperty("value", value)) {
                 unhandledType(sw);
@@ -1988,7 +2002,9 @@ void EditStyle::setValues()
         case P_TYPE::TIMESIG_MARGIN:
         case P_TYPE::INT: {
             int value = val.toInt();
-            if (qobject_cast<QComboBox*>(sw.widget)) {
+            if (sw.idx == StyleId::lyricsStackingOrder) { // special case for enum represented by a checkbox
+                sw.widget->setProperty("checked", value == int(LyricsStackingOrder::LYRICS_AFTER_PEDALS));
+            } else if (qobject_cast<QComboBox*>(sw.widget)) {
                 QComboBox* cb = qobject_cast<QComboBox*>(sw.widget);
                 cb->setCurrentIndex(cb->findData(value));
             } else if (qobject_cast<QSpinBox*>(sw.widget)) {
@@ -2042,9 +2058,7 @@ void EditStyle::setValues()
             if (as) {
                 // Displayed: positive = up, negative = down
                 // Internal:  negative = up, positive = down
-                muse::PointF offset = val.value<muse::PointF>();
-                offset.setY(-offset.y());
-                as->setOffset(offset);
+                as->setOffset(OffsetUtils::flipYSign(val.value<muse::PointF>()));
             }
         } break;
         default: {
@@ -2088,7 +2102,7 @@ void EditStyle::setValues()
     doubleSpinFBSize->setValue(styleValue(StyleId::figuredBassFontSize).toDouble());
     // Displayed: positive = up, negative = down
     // Internal:  negative = up, positive = down
-    doubleSpinFBVertPos->setValue(-styleValue(StyleId::figuredBassYOffset).toDouble());
+    doubleSpinFBVertPos->setValue(OffsetUtils::flipSign(styleValue(StyleId::figuredBassYOffset).toDouble()));
     spinFBLineHeight->setValue(styleValue(StyleId::figuredBassLineHeight).toDouble() * 100.0);
 
     QString mfont(styleValue(StyleId::musicalSymbolFont).value<String>());
@@ -2163,12 +2177,12 @@ void EditStyle::setSwingParams(bool checked)
 
 const PropertyValue& EditStyle::styleValue(StyleId id) const
 {
-    return globalContext()->currentNotation()->style()->styleValue(id);
+    return projectSession()->currentNotation()->style()->styleValue(id);
 }
 
 const PropertyValue& EditStyle::defaultStyleValue(StyleId id) const
 {
-    return globalContext()->currentNotation()->style()->defaultStyleValue(id);
+    return projectSession()->currentNotation()->style()->defaultStyleValue(id);
 }
 
 bool EditStyle::hasDefaultStyleValue(StyleId id) const
@@ -2179,6 +2193,7 @@ bool EditStyle::hasDefaultStyleValue(StyleId id) const
 bool EditStyle::dynamicsAndHairpinPosPropertiesHaveDefaultStyleValue() const
 {
     return hasDefaultStyleValue(StyleId::dynamicsHairpinsAutoCenterOnGrandStaff)
+           && hasDefaultStyleValue(StyleId::dynamicsHairpinsAutoCenterOnVocalStaves)
            && hasDefaultStyleValue(StyleId::dynamicsHairpinsAboveForVocalStaves)
            && hasDefaultStyleValue(StyleId::dynamicsHairpinVoiceBasedPlacement);
 }
@@ -2190,7 +2205,7 @@ void EditStyle::setStyleQVariantValue(StyleId id, const QVariant& value)
 
 void EditStyle::setStyleValue(StyleId id, const PropertyValue& value)
 {
-    globalContext()->currentNotation()->style()->setStyleValue(id, value);
+    projectSession()->currentNotation()->style()->setStyleValue(id, value);
 }
 
 //---------------------------------------------------------
@@ -2388,7 +2403,7 @@ void EditStyle::valueChanged(int i)
     }
 
     if (idx == StyleId::dynamicsHairpinVoiceBasedPlacement || idx == StyleId::dynamicsHairpinsAutoCenterOnGrandStaff
-        || idx == StyleId::dynamicsHairpinsAboveForVocalStaves) {
+        || idx == StyleId::dynamicsHairpinsAutoCenterOnVocalStaves || idx == StyleId::dynamicsHairpinsAboveForVocalStaves) {
         resetDynamicsAndHairpinPos->setEnabled(!dynamicsAndHairpinPosPropertiesHaveDefaultStyleValue());
     }
 
@@ -2431,7 +2446,9 @@ void EditStyle::resetStyleValue(int i)
 
     setStyleValue(idx, defaultStyleValue(idx));
     if (idx == StyleId::dynamicsHairpinVoiceBasedPlacement) {
-        for (StyleId id : { StyleId::dynamicsHairpinsAutoCenterOnGrandStaff, StyleId::dynamicsHairpinsAboveForVocalStaves }) {
+        for (StyleId id : { StyleId::dynamicsHairpinsAutoCenterOnGrandStaff,
+                            StyleId::dynamicsHairpinsAutoCenterOnVocalStaves,
+                            StyleId::dynamicsHairpinsAboveForVocalStaves }) {
             setStyleValue(id, defaultStyleValue(id));
         }
     }
@@ -2542,12 +2559,10 @@ void EditStyle::textStyleChanged(int row)
 
     // Displayed: positive = up, negative = down
     // Internal:  negative = up, positive = down
-    PointF textStyleOffsetValue = styleValue(ts->offsetSids.above).value<PointF>();
-    textStyleOffsetValue.setY(-textStyleOffsetValue.y());
-    textStyleOffset->setOffset(textStyleOffsetValue);
+    textStyleOffset->setOffset(OffsetUtils::flipYSign(styleValue(ts->offsetSids.above).value<PointF>()));
     resetTextStyleOffset->setEnabled(styleValue(ts->offsetSids.above) != defaultStyleValue(ts->offsetSids.above));
 
-    INotationPtr notation = globalContext()->currentNotation();
+    INotationPtr notation = projectSession()->currentNotation();
     IF_ASSERT_FAILED(notation) {
         return;
     }
@@ -2578,9 +2593,7 @@ void EditStyle::textStyleValueChanged(TextStylePropertyType type, const Property
     if (type == TextStylePropertyType::Offset) {
         // Displayed: positive = up, negative = down
         // Internal:  negative = up, positive = down
-        PointF offset = value.value<PointF>();
-        offset.setY(-offset.y());
-        setStyleValue(ts->offsetSids.above, offset);
+        setStyleValue(ts->offsetSids.above, OffsetUtils::flipYSign(value.value<PointF>()));
     } else {
         for (const auto& a : *ts) {
             if (a.type == type) {

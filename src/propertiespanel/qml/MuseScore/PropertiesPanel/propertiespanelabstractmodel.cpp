@@ -31,9 +31,9 @@
 #include "notation/inotationinteraction.h" // IWYU pragma: keep
 #include "notation/inotationstyle.h"
 #include "notation/inotationundostack.h"
+#include "notation/utilities/offsetutilities.h"
 
 #include "modularity/ioc.h"
-#include "shortcuts/shortcutstypes.h"
 
 #include "types/texttypes.h"
 
@@ -157,9 +157,9 @@ static const QMap<mu::engraving::TempoTextType, PropertiesPanelModelType> TEMPO_
     { mu::engraving::TempoTextType::TEMPO_PRIMO, PropertiesPanelModelType::TYPE_TEMPO_PRIMO },
 };
 
-QString PropertiesPanelAbstractModel::shortcutsForActionCode(std::string code) const
+QString PropertiesPanelAbstractModel::shortcutsForCommand(const muse::rcommand::Command& command) const
 {
-    std::vector<std::string> shortcuts = shortcutsRegister()->shortcut(code).sequences;
+    std::vector<std::string> shortcuts = commandShortcutsRegister()->shortcut(command).sequences;
     return muse::shortcuts::sequencesToNativeText(shortcuts);
 }
 
@@ -383,6 +383,18 @@ PropertiesPanelSectionTypeSet PropertiesPanelAbstractModel::sectionTypesByElemen
 {
     PropertiesPanelSectionTypeSet types;
 
+    static const std::unordered_set<ElementType> boxTypes {
+        ElementType::HBOX,
+        ElementType::VBOX,
+        ElementType::TBOX,
+        ElementType::FBOX,
+    };
+
+    static const PropertiesPanelSectionTypeSet measureBaseModels {
+        PropertiesPanelSectionType::SECTION_SYSTEM_PAGE_LAYOUT,
+        PropertiesPanelSectionType::SECTION_EMPTY_STAVES,
+    };
+
     for (const ElementKey& key : elementKeySet) {
         if (NOTATION_ELEMENT_MODEL_TYPES.contains(key.type)
             && (modelTypeByElementKey(key) != PropertiesPanelModelType::TYPE_UNDEFINED)) {
@@ -402,12 +414,18 @@ PropertiesPanelSectionTypeSet PropertiesPanelAbstractModel::sectionTypesByElemen
         if (key.type != mu::engraving::ElementType::INSTRUMENT_NAME) {
             types << PropertiesPanelSectionType::SECTION_GENERAL;
         }
+
+        if (boxTypes.contains(key.type)) {
+            types.insert(measureBaseModels.begin(), measureBaseModels.end());
+        }
     }
 
     if (isRange) {
-        types << PropertiesPanelSectionType::SECTION_MEASURES;
-        types << PropertiesPanelSectionType::SECTION_SYSTEM_PAGE_LAYOUT;
-        types << PropertiesPanelSectionType::SECTION_EMPTY_STAVES;
+        if (!selectedElementList.empty()) {
+            //! NOTE: "Box only" selections will be empty...
+            types << PropertiesPanelSectionType::SECTION_MEASURES;
+        }
+        types.insert(measureBaseModels.begin(), measureBaseModels.end());
     }
 
     if (showPartsSection(selectedElementList)) {
@@ -631,7 +649,7 @@ PropertyValue PropertiesPanelAbstractModel::valueToElementUnits(const mu::engrav
         if (pid == Pid::OFFSET) {
             // Displayed: positive = up, negative = down
             // Internal:  negative = up, positive = down
-            point.setY(-point.y());
+            point = OffsetUtils::flipYSign(point);
         }
 
         if (pid == Pid::OFFSET ? element->offsetIsSpatiumDependent() : element->sizeIsSpatiumDependent()) {
@@ -690,7 +708,7 @@ QVariant PropertiesPanelAbstractModel::valueFromElementUnits(const mu::engraving
         if (pid == Pid::OFFSET) {
             // Displayed: positive = up, negative = down
             // Internal:  negative = up, positive = down
-            point.setY(-point.y());
+            point = OffsetUtils::flipYSign(point);
         }
 
         return point.toQPointF();
@@ -873,7 +891,7 @@ void PropertiesPanelAbstractModel::loadPropertyItem(PropertyItem* propertyItem, 
 
 bool PropertiesPanelAbstractModel::isNotationExisting() const
 {
-    return context()->currentProject() != nullptr;
+    return context()->project() != nullptr;
 }
 
 INotationStylePtr PropertiesPanelAbstractModel::style() const

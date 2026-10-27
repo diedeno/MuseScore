@@ -23,6 +23,7 @@
 #include "elements.h"
 
 #include "engraving/dom/chord.h"
+#include "engraving/dom/clef.h"
 #include "engraving/dom/guitarbend.h"
 #include "engraving/dom/measure.h"
 #include "engraving/dom/measurenumber.h"
@@ -38,6 +39,8 @@
 #include "engraving/editing/editnote.h"
 #include "engraving/editing/editsystemlocks.h"
 #include "engraving/editing/transaction/transaction.h"
+
+#include "engraving/style/style.h"
 
 // api
 #include "apistructs.h"
@@ -67,6 +70,56 @@ void EngravingItem::setOffsetY(qreal offY)
     set(mu::engraving::Pid::OFFSET, QPointF(offX, offY));
 }
 
+//---------------------------------------------------------
+//   Number positions of multimeasure rests
+//---------------------------------------------------------
+
+QVariant EngravingItem::mmRestNumberPos() const
+{
+    if (!element()->isMMRest()) {
+        return QVariant();
+    }
+    return element()->style().styleS(Sid::mmRestNumberPos).val() + get(Pid::MMREST_NUMBER_OFFSET).toDouble();
+}
+
+void EngravingItem::setMmRestNumberPos(const QVariant& pos)
+{
+    if (!element()->isMMRest()) {
+        return;
+    }
+    set(Pid::MMREST_NUMBER_OFFSET, pos.toDouble() - element()->style().styleS(Sid::mmRestNumberPos).val());
+}
+
+void EngravingItem::resetMmRestNumberPos()
+{
+    reset(Pid::MMREST_NUMBER_OFFSET);
+}
+
+//---------------------------------------------------------
+//   Number positions of measure repeats
+//---------------------------------------------------------
+
+QVariant EngravingItem::measureRepeatNumberPos() const
+{
+    if (!element()->isMeasureRepeat()) {
+        return QVariant();
+    }
+    return element()->style().styleS(Sid::measureRepeatNumberPos).val() + get(Pid::MEASURE_REPEAT_NUMBER_OFFSET).toDouble();
+}
+
+void EngravingItem::setMeasureRepeatNumberPos(const QVariant& pos)
+{
+    if (!element()->isMeasureRepeat()) {
+        return;
+    }
+    set(Pid::MEASURE_REPEAT_NUMBER_OFFSET, pos.toDouble() - element()->style().styleS(Sid::measureRepeatNumberPos).val());
+}
+
+void EngravingItem::resetMeasureRepeatNumberPos()
+{
+    reset(Pid::MEASURE_REPEAT_NUMBER_OFFSET);
+}
+
 static QRectF scaleRect(const mu::engraving::RectF& rect, double spatium)
 {
     return QRectF(rect.x() / spatium, rect.y() / spatium, rect.width() / spatium, rect.height() / spatium);
@@ -80,6 +133,11 @@ static QRectF scaleRect(const mu::engraving::RectF& rect, double spatium)
 QRectF EngravingItem::bbox() const
 {
     return scaleRect(element()->ldata()->bbox(), element()->spatium());
+}
+
+bool EngravingItem::isHeader() const
+{
+    return element()->isClef() && toClef(element())->isHeader();
 }
 
 bool EngravingItem::up() const

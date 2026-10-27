@@ -1037,7 +1037,10 @@ static MeasureBase* cloneMeasure(MeasureBase* mb, Score* score, const Score* osc
                                 size_t n = och->notes().size();
                                 for (size_t i = 0; i < n; ++i) {
                                     Note* on = och->notes().at(i);
-                                    Note* nn = nch->notes().at(i);
+                                    Note* nn = toNote(on->findLinkedInStaff(nch->staff()));
+                                    if (!nn) {
+                                        continue;
+                                    }
 
                                     addTies(on, nn, tieMap, score);
                                     // add back spanners (going back from end to start spanner element
@@ -1045,6 +1048,7 @@ static MeasureBase* cloneMeasure(MeasureBase* mb, Score* score, const Score* osc
                                     // 'on' is the old spanner end note and 'nn' is the new spanner end note
                                     for (Spanner* oldSp : on->spannerBack()) {
                                         if (oldSp->startElement() && oldSp->endElement()
+                                            && oldSp->startElement()->findMeasure() == oldSp->endElement()->findMeasure()
                                             && oldSp->startElement()->track() > oldSp->endElement()->track()) {
                                             continue;
                                         }
@@ -1059,7 +1063,8 @@ static MeasureBase* cloneMeasure(MeasureBase* mb, Score* score, const Score* osc
                                     }
                                     for (Spanner* oldSp : on->spannerFor()) {
                                         if (oldSp->startElement() && oldSp->endElement()
-                                            && oldSp->startElement()->track() <= oldSp->endElement()->track()) {
+                                            && (oldSp->startElement()->findMeasure() != oldSp->endElement()->findMeasure()
+                                                || oldSp->startElement()->track() <= oldSp->endElement()->track())) {
                                             continue;
                                         }
                                         Note* newEnd = Spanner::endElementFromSpanner(oldSp, nn);
@@ -1422,7 +1427,10 @@ void Excerpt::cloneStaff(Staff* srcStaff, Staff* dstStaff, bool cloneSpanners)
                         size_t n = och->notes().size();
                         for (size_t i = 0; i < n; ++i) {
                             Note* on = och->notes().at(i);
-                            Note* nn = nch->notes().at(i);
+                            Note* nn = toNote(on->findLinkedInStaff(dstStaff));
+                            if (!nn) {
+                                continue;
+                            }
                             addTies(on, nn, tieMap, score);
                             // add back spanners (going back from end to start spanner element
                             // makes sure the 'other' spanner anchor element is already set up)
@@ -1673,7 +1681,10 @@ void Excerpt::cloneStaff2(Staff* srcStaff, Staff* dstStaff, const Fraction& star
                 size_t n = och->notes().size();
                 for (size_t i = 0; i < n; ++i) {
                     Note* on = och->notes().at(i);
-                    Note* nn = nch->notes().at(i);
+                    Note* nn = toNote(on->findLinkedInStaff(dstStaff));
+                    if (!nn) {
+                        continue;
+                    }
                     addTies(on, nn, tieMap, score);
                     addBackSpanners(on, nn, score);
                     GuitarBend* bendBack = on->bendBack();

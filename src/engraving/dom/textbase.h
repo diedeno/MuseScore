@@ -286,7 +286,7 @@ public:
     void setY(double val) { m_y = val; }
     double lineSpacing() const { return m_lineSpacing; }
     void setLineSpacing(double val) { m_lineSpacing = val; }
-    String text(int, int, bool = false) const;
+    String text(int, int, const TextBase*, bool = false) const;
     bool eol() const { return m_eol; }
     void setEol(bool val) { m_eol = val; }
     void changeFormat(FormatId, const FormatValue& val, int start, int n);
@@ -524,9 +524,9 @@ public:
     PointF defaultPos() const override;
 
 protected:
-    TextBase(const ElementType& type, EngravingItem* parent = 0, TextStyleType tid = TextStyleType::DEFAULT,
+    TextBase(const ElementType& type, EngravingObject* parent = 0, TextStyleType tid = TextStyleType::DEFAULT,
              ElementFlags = ElementFlag::NOTHING);
-    TextBase(const ElementType& type, EngravingItem* parent, ElementFlags);
+    TextBase(const ElementType& type, EngravingObject* parent, ElementFlags);
     TextBase(const TextBase&);
 
     bool nudge(const EditData& ed);
