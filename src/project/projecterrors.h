@@ -54,11 +54,8 @@ enum class Err {
     ConvertTooManyImages,
     ConvertUnsupportedLink,
     ConvertProcessingFailed,
-    DownloadLinkExpired,
+    ConvertUploadFailed,
 };
-
-//! NOTE: key for the converted file name stored in Ret::data
-static const std::string CONVERT_FAILED_FILE_NAME_KEY("convertedFileName");
 
 inline muse::Ret make_ret(Err e)
 {

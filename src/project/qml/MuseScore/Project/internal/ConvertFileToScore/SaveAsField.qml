@@ -30,6 +30,8 @@ Column {
     property alias currentText: input.currentText
     property alias errorText: errorLabel.text
 
+    readonly property string trimmedText: input.currentText.trim()
+
     property NavigationPanel navigationPanel: null
     property int navigationOrder: 0
 
@@ -50,6 +52,8 @@ Column {
         id: input
 
         width: parent.width
+
+        maximumLength: 255
 
         navigation.panel: root.navigationPanel
         navigation.order: root.navigationOrder

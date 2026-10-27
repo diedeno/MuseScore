@@ -122,7 +122,7 @@ Item {
                     Layout.alignment: Qt.AlignHCenter
                     Layout.topMargin: 12
 
-                    text: qsTrc("project/convert", "Use a PDF, images, or MP3 (beta)")
+                    text: qsTrc("project/convert", "Use a PDF, images, or an audio file (beta)")
                     font: ui.theme.bodyFont
                 }
 
@@ -138,7 +138,8 @@ Item {
                         order: 1
                         enabled: root.enabled && root.visible
                     }
-                    navigation.order: 1
+                    navigation.row: 0
+                    navigation.column: 0
                 }
 
                 FlatButton {
@@ -151,7 +152,8 @@ Item {
                     accentButton: true
 
                     navigation.panel: navPanel
-                    navigation.order: 0
+                    navigation.row: 1
+                    navigation.column: 0
 
                     onClicked: {
                         root.selectFilesRequested()

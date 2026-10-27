@@ -29,6 +29,7 @@ Item {
     id: root
 
     property alias saveAsName: saveAsField.currentText
+    property alias saveAsTrimmed: saveAsField.trimmedText
     property alias saveAsErrorText: saveAsField.errorText
 
     property string hintText: ""
@@ -42,7 +43,7 @@ Item {
 
     signal cancelRequested()
     signal backRequested()
-    signal convertRequested(string link, string convertedFileName)
+    signal convertRequested(string link, string convertedScoreName)
 
     function focusOnDefault() {
         linkInputField.navigation.requestActive()
@@ -162,7 +163,7 @@ Item {
             onBackRequested: root.backRequested()
 
             onConvertRequested: {
-                root.convertRequested(linkInputField.trimmedText, saveAsField.currentText)
+                root.convertRequested(linkInputField.trimmedText, saveAsField.trimmedText)
             }
         }
     }

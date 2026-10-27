@@ -33,7 +33,8 @@ Rectangle {
     property var filesModel: null
     property var fileRequirements: []
 
-    signal selectMoreFilesRequested(var existingPaths)
+    signal selectMoreFilesRequested()
+    signal filesDropped(var urls)
     signal removeLastFileRequested()
 
     function moveCurrentFile(delta) {
@@ -62,21 +63,52 @@ Rectangle {
             radius: 3
             clip: true
 
+            DropArea {
+                id: fileDropArea
+
+                anchors.fill: parent
+                //! NOTE: below the list, so internal item reordering still wins
+                z: -1
+
+                property bool containsFileDrag: false
+
+                onEntered: function(drag) {
+                    fileDropArea.containsFileDrag = drag.hasUrls
+                }
+
+                onExited: {
+                    fileDropArea.containsFileDrag = false
+                }
+
+                onDropped: function(drop) {
+                    fileDropArea.containsFileDrag = false
+
+                    if (drop.hasUrls) {
+                        var urls = drop.urls.map(function(url) { return url.toString() })
+                        root.filesDropped(urls)
+                    }
+                }
+            }
+
             StyledListView {
                 id: fileListView
+
+                readonly property int scrollBarGap: 6
 
                 anchors.fill: parent
                 anchors.topMargin: 12
                 anchors.leftMargin: 12
                 anchors.bottomMargin: 12
-                anchors.rightMargin: (fileListView.ScrollBar.vertical && fileListView.ScrollBar.vertical.visible) ? 6 : 12
+                anchors.rightMargin: (fileListView.ScrollBar.vertical && fileListView.ScrollBar.vertical.visible) ? fileListView.scrollBarGap : 12
+
+                //! NOTE: keeps edge rows visible until fully scrolled out
+                displayMarginBeginning: 12
+                displayMarginEnd: 12
 
                 clip: false
 
                 spacing: 4
                 topMargin: root.filesModel.count === 1 ? Math.max(0, (fileListView.height - 40) / 2) : 0
-
-                property int scrollBarGap: 8
 
                 navigation.section: root.navigationPanel.section
                 navigation.order: 0
@@ -84,6 +116,7 @@ Rectangle {
                 accessible.name: qsTrc("project/convert", "Selected files")
 
                 ScrollBar.vertical: StyledScrollBar {
+                    padding: 0
                     thickness: fileListView.scrollBarThickness
                     policy: ScrollBar.AlwaysOn
                 }
@@ -194,11 +227,13 @@ Rectangle {
             }
 
             Rectangle {
+                id: dropAreaBorder
+
                 anchors.fill: parent
 
                 color: "transparent"
                 border.width: 1
-                border.color: ui.theme.strokeColor
+                border.color: fileDropArea.containsFileDrag ? ui.theme.accentColor : ui.theme.strokeColor
                 radius: fileListBackground.radius
             }
         }
@@ -228,9 +263,9 @@ Rectangle {
 
                     visible: Boolean(maxCountReachedLabel.text)
 
-                    //: %1 is the number of files currently selected, %2 is the maximum allowed, e.g. "3/5 max files"
-                    text: root.filesModel.maxFileCount > 0 && root.filesModel.count > 1
-                          ? qsTrc("project/convert", "%1/%n file(s) max.", root.filesModel.maxFileCount).arg(root.filesModel.count)
+                    //: %1 is the number of files currently selected, %n is the maximum allowed, e.g. "3/5 max files"
+                    text: root.filesModel.convertLimits.maxFileCount > 0 && root.filesModel.count > 1
+                          ? qsTrc("project/convert", "%1/%n file(s) max.", "", root.filesModel.convertLimits.maxFileCount).arg(root.filesModel.count)
                           : ""
                     horizontalAlignment: Text.AlignLeft
                     color: ui.theme.fontSecondaryColor
@@ -292,13 +327,13 @@ Rectangle {
                         text: qsTrc("global", "Select more")
                         accentButton: true
 
-                        enabled: root.filesModel.maxFileCount <= 0 || root.filesModel.count < root.filesModel.maxFileCount
+                        enabled: root.filesModel.convertLimits.maxFileCount <= 0 || root.filesModel.count < root.filesModel.convertLimits.maxFileCount
 
                         navigation.panel: root.navigationPanel
                         navigation.order: 3
 
                         onClicked: {
-                            root.selectMoreFilesRequested(root.filesModel.paths)
+                            root.selectMoreFilesRequested()
                         }
                     }
                 }

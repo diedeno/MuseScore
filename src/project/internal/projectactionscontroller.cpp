@@ -50,6 +50,7 @@ using namespace muse;
 using namespace muse::actions;
 
 static const muse::Uri NOTATION_PAGE_URI("musescore://notation");
+static const muse::Uri NOTATION_REVIEW_PAGE_URI("musescore://notation/review");
 static const muse::Uri HOME_PAGE_URI("musescore://home");
 static const muse::Uri NEW_SCORE_URI("musescore://project/newscore");
 static const muse::Uri PROJECT_PROPERTIES_URI("musescore://project/properties");
@@ -89,8 +90,6 @@ void ProjectActionsController::init()
     dispatcher()->reg(this, "file-share-audio", this, &ProjectActionsController::shareAudio);
 
     dispatcher()->reg(this, "file-export", this, &ProjectActionsController::exportScore);
-    dispatcher()->reg(this, "file-import-pdf", this, &ProjectActionsController::importPdf);
-    dispatcher()->reg(this, "file-import-audio-to-score", this, &ProjectActionsController::importAudioToScore);
     dispatcher()->reg(this, "file-convert-to-score", this, &ProjectActionsController::convertFileToScore);
 
     dispatcher()->reg(this, "print", this, &ProjectActionsController::printScore);
@@ -133,8 +132,6 @@ bool ProjectActionsController::canReceiveAction(const ActionCode& code) const
         static const std::unordered_set<ActionCode> DONT_REQUIRE_OPEN_PROJECT {
             "file-new",
             "file-open",
-            "file-import-pdf",
-            "file-import-audio-to-score",
             "file-convert-to-score",
             "continue-last-session",
             "clear-recent",
@@ -147,6 +144,14 @@ bool ProjectActionsController::canReceiveAction(const ActionCode& code) const
         if (code == "file-save-to-cloud" || code == "file-publish") {
             return false;
         }
+    }
+
+    if (interactive()->currentUri().val == NOTATION_REVIEW_PAGE_URI) {
+        static const std::unordered_set<ActionCode> ALLOWED_ON_REVIEW_PAGE {
+            "file-close",
+        };
+
+        return muse::contains(ALLOWED_ON_REVIEW_PAGE, code);
     }
 
     return true;
@@ -419,13 +424,15 @@ Ret ProjectActionsController::doFinishOpenProject()
         QTimer::singleShot(1000, [this]() {
             if (museSoundsCheckUpdateScenario()->hasUpdate()) {
                 museSoundsCheckUpdateScenario()->showUpdate();
-            } else if (!museSamplerCheckUpdateScenario()->alreadyChecked()) {
-                museSamplerCheckUpdateScenario()->checkAndShowUpdateIfNeed();
+            } else if (!museSamplerCheckStatusScenario()->alreadyChecked()) {
+                museSamplerCheckStatusScenario()->checkAndShowStatusIfNeed();
             }
         });
     };
 
-    if (interactive()->isOpened(NOTATION_PAGE_URI).val) {
+    const Uri notationPageUri = resolveNotationPageUri();
+
+    if (interactive()->isOpened(notationPageUri).val) {
         showUpdateNotification();
     } else {
         async::Channel<Uri> opened = interactive()->opened();
@@ -439,7 +446,22 @@ Ret ProjectActionsController::doFinishOpenProject()
         });
     }
 
-    return openPageIfNeed(NOTATION_PAGE_URI);
+    return openPageIfNeed(notationPageUri);
+}
+
+Uri ProjectActionsController::resolveNotationPageUri() const
+{
+    INotationProjectPtr project = globalContext()->currentProject();
+    if (!project || !project->cloudInfo().isValid()) {
+        return NOTATION_PAGE_URI;
+    }
+
+    int scoreId = static_cast<int>(muse::cloud::idFromCloudUrl(project->cloudInfo().sourceUrl).toUint64());
+    if (convertFileToScoreScenario()->isAwaitingReview(scoreId)) {
+        return NOTATION_REVIEW_PAGE_URI;
+    }
+
+    return NOTATION_PAGE_URI;
 }
 
 void ProjectActionsController::downloadAndOpenCloudProject(int scoreId, const QString& hash, const QString& secret, bool isOwner)
@@ -1848,16 +1870,6 @@ void ProjectActionsController::warnProjectCannotBeOpened(const Ret& ret, const m
     }
 
     interactive()->error(title, body);
-}
-
-void ProjectActionsController::importPdf()
-{
-    interactive()->openUrl("https://musescore.com/import");
-}
-
-void ProjectActionsController::importAudioToScore()
-{
-    interactive()->openUrl("https://musescore.com/upload?format=audio2score");
 }
 
 void ProjectActionsController::convertFileToScore(const ActionData& args)

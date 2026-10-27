@@ -28,9 +28,8 @@
 
 #include "async/asyncable.h"
 
-#include "iprojectconfiguration.h"
-#include "irecentfilescontroller.h"
-#include "iconvertfiletoscoreservice.h"
+#include "project/iprojectconfiguration.h"
+#include "project/irecentfilescontroller.h"
 #include "io/ifilesystem.h"
 #include "modularity/ioc.h"
 
@@ -39,20 +38,29 @@ class RecentScoresModel : public AbstractScoresModel, public muse::async::Asynca
 {
     Q_OBJECT
     QML_ELEMENT
+
+public:
     muse::GlobalInject<IProjectConfiguration> configuration;
     muse::ContextInject<IRecentFilesController> recentFilesController = { this };
-    muse::ContextInject<IConvertFileToScoreService> convertFileToScoreService = { this };
     muse::GlobalInject<muse::io::IFileSystem> fileSystem;
 
 public:
     RecentScoresModel(QObject* parent = nullptr);
 
     void load() override;
+    Q_INVOKABLE void removeRecentScore(const QString& scorePath);
 
     QList<int> nonScoreItemIndices() const override;
 
 private:
-    void updateRecentScores();
+    void reloadRecentScores();
     void setRecentScores(const std::vector<QVariantMap>& items);
+
+    void prependItem(const RecentFile& file);
+    void updateItem(const muse::io::path_t& oldPath, const RecentFile& file);
+    void removeItem(const muse::io::path_t& path);
+
+    QVariantMap makeItem(const RecentFile& file) const;
+    int findRow(const muse::io::path_t& path) const;
 };
 }

@@ -26,6 +26,7 @@
 #include "async/channel.h"
 #include "async/notification.h"
 #include "io/path.h"
+#include "progress.h"
 #include "types/retval.h"
 
 #include "types/converttypes.h"
@@ -52,20 +53,37 @@ public:
     //! Checks that the given link is from a supported source
     virtual muse::Ret validateLink(const QUrl& link) const = 0;
 
-    //! Sends the conversion request to the server
-    virtual muse::Ret startConvert(const ConvertInput& input, const muse::String& convertedFileName) = 0;
+    //! Starts uploading the input to the server, returning the upload's progress
+    //! (or an error if the upload couldn't be started, e.g. the files couldn't be read).
+    //! The conversion's final result is reported via convertFinished()
+    virtual muse::RetVal<muse::Progress> uploadToConvert(const ConvertInput& input, const muse::String& convertedScoreName) = 0;
 
-    //! Emits the result once the server-side conversion completes
-    virtual muse::async::Channel<muse::Ret, muse::io::path_t> convertFinished() const = 0;
+    //! Emits the final result of a processed conversion (failure, or success with the WatchedScore)
+    virtual muse::async::Channel<muse::Ret, WatchedScore> convertFinished() const = 0;
 
-    //! Names of the files currently being converted server-side (queued, processing, or downloading)
-    virtual muse::StringList fileNamesBeingConverted() const = 0;
-    virtual muse::async::Notification fileNamesBeingConvertedChanged() const = 0;
+    //! Uploads in progress (not saved, not polled)
+    virtual muse::ValNt<UploadingScoreList> uploadingScores() const = 0;
 
-    //! Emitted once a converted score is ready and awaiting a quality review
-    virtual muse::async::Channel<ConvertType, int /*queueId*/> reviewRequested() const = 0;
-    virtual void submitReview(ConvertType type, int queueId, ReviewRating rating, const QString& comment = QString()) = 0;
-    virtual void submitReviewComment(ConvertType type, int queueId, const QString& comment) = 0;
+    //! All pending/reviewable conversions from the server's convert queue
+    virtual muse::ValNt<WatchedScoreList> watchedScores() const = 0;
+
+    //! Returns a previously converted/watched score by its cloud score id
+    virtual const WatchedScore* watchedScoreById(int scoreId) const = 0;
+
+    //! Emitted after every conversion status check, whether it succeeded or failed
+    virtual muse::async::Channel<PollingStatus> pollingStatusChanged() const = 0;
+
+    //! Resumes polling for any still-pending items - e.g. in response to the user pressing "Retry"
+    virtual void retryPolling() = 0;
+
+    virtual void submitReview(int scoreId, ReviewRating rating, const QString& comment = QString()) = 0;
+    virtual void submitReviewComment(int scoreId, const QString& comment) = 0;
+
+    //! Aborts an upload in progress
+    virtual void cancelUpload(int uploadId) = 0;
+
+    //! Cancels a watched conversion, removing it both server-side and from watchedScores()
+    virtual void cancelConversion(ConvertType type, int convertId) = 0;
 };
 
 using IConvertFileToScoreServicePtr = std::shared_ptr<IConvertFileToScoreService>;

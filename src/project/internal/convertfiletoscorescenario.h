@@ -25,6 +25,8 @@
 #include "modularity/ioc.h"
 #include "global/iinteractive.h"
 #include "actions/iactionsdispatcher.h"
+#include "toast/itoastservice.h"
+#include "multiwindows/imultiwindowsprovider.h"
 
 #include "cloud/musescorecom/imusescorecomservice.h"
 
@@ -32,19 +34,24 @@
 #include "project/iconvertfiletoscorescenario.h"
 #include "project/iconvertfiletoscoreservice.h"
 
+namespace muse {
+class Val;
+}
+
 namespace mu::project {
 class ConvertFileToScoreScenario : public IConvertFileToScoreScenario, public muse::async::Asyncable, public muse::Contextable
 {
 public:
     muse::ContextInject<muse::cloud::IMuseScoreComService> museScoreComService = { this };
     muse::ContextInject<muse::IInteractive> interactive = { this };
+    muse::GlobalInject<muse::toast::IToastService> toastService;
     muse::ContextInject<muse::actions::IActionsDispatcher> dispatcher = { this };
     muse::GlobalInject<IProjectConfiguration> configuration;
+    muse::GlobalInject<muse::mi::IMultiWindowsProvider> multiwindowsProvider;
     muse::ContextInject<IConvertFileToScoreService> service = { this };
 
 public:
-    explicit ConvertFileToScoreScenario(const muse::modularity::ContextPtr& iocCtx)
-        : muse::Contextable(iocCtx) {}
+    explicit ConvertFileToScoreScenario(const muse::modularity::ContextPtr& iocCtx);
 
     void init();
 
@@ -55,22 +62,43 @@ public:
     muse::Ret validateLink(const QUrl& link) override;
 
     void convertFiles(const muse::io::paths_t& paths = {}) override;
-    muse::async::Channel<muse::Ret, muse::io::path_t> convertFinished() const override;
+    muse::async::Channel<muse::Ret, WatchedScore> convertFinished() const override;
+
+    muse::ValNt<UploadingScoreList> uploadingScores() const override;
+    muse::ValNt<WatchedScoreList> watchedScores() const override;
+
+    bool isAwaitingReview(int scoreId) const override;
+
+    void cancelUpload(int uploadId) override;
+    void cancelConversion(ConvertType type, int convertId) override;
+
+    muse::async::Channel<PollingStatus> pollingStatusChanged() const override;
+
+    void retryPolling() override;
 
 private:
+    struct ConvertSelection {
+        ConvertInput input;
+        muse::String convertedScoreName;
+    };
+
     muse::async::Promise<muse::Ret> checkConvertIsAllowed();
     muse::async::Promise<muse::Ret> ensureAuthorization();
 
     muse::async::Promise<ConvertSelection> selectFilesToConvert(const muse::io::paths_t& paths = {}, ConvertType type = ConvertType::Omr);
+    ConvertSelection toConvertSelection(const muse::Val& val) const;
 
     void confirmConvert(const muse::io::paths_t& paths, ConvertType type);
+    void confirmCancel(const std::function<void()>& onCancel);
 
-    muse::Ret startConvert(const ConvertInput& input, const muse::String& convertedFileName);
+    void startConvert(const ConvertInput& input, const muse::String& convertedScoreName);
 
     void showValidationError(const muse::Ret& ret);
+    void showUploadError(const muse::Ret& ret, const ConvertInput& input, const muse::String& convertedScoreName);
 
     void showCloudIsNotAvailableError();
     void showUnknownError();
+    void showFileReadError(size_t fileCount);
     void showFileTooLargeError(qint64 maxFileSizeBytes);
     void showCombinedImageSizeTooLargeError(qint64 maxFileSizeBytes);
     void showUnsupportedFormatError();
@@ -81,11 +109,15 @@ private:
     void showTooManyImagesError(int maxImages);
 
     void showFileProcessingDialog();
-    void showScoreReadyNotification(const muse::io::path_t& path);
-    void showConvertFailedNotification(const muse::Ret& ret);
+    void showScoreReadyNotification(const WatchedScore& watched);
+    void showConvertFailedNotification(const WatchedScore& watched);
+    void showUploadFailedNotification(const ConvertInput& input, const muse::String& convertedScoreName);
+    void showPollingFailureNotification();
+    void showPollingGaveUpNotification();
 
-    void askReviewRating(ConvertType type, int queueId);
+    muse::async::Channel<muse::Ret, WatchedScore> m_convertFinished;
 
-    muse::async::Channel<muse::Ret, muse::io::path_t> m_convertFinished;
+    bool m_retryToastShown = false;
+    bool m_convertFlowInProgress = false;
 };
 }

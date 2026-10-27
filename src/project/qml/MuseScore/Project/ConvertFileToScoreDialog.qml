@@ -50,6 +50,25 @@ StyledDialogView {
     property int currentPageIndex: 0
     property bool skipCloseConfirmation: false
 
+    readonly property string pageTitle: {
+        if (root.currentPageIndex === 2) {
+            return qsTrc("project/convert", "Convert audio to score (beta)")
+        }
+
+        switch (convertModel.fileListModel.fileCategory) {
+        case FileListModel.Audio:
+            return qsTrc("project/convert", "Convert audio to score (beta)")
+        case FileListModel.Pdf:
+            return qsTrc("project/convert", "Convert PDF to score")
+        case FileListModel.Image:
+            return qsTrc("project/convert", "Convert images to score")
+        case FileListModel.Unknown:
+            break
+        }
+
+        return qsTrc("project/convert", "Convert a file to score")
+    }
+
     ConvertFileToScoreModel {
         id: convertModel
 
@@ -72,9 +91,9 @@ StyledDialogView {
         }
     }
 
-    function finish(type, paths, link, convertedFileName) {
+    function finish(type, paths, link, convertedScoreName) {
         root.skipCloseConfirmation = true
-        root.ret = { errcode: 0, value: { type: type, paths: paths, link: link, convertedFileName: convertedFileName } }
+        root.ret = { errcode: 0, value: { type: type, paths: paths, link: link, convertedScoreName: convertedScoreName } }
         root.hide()
     }
 
@@ -110,9 +129,7 @@ StyledDialogView {
             StyledTextLabel {
                 Layout.fillWidth: true
 
-                text: root.currentPageIndex === 2
-                      ? qsTrc("project/convert", "Convert audio to score (beta)")
-                      : qsTrc("project/convert", "Convert a file to score")
+                text: root.pageTitle
                 font: ui.theme.largeBodyBoldFont
                 horizontalAlignment: Text.AlignLeft
             }
@@ -167,7 +184,7 @@ StyledDialogView {
             }
 
             onFilesDropped: function(urls) {
-                if (convertModel.validateAndApplyFiles(urls)) {
+                if (convertModel.validateAndAddFiles(urls)) {
                     root.currentPageIndex = 1
                 }
             }
@@ -182,24 +199,26 @@ StyledDialogView {
         id: selectedFilesPageComponent
 
         SelectedFilesPage {
+            id: filesPage
+
             saveAsName: convertModel.defaultSaveAsName
-            saveAsErrorText: convertModel.validateFileName(saveAsName)
+            saveAsErrorText: convertModel.validateFileName(filesPage.saveAsTrimmed)
             navigationSection: root.navigationSection
-            files: convertModel.selectedPaths
+            fileListModel: convertModel.fileListModel
             canSelectMultipleFiles: convertModel.canSelectMultipleFiles
             fileRequirements: convertModel.fileRequirements
-            convertLimits: convertModel.convertLimits
 
             onCancelRequested: convertModel.confirmCancel()
-
             onBackRequested: convertModel.confirmGoingBack()
 
-            onConvertRequested: function(paths, convertedFileName) {
-                root.finish(convertModel.convertType, paths, "", convertedFileName)
+            onConvertRequested: function(convertedScoreName) {
+                root.finish(convertModel.convertType, convertModel.fileListModel.paths(), "", convertedScoreName)
             }
 
-            onSelectMoreFilesRequested: function(existingPaths) {
-                convertModel.selectAndValidateFiles(existingPaths)
+            onSelectMoreFilesRequested: convertModel.selectAndValidateFiles()
+
+            onAddFilesRequested: function(urls) {
+                convertModel.validateAndAddFiles(urls)
             }
         }
     }
@@ -208,8 +227,10 @@ StyledDialogView {
         id: linkEntryPageComponent
 
         LinkEntryPage {
+            id: linkPage
+
             saveAsName: convertModel.defaultSaveAsName
-            saveAsErrorText: convertModel.validateFileName(saveAsName)
+            saveAsErrorText: convertModel.validateFileName(linkPage.saveAsTrimmed)
             hintText: convertModel.linkPageHintText
             hintPlainText: convertModel.linkPageHintPlainText
             audioComUrl: convertModel.audioComUrl
@@ -217,16 +238,15 @@ StyledDialogView {
             navigationSection: root.navigationSection
 
             onCancelRequested: convertModel.confirmCancel()
-
             onBackRequested: convertModel.confirmGoingBack()
 
-            onConvertRequested: function(link, convertedFileName) {
+            onConvertRequested: function(link, convertedScoreName) {
                 if (!convertModel.validateLink(link)) {
                     return
                 }
 
                 convertModel.selectedLink = link
-                root.finish(convertModel.convertType, [], link, convertedFileName)
+                root.finish(convertModel.convertType, [], link, convertedScoreName)
             }
         }
     }
