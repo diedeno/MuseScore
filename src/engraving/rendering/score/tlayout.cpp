@@ -334,7 +334,10 @@ void TLayout::layoutItem(EngravingItem* item, LayoutContext& ctx)
         break;
     // TODO: case ElementType::STAFF_VISIBILTY_INDICATOR:
     case ElementType::SYSTEM_LOCK_INDICATOR:
-        layoutIndicatorIcon(item_cast<const IndicatorIcon*>(item), static_cast<IndicatorIcon::LayoutData*>(ldata));
+        layoutSystemIndicatorIcon(item_cast<const SystemIndicatorIcon*>(item), static_cast<IndicatorIcon::LayoutData*>(ldata));
+        break;
+    case ElementType::STAVE_SHARING_CHANGE:
+        layoutStaveSharingChange(item_cast<const StaveSharingChange*>(item), static_cast<IndicatorIcon::LayoutData*>(ldata));
         break;
     case ElementType::LET_RING:         layoutLetRing(item_cast<LetRing*>(item), ctx);
         break;
@@ -1661,31 +1664,7 @@ void TLayout::layoutChordLine(const ChordLine* item, ChordLine::LayoutData* ldat
 
     ldata->setMag(item->chord()->mag());
 
-    if (!item->modified()) {
-        double x2 = 0;
-        double y2 = 0;
-        double baseLength = spatium * item->chord()->intrinsicMag();
-        double horBaseLength = 1.2 * baseLength;     // let the symbols extend a bit more horizontally
-        x2 += item->isToTheLeft() ? -horBaseLength : horBaseLength;
-        y2 += item->isBelow() ? baseLength : -baseLength;
-        if (item->chordLineType() != ChordLineType::NOTYPE && !item->isWavy()) {
-            PainterPath path;
-            if (!item->isToTheLeft()) {
-                if (item->isStraight()) {
-                    path.lineTo(x2, y2);
-                } else {
-                    path.cubicTo(x2 / 2, 0.0, x2, y2 / 2, x2, y2);
-                }
-            } else {
-                if (item->isStraight()) {
-                    path.lineTo(x2, y2);
-                } else {
-                    path.cubicTo(0.0, y2 / 2, x2 / 2, y2, x2, y2);
-                }
-            }
-            ldata->path = path;
-        }
-    }
+    layoutChordLinePath(item, ldata, spatium, item->chordMag());
 
     double x = 0.0;
     double y = noteLD->pos().y();
@@ -1752,6 +1731,31 @@ void TLayout::layoutChordLine(const ChordLine* item, ChordLine::LayoutData* ldat
 
         ldata->setBbox(r);
     }
+}
+
+void TLayout::layoutChordLinePath(const ChordLine* item, ChordLine::LayoutData* ldata, double spatium, double mag)
+{
+    ldata->path = PainterPath();
+    if (item->chordLineType() == ChordLineType::NOTYPE || item->isWavy()) {
+        return;
+    }
+
+    const ChordLine::Points defaultPoints = item->defaultPoints();
+    const ChordLine::Points& offsets = item->bezierOffsets();
+    ChordLine::Points points;
+    for (size_t i = 0; i < points.size(); ++i) {
+        points[i] = (defaultPoints[i] * spatium + offsets[i]) * mag;
+    }
+
+    PainterPath path;
+    path.moveTo(points[size_t(ChordLine::Point::START)]);
+    if (item->isStraight()) {
+        path.lineTo(points[size_t(ChordLine::Point::END)]);
+    } else {
+        path.cubicTo(points[size_t(ChordLine::Point::BEZIER1)], points[size_t(ChordLine::Point::BEZIER2)],
+                     points[size_t(ChordLine::Point::END)]);
+    }
+    ldata->path = path;
 }
 
 void TLayout::layoutClef(const Clef* item, Clef::LayoutData* ldata, const LayoutConfiguration& conf)
@@ -3714,7 +3718,7 @@ void TLayout::layoutLayoutBreak(const LayoutBreak* item, LayoutBreak::LayoutData
     ldata->setShape(Shape(bbox, item));
 }
 
-void TLayout::layoutIndicatorIcon(const IndicatorIcon* item, IndicatorIcon::LayoutData* ldata)
+void TLayout::layoutSystemIndicatorIcon(const SystemIndicatorIcon* item, IndicatorIcon::LayoutData* ldata)
 {
     if (!item->configuration()->canLayoutIcons()) {
         return;
@@ -3777,7 +3781,24 @@ void TLayout::layoutIndicatorIcon(const IndicatorIcon* item, IndicatorIcon::Layo
     ldata->setPos(PointF(x, -2.5 * spatium));
 
     // Ensure it goes behind notation and LayoutBreak
-    const_cast<IndicatorIcon*>(item)->setZ(-100);
+    const_cast<SystemIndicatorIcon*>(item)->setZ(-100);
+}
+
+void TLayout::layoutStaveSharingChange(const StaveSharingChange* item, IndicatorIcon::LayoutData* ldata)
+{
+    if (!item->configuration()->canLayoutIcons()) {
+        return;
+    }
+
+    const FontMetrics metrics(item->font());
+    const RectF iconBox = metrics.boundingRect(item->iconCode());
+
+    Shape shape;
+    shape.add(iconBox, item);
+    ldata->setShape(shape);
+    ldata->setPos(PointF(0.0, -2.5 * item->spatium()));
+
+    Autoplace::autoplaceSegmentElement(item, ldata, false);
 }
 
 static void _layoutLedgerLine(const LedgerLine* item, const LayoutContext& ctx, LedgerLine::LayoutData* ldata)

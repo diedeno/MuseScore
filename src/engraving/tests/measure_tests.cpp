@@ -22,14 +22,22 @@
 
 #include <gtest/gtest.h>
 
+#include "engraving/compat/scoreaccess.h"
 #include "engraving/dom/breath.h"
+#include "engraving/dom/chord.h"
 #include "engraving/dom/engravingitem.h"
 #include "engraving/dom/excerpt.h"
 #include "engraving/dom/factory.h"
 #include "engraving/dom/masterscore.h"
 #include "engraving/dom/measure.h"
+#include "engraving/dom/mmrest.h"
+#include "engraving/dom/note.h"
+#include "engraving/dom/part.h"
 #include "engraving/dom/rest.h"
 #include "engraving/dom/segment.h"
+#include "engraving/dom/stafftext.h"
+#include "engraving/dom/timesig.h"
+#include "engraving/editing/edittimesig.h"
 #include "engraving/editing/splitjoinmeasure.h"
 #include "engraving/editing/transaction/transaction.h"
 
@@ -853,4 +861,255 @@ TEST_F(Engraving_MeasureTests, breathInPart)
     }
 
     delete score;
+}
+
+//---------------------------------------------------------
+///   mmrestResize
+///    a reused MM-rest that grows or shrinks must resize its MMRest symbols too
+//---------------------------------------------------------
+TEST_F(Engraving_MeasureTests, mmrestResize)
+{
+    // one staff, 10 empty 4/4 measures
+    std::unique_ptr<MasterScore> score(compat::ScoreAccess::createMasterScoreWithBaseStyle(nullptr));
+    Part* part = new Part(score.get());
+    score->appendPart(part);
+    score->appendStaff(Factory::createStaff(part));
+    score->startCmd(TranslatableString::untranslatable("Engraving measure tests"));
+    score->appendMeasures(10);
+    score->endCmd();
+    ASSERT_EQ(score->nmeasures(), 10u);
+
+    Measure* m1 = score->firstMeasure();
+    Measure* m4 = score->crMeasure(3);
+    Measure* m5 = score->crMeasure(4);
+    ASSERT_TRUE(m1 && m4 && m5);
+
+    auto mmRestSymbol = [m1]() -> MMRest* {
+        Measure* mmr = m1->mmRest();
+        EXPECT_TRUE(mmr);
+        if (!mmr) {
+            return nullptr;
+        }
+        Segment* seg = mmr->findSegmentR(SegmentType::ChordRest, Fraction(0, 1));
+        EXPECT_TRUE(seg && seg->element(0) && seg->element(0)->isMMRest());
+        return seg && seg->element(0) ? toMMRest(seg->element(0)) : nullptr;
+    };
+
+    // 10-bar MM rest
+    score->startCmd(TranslatableString::untranslatable("Engraving measure tests"));
+    score->undoChangeStyleVal(Sid::createMultiMeasureRests, true);
+    score->endCmd();
+    EXPECT_EQ(m1->mmRest()->ticks(), Fraction(10, 1));
+    EXPECT_EQ(mmRestSymbol()->ticks(), Fraction(10, 1));
+
+    // shrink to 4 bars
+    score->startCmd(TranslatableString::untranslatable("Engraving measure tests"));
+    m5->undoChangeProperty(Pid::BREAK_MMR, true);
+    score->endCmd();
+    EXPECT_EQ(m1->mmRest()->ticks(), Fraction(4, 1));
+    EXPECT_EQ(mmRestSymbol()->ticks(), Fraction(4, 1));
+
+    // grow back to 10 bars
+    score->startCmd(TranslatableString::untranslatable("Engraving measure tests"));
+    m5->undoChangeProperty(Pid::BREAK_MMR, false);
+    score->endCmd();
+    EXPECT_EQ(m1->mmRest()->ticks(), Fraction(10, 1));
+    EXPECT_EQ(mmRestSymbol()->ticks(), Fraction(10, 1));
+}
+
+/**
+ *  A time signature change at the start of an MM rest survives save and reload.
+ *  See issue #35000
+ */
+TEST_F(Engraving_MeasureTests, mmrestTimeSigSaveReload)
+{
+    // [GIVEN] A 4/4 score with two staves, a time sig change to 3/4 at measure 2, followed by some empty measures
+    std::unique_ptr<MasterScore> score(compat::ScoreAccess::createMasterScore(nullptr));
+    for (int i = 0; i < 2; ++i) {
+        Part* part = new Part(score.get());
+        score->appendPart(part);
+        score->appendStaff(Factory::createStaff(part));
+    }
+    score->appendMeasures(4);
+
+    TimeSig* ts = Factory::createTimeSig(score->dummy());
+    ts->setSig(Fraction(3, 4), TimeSigType::NORMAL);
+
+    score->startCmd(TranslatableString::untranslatable("Engraving measure tests"));
+    EditTimeSig::addTimeSig(score->transactionManager()->currentOrDummyTransaction(), score.get(), score->crMeasure(1), 0, ts, false);
+    score->endCmd();
+
+    // [WHEN] MM rests are turned on
+    score->startCmd(TranslatableString::untranslatable("Engraving measure tests"));
+    score->undoChangeStyleVal(Sid::createMultiMeasureRests, true);
+    score->setLayoutAll();
+    score->endCmd();
+
+    // [THEN] Layout moves the 3/4 time signatures onto the MM rest starting at measure 2
+    Measure* m2 = score->firstMeasure()->nextMeasure();
+    ASSERT_TRUE(m2->mmRest());
+    Segment* tsSeg = m2->mmRest()->findSegmentR(SegmentType::TimeSig, Fraction(0, 1));
+    ASSERT_TRUE(tsSeg);
+    for (staff_idx_t staffIdx = 0; staffIdx < score->nstaves(); ++staffIdx) {
+        EXPECT_TRUE(tsSeg->element(staff2track(staffIdx)));
+    }
+
+    // [WHEN] The score is saved and reloaded
+    ASSERT_TRUE(ScoreRW::saveScore(score.get(), u"mmrest-timesig-test.mscx"));
+
+    std::unique_ptr<MasterScore> reopened(ScoreRW::readScore(u"mmrest-timesig-test.mscx", true));
+    ASSERT_TRUE(reopened);
+
+    // [THEN] The score isn't corrupted
+    EXPECT_TRUE(reopened->sanityCheck());
+
+    // [THEN] Measure 2 is still in 3/4
+    m2 = reopened->firstMeasure()->nextMeasure();
+    EXPECT_EQ(m2->ticks(), Fraction(3, 4));
+    EXPECT_EQ(m2->timesig(), Fraction(3, 4));
+
+    // [THEN] The MM rest starting at measure 2 shows the 3/4 time signatures again
+    ASSERT_TRUE(m2->mmRest());
+    tsSeg = m2->mmRest()->findSegmentR(SegmentType::TimeSig, Fraction(0, 1));
+    ASSERT_TRUE(tsSeg);
+    for (staff_idx_t staffIdx = 0; staffIdx < reopened->nstaves(); ++staffIdx) {
+        EngravingItem* reopenedTs = tsSeg->element(staff2track(staffIdx));
+        ASSERT_TRUE(reopenedTs);
+        EXPECT_EQ(toTimeSig(reopenedTs)->sig(), Fraction(3, 4));
+    }
+}
+
+/**
+ *  Deleting the time of a note at the start of a measure, then undoing it,
+ *  restores the measure's segments in their original order.
+ */
+TEST_F(Engraving_MeasureTests, timeDeleteNoteAtMeasureStartUndo)
+{
+    // [GIVEN] A 4/4 score of quarter notes on two staves
+    std::unique_ptr<MasterScore> score(ScoreRW::readScore(MEASURE_DATA_DIR + u"measure-3.mscx"));
+    ASSERT_TRUE(score);
+
+    // Layout may replace segments (e.g. end barlines), so compare type and tick rather than pointers
+    using SegmentInfo = std::pair<SegmentType, Fraction>;
+    auto collectSegments = [&score]() {
+        std::vector<SegmentInfo> segments;
+        for (Segment* s = score->firstSegment(SegmentType::All); s; s = s->next1()) {
+            segments.emplace_back(s->segmentType(), s->tick());
+        }
+        return segments;
+    };
+
+    auto expectTicksInOrder = [](const std::vector<SegmentInfo>& segments) {
+        for (size_t i = 1; i < segments.size(); ++i) {
+            EXPECT_LE(segments[i - 1].second, segments[i].second);
+        }
+    };
+
+    const std::vector<SegmentInfo> segmentsBefore = collectSegments();
+    expectTicksInOrder(segmentsBefore);
+
+    // [WHEN] The first note of measure 2 is selected and its time is deleted
+    Measure* m2 = score->firstMeasure()->nextMeasure();
+    ASSERT_TRUE(m2);
+    ChordRest* cr = m2->findChordRest(m2->tick(), 0);
+    ASSERT_TRUE(cr && cr->isChord());
+    score->select(toChord(cr)->upNote());
+
+    score->startCmd(TranslatableString::untranslatable("Engraving measure tests"));
+    score->cmdTimeDelete();
+    score->endCmd();
+    score->doLayout();
+
+    // [THEN] Measure 2 is shortened and the segment ticks are still in order
+    EXPECT_EQ(m2->ticks(), Fraction(3, 4));
+    expectTicksInOrder(collectSegments());
+
+    // [WHEN] The deletion is undone
+    score->undoRedo(true, 0);
+    score->doLayout();
+
+    // [THEN] The segments are back in their original order, with ticks in order
+    EXPECT_EQ(m2->ticks(), Fraction(4, 4));
+    const std::vector<SegmentInfo> segmentsAfter = collectSegments();
+    EXPECT_EQ(segmentsAfter, segmentsBefore);
+    expectTicksInOrder(segmentsAfter);
+}
+
+/**
+ *  Deleting the time of a note with an annotation at the start of a measure moves the annotation to the
+ *  next segment instead of leaving it on an empty segment, and undo restores the original segments.
+ */
+TEST_F(Engraving_MeasureTests, timeDeleteNoteWithAnnotationUndo)
+{
+    // [GIVEN] A 4/4 score of quarter notes on two staves, with staff text on the first note of measure 2
+    std::unique_ptr<MasterScore> score(ScoreRW::readScore(MEASURE_DATA_DIR + u"measure-3.mscx"));
+    ASSERT_TRUE(score);
+
+    Measure* m2 = score->firstMeasure()->nextMeasure();
+    ASSERT_TRUE(m2);
+    Segment* firstSeg = m2->findSegment(SegmentType::ChordRest, m2->tick());
+    ASSERT_TRUE(firstSeg);
+
+    StaffText* text = Factory::createStaffText(firstSeg);
+    text->setTrack(0);
+    text->setXmlText(u"Text");
+    score->startCmd(TranslatableString::untranslatable("Engraving measure tests"));
+    score->undoAddElement(text);
+    score->endCmd();
+
+    using SegmentInfo = std::pair<SegmentType, Fraction>;
+    auto collectSegments = [m2]() {
+        std::vector<SegmentInfo> segments;
+        for (Segment* s = m2->first(); s; s = s->next()) {
+            segments.emplace_back(s->segmentType(), s->tick());
+        }
+        return segments;
+    };
+
+    auto staffTextTicks = [m2]() {
+        std::vector<Fraction> ticks;
+        for (Segment* s = m2->first(SegmentType::ChordRest); s; s = s->next(SegmentType::ChordRest)) {
+            for (EngravingItem* a : s->annotations()) {
+                if (a->isStaffText()) {
+                    ticks.push_back(s->tick());
+                }
+            }
+        }
+        return ticks;
+    };
+
+    const std::vector<SegmentInfo> segmentsBefore = collectSegments();
+
+    // [WHEN] The time of the first note of measure 2 is deleted
+    ChordRest* cr = m2->findChordRest(m2->tick(), 0);
+    ASSERT_TRUE(cr && cr->isChord());
+    score->select(toChord(cr)->upNote());
+
+    score->startCmd(TranslatableString::untranslatable("Engraving measure tests"));
+    score->cmdTimeDelete();
+    score->endCmd();
+    score->doLayout();
+
+    // [THEN] Measure 2 is shortened, and every ChordRest segment still has ChordRests
+    EXPECT_TRUE(score->sanityCheck());
+    EXPECT_EQ(m2->ticks(), Fraction(3, 4));
+    for (Segment* s = m2->first(SegmentType::ChordRest); s; s = s->next(SegmentType::ChordRest)) {
+        EXPECT_TRUE(s->hasElements()) << "Tick " << s->tick().toString().toStdString();
+    }
+
+    // [THEN] The staff text has moved to the next note, which is now at the start of measure 2
+    EXPECT_EQ(staffTextTicks(), std::vector<Fraction>({ m2->tick() }));
+
+    // [WHEN] The deletion is undone
+    score->undoRedo(true, 0);
+    score->doLayout();
+
+    // [THEN] The segments are back in their original order, with the staff text back on the first note
+    EXPECT_TRUE(score->sanityCheck());
+    EXPECT_EQ(m2->ticks(), Fraction(4, 4));
+    EXPECT_EQ(collectSegments(), segmentsBefore);
+    EXPECT_EQ(staffTextTicks(), std::vector<Fraction>({ m2->tick() }));
+    const Segment* textSeg = m2->findSegment(SegmentType::ChordRest, m2->tick());
+    ASSERT_TRUE(textSeg);
+    EXPECT_TRUE(textSeg->element(0) && textSeg->element(0)->isChord());
 }

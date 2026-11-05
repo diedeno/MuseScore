@@ -92,11 +92,13 @@
 #include "../../dom/stafftext.h"
 #include "../../dom/stafftype.h"
 #include "../../dom/stafftypechange.h"
+#include "../../dom/stavesharingchange.h"
 #include "../../dom/stavesharinglabel.h"
 #include "../../dom/stem.h"
 #include "../../dom/stemslash.h"
 #include "../../dom/sticking.h"
 #include "../../dom/systemdivider.h"
+#include "../../dom/systemindicatoricon.h"
 #include "../../dom/systemtext.h"
 #include "../../dom/soundflag.h"
 
@@ -229,6 +231,7 @@ public:
 
     static void layoutChord(Chord* item, LayoutContext& ctx);
     static void layoutChordLine(const ChordLine* item, ChordLine::LayoutData* ldata, const LayoutConfiguration& conf);
+    static void layoutChordLinePath(const ChordLine* item, ChordLine::LayoutData* ldata, double spatium, double mag);
     static void layoutClef(const Clef* item, Clef::LayoutData* ldata, const LayoutConfiguration& conf);
     static void layoutCapo(const Capo* item, Capo::LayoutData* ldata, const LayoutContext& ctx);
 
@@ -262,7 +265,8 @@ public:
     static void layoutHarmony(Harmony* item, Harmony::LayoutData* ldata, const LayoutContext& ctx);
     static void layoutHook(const Hook* item, Hook::LayoutData* ldata);
 
-    static void layoutIndicatorIcon(const IndicatorIcon* item, IndicatorIcon::LayoutData* ldata);
+    static void layoutSystemIndicatorIcon(const SystemIndicatorIcon* item, IndicatorIcon::LayoutData* ldata);
+    static void layoutStaveSharingChange(const StaveSharingChange* item, IndicatorIcon::LayoutData* ldata);
 
     static void layoutImage(const Image* item, Image::LayoutData* ldata);
     static void layoutInstrumentChange(const InstrumentChange* item, InstrumentChange::LayoutData* ldata);
